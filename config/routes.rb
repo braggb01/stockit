@@ -1,4 +1,10 @@
 Stockit::Application.routes.draw do
+  resources :purchases
+
+  resources :products
+
+  resources :product_types
+
   get "home/index"
 
   resources :locations

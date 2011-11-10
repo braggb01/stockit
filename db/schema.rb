@@ -11,10 +11,39 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111109030751) do
+ActiveRecord::Schema.define(:version => 20111110131223) do
 
   create_table "locations", :force => true do |t|
     t.string   "room"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "product_types", :force => true do |t|
+    t.string   "prod_number"
+    t.text     "prod_desc"
+    t.string   "brand",           :default => "Cisco"
+    t.integer  "total_quantity",  :default => 0
+    t.integer  "needed_quantity", :default => 0
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "products", :force => true do |t|
+    t.integer  "purchase_id"
+    t.integer  "product_type_id"
+    t.integer  "quantity"
+    t.integer  "location_id"
+    t.boolean  "received",        :default => false
+    t.date     "date_received"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "purchases", :force => true do |t|
+    t.string   "po_number"
+    t.date     "date_ordered"
+    t.boolean  "complete"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

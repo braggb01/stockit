@@ -1,0 +1,57 @@
+<%= form_for(@product) do |f| %>
+  <% if @product.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@product.errors.count, "error") %> prohibited this product from being saved:</h2>
+
+      <ul>
+      <% @product.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <fieldset>
+  <div class="clearfix">
+    <%= f.label "Purchase Order:" %>
+		<div class="input">
+    	<%= f.collection_select(:purchase_id, Purchase.all, :id, :po_number, :prompt => true) %>
+		</div>
+	</div>
+  <div class="clearfix">
+		<%= f.label "Product #:" %>
+		<div class="input">
+    	<%= f.collection_select(:product_type_id, ProductType.all, :id, :prod_number, :prompt => true) %>
+		</div>
+	</div>
+  <div class="clearfix">
+    <%= f.label "Quantity Ordered:" %>
+		<div class="input">
+    	<%= f.number_field :quantity %>
+		</div>
+	</div>
+  <div class="clearfix">
+		<%= f.label "Location Stored:" %>
+		<div class="input">
+    	<%= f.collection_select(:location_id, Location.all, :id, :room, :prompt => true) %>
+		</div>
+	</div>
+  <div class="clearfix">
+		<%= f.label "Received:" %>
+		<div class="input">
+    	<%= f.check_box :received %>
+		</div>
+	</div>
+  <div class="clearfix">
+		<%= f.label "Date Received:" %>
+		<div class="input">
+    	<%= f.date_select :date_received %>
+		</div>
+	</div>
+  <div class="clearfix">
+  	<div class="well">
+    	<%= f.submit :class => "btn primary" %>
+  	</div>
+	</div>
+	</fieldset>
+	<% end %>

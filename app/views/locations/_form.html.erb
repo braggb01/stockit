@@ -10,12 +10,13 @@
       </ul>
     </div>
   <% end %>
+  <fieldset>
+  <div class="clearfix">
+    <%= f.label "Room:", :for => "xlInput" %>
+		<div class="input">
+    	<%= f.text_field :room, :class => "xlarg" %>&nbsp;&nbsp;&nbsp;<%= f.submit :class => "btn primary"  %>
+		</div>
+  </div>
 
-  <div class="field">
-    <%= f.label :room %><br />
-    <%= f.text_field :room %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+	</fieldset>
 <% end %>

@@ -1,0 +1,48 @@
+<% content_for :topbar do %>
+	<%= render :partial => 'topbar' %>
+<% end %>
+
+<% content_for :sidebar do %>
+	<%= render :partial => 'sidebar' %>
+<% end %>
+
+<% content_for :content do %>
+<div class="content">
+<h1>Listing products</h1>
+	<table class="zebra-striped bordered-table">
+		<thead>
+			<tr>
+    		<th>Purchase</th>
+    		<th>Product type</th>
+    		<th>Quantity</th>
+    		<th>Location</th>
+    		<th>Received</th>
+    		<th>Date received</th>
+    		<th></th>
+    		<th></th>
+    		<th></th>
+  		</tr>
+		</thead>
+		<tbody>
+			<% @products.each do |product| %>
+  		<tr>
+    		<td><%= product.purchase_id %></td>
+    		<td><%= product.product_type_id %></td>
+    		<td><%= product.quantity %></td>
+    		<td><%= product.location_id %></td>
+    		<td><%= product.received %></td>
+    		<td><%= product.date_received %></td>
+    		<td><%= link_to 'Show', product %></td>
+    		<td><%= link_to 'Edit', edit_product_path(product) %></td>
+    		<td><%= link_to 'Destroy', product, confirm: 'Are you sure?', method: :delete %></td>
+  		</tr>
+		</tbody>
+<% end %>
+	</table>
+
+<br />
+
+<%= link_to 'New Product', new_product_path,:class => "btn primary"  %>
+</div>
+
+<% end %>

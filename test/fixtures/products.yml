@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  purchase_id: 1
+  product_type_id: 1
+  vendor_id: 1
+  quantity: 1
+  location_id: 1
+  received: false
+  date_received: 2011-11-10
+
+two:
+  purchase_id: 1
+  product_type_id: 1
+  vendor_id: 1
+  quantity: 1
+  location_id: 1
+  received: false
+  date_received: 2011-11-10

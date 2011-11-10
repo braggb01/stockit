@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Prod number:</b>
+  <%= @product_type.prod_number %>
+</p>
+
+<p>
+  <b>Prod desc:</b>
+  <%= @product_type.prod_desc %>
+</p>
+
+<p>
+  <b>Brand:</b>
+  <%= @product_type.brand %>
+</p>
+
+<p>
+  <b>Total quantity:</b>
+  <%= @product_type.total_quantity %>
+</p>
+
+<p>
+  <b>Needed quantity:</b>
+  <%= @product_type.needed_quantity %>
+</p>
+
+
+<%= link_to 'Edit', edit_product_type_path(@product_type) %> |
+<%= link_to 'Back', product_types_path %>
