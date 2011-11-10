@@ -2,6 +2,7 @@ class LocationsController < ApplicationController
   # GET /locations
   # GET /locations.json
   def index
+		@title = "Storage Locations"
     @locations = Location.all
 
     respond_to do |format|
@@ -13,6 +14,7 @@ class LocationsController < ApplicationController
   # GET /locations/1
   # GET /locations/1.json
   def show
+		@title = "Storage Location"
     @location = Location.find(params[:id])
 
     respond_to do |format|
@@ -24,6 +26,7 @@ class LocationsController < ApplicationController
   # GET /locations/new
   # GET /locations/new.json
   def new
+		@title = "New Storage Location"
     @location = Location.new
 
     respond_to do |format|
@@ -34,6 +37,7 @@ class LocationsController < ApplicationController
 
   # GET /locations/1/edit
   def edit
+		@title = "Edit Storage Location"
     @location = Location.find(params[:id])
   end
 
