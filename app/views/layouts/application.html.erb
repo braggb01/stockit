@@ -7,16 +7,12 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-	<div class="container-fluid">
-		<div style="height:50px;background-color:gray;">
-		</div>
-		<div class="sidebar">
+	<%= yield :topbar %>
 
-		</div>
-		<div class="content">
-			<%= yield %>
-		</div>
-	</div>
+    <div class="container-fluid">
+	  <%= yield :sidebar %>
+      <%= yield :content %>
+    </div>
 
 
 </body>
