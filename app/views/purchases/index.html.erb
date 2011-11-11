@@ -1,27 +1,37 @@
-<h1>Listing purchases</h1>
-
-<table>
-  <tr>
-    <th>Po number</th>
-    <th>Date ordered</th>
-    <th>Complete</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
-
-<% @purchases.each do |purchase| %>
-  <tr>
-    <td><%= purchase.po_number %></td>
-    <td><%= purchase.date_ordered %></td>
-    <td><%= purchase.complete %></td>
-    <td><%= link_to 'Show', purchase %></td>
-    <td><%= link_to 'Edit', edit_purchase_path(purchase) %></td>
-    <td><%= link_to 'Destroy', purchase, confirm: 'Are you sure?', method: :delete %></td>
-  </tr>
+<% content_for :topbar do %>
+  <%= render :partial => 'topbar' %>
 <% end %>
-</table>
+
+<% content_for :sidebar do %>
+  <%= render :partial => 'sidebar' %>
+<% end %>
+
+<% content_for :content do %>
+<div class="content">
+  <h1>Listing purchases</h1>
+
+  <table class="zebra-striped bordered-table">
+    <thead>
+      <tr>
+        <th>Po number</th>
+        <th>Date ordered</th>
+        <th>Complete</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+    <% @purchases.each do |purchase| %>
+      <tr>
+        <td><%= purchase.po_number %></td>
+        <td><%= purchase.date_ordered %></td>
+        <td><%= purchase.complete %></td>
+        <td><%= link_to 'Show', purchase,:class => "btn success" %>&nbsp;<%= link_to 'Edit', edit_purchase_path(purchase),:class => "btn primary" %>&nbsp;<%= link_to 'Destroy', purchase,:class => "btn danger", confirm: 'Are you sure?', method: :delete %></td>
+      </tr>
+    <% end %>
+    </tbody>
+  </table>
 
 <br />
 
-<%= link_to 'New Purchase', new_purchase_path %>
+<%= link_to 'New Purchase', new_purchase_path,:class => "btn primary" %>
+<% end %>

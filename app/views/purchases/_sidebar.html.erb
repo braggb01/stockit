@@ -1,0 +1,18 @@
+<div class="sidebar">
+  <div class="well-sidebar">
+    <h5 class="light">Search</h5>
+    <%= search_form_for @q, :html => { :class => "form-stacked" } do |f| %>
+      <fieldset>
+        <div class="clearfix">
+          <%= f.label "Purchases:" %>
+          <div class="input">
+            <%= f.text_field :po_number_cont, :class => "span3" %>
+          </div>
+        </div>
+        <div class="clearfix">
+          <%= f.submit :class => "btn primary" %>
+        </div>
+      </fieldset>
+    <% end %>
+  </div>
+</div>

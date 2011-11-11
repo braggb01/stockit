@@ -1,6 +1,8 @@
 class ProductsController < ApplicationController
   # GET /products
   # GET /products.json
+  autocomplete :product_type, :prod_number, :full => true
+  autocomplete :purchase, :po_number, :full => true
   def index
     @products = Product.all
 

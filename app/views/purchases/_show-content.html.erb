@@ -1,0 +1,26 @@
+	<div class="clearfix">
+		<h1><%= @purchase.po_number %></h1>
+		<div class="panel">
+		  <h3>Purchase Order Details</h3>
+		  <div>
+		    <div>
+		      <table class="zebra-striped">
+		        <tbody>
+			        <tr>
+			          <th>Purchase Order:</th>
+			          <td><%= @purchase.po_number %></td>
+			        </tr>
+			        <tr>
+			          <th>Date ordered:</th>
+			          <td><%= @purchase.date_ordered %></td>
+			        </tr>
+			        <tr>
+			          <th>Complete:</th>
+			          <td><%= @purchase.complete %></td>
+			        </tr>
+		      	</tbody>
+		      </table>
+		    </div>
+		  </div>
+		</div>
+	</div>

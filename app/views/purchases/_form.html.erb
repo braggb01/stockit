@@ -11,19 +11,27 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :po_number %><br />
-    <%= f.text_field :po_number %>
+  <fieldset>
+  <div class="clearfix">
+    <%= f.label :po_number %>
+    <div class="input">
+      <%= f.text_field :po_number %>
+    </div>
   </div>
-  <div class="field">
-    <%= f.label :date_ordered %><br />
-    <%= f.date_select :date_ordered %>
+  <div class="clearfix">
+    <%= f.label :date_ordered %>
+    <div class="input">
+      <%= f.text_field :date_ordered, :id => "datepicker" %>
+    </div>
   </div>
-  <div class="field">
-    <%= f.label :complete %><br />
-    <%= f.check_box :complete %>
+  <div class="clearfix">
+    <%= f.label :complete %>
+    <div class="input">
+      <%= f.check_box :complete %>
+    </div>
   </div>
-  <div class="actions">
+  <div class="well">
     <%= f.submit :class => "btn primary" %>
   </div>
+  </fieldset>
 <% end %>

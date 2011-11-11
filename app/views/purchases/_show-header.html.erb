@@ -1,0 +1,10 @@
+	<% if flash[:notice] %>
+	<div class="alert-message success">
+		<%= link_to "x", purchase_path(@purchase), :class => "close" %>
+		<p id="notice"><%= notice %></p>
+	</div>
+	<% end %>
+	<div class="pull-right">
+		<%= link_to 'Edit', edit_purchase_path(@purchase), :class => "btn primary"  %> 
+		<%= link_to 'Back', purchases_path, :class => "btn primary"  %>
+	</div>

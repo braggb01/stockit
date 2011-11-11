@@ -1,7 +1,10 @@
 Stockit::Application.routes.draw do
   resources :purchases
 
-  resources :products
+  resources :products do
+    get :autocomplete_product_type_prod_number, :on => :collection
+    get :autocomplete_purchase_po_number, :on => :collection
+  end
 
   resources :product_types
 

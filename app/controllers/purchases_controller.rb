@@ -3,6 +3,8 @@ class PurchasesController < ApplicationController
   # GET /purchases.json
   def index
     @purchases = Purchase.all
+    @q = Purchase.search(params[:q])
+    @purchases = @q.result(:distinct => true)
 
     respond_to do |format|
       format.html # index.html.erb

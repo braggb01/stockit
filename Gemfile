@@ -7,6 +7,8 @@ gem 'rails', '3.1.1'
 
 gem 'sqlite3'
 gem 'therubyracer'
+gem 'rails3-jquery-autocomplete'
+gem "ransack"
 
 
 # Gems used only for assets and not required

@@ -1,6 +1,25 @@
-<h1>Editing product_type</h1>
+<% content_for :topbar do %>
+	<%= render :partial => 'topbar' %>
+<% end %>
 
-<%= render 'form' %>
+<% content_for :sidebar do %>
+	<%= render :partial => 'sidebar' %>
+<% end %>
 
-<%= link_to 'Show', @product_type %> |
-<%= link_to 'Back', product_types_path %>
+<% content_for :content do %>
+<div class="content">
+			<div class="pull-right">
+				<%= link_to 'Show', @product_type, :class => "btn primary"  %>
+				<%= link_to 'Back', product_types_path, :class => "btn primary"  %>
+			</div>
+	<div class="row">
+		<div class="span12">
+			<h1>Edit Product Type</h1>
+			<div class="row">
+				<div class="span12">
+					<%= render 'form' %>
+				</div>
+			</div>
+		</div>
+	</div>
+<% end %>

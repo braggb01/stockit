@@ -15,15 +15,15 @@
   <div class="clearfix">
     <%= f.label "Purchase Order:" %>
 		<div class="input">
-    	<%= f.collection_select(:purchase_id, Purchase.all, :id, :po_number, :prompt => true) %>
+    	<%= f.autocomplete_field :purchase_po_number, autocomplete_purchase_po_number_products_path %>
 		</div>
 	</div>
   <div class="clearfix">
-		<%= f.label "Product #:" %>
-		<div class="input">
-    	<%= f.collection_select(:product_type_id, ProductType.all, :id, :prod_number, :prompt => true) %>
-		</div>
-	</div>
+    <%= f.label "Product #:" %>
+    <div class="input">
+      <%= f.autocomplete_field :product_type_prod_number, autocomplete_product_type_prod_number_products_path %>
+    </div>
+  </div>
   <div class="clearfix">
     <%= f.label "Quantity Ordered:" %>
 		<div class="input">
@@ -45,7 +45,7 @@
   <div class="clearfix">
 		<%= f.label "Date Received:" %>
 		<div class="input">
-    	<%= f.date_select :date_received %>
+    	<%= f.text_field :date_received, :id => "datepicker" %>
 		</div>
 	</div>
   <div class="clearfix">

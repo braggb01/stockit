@@ -1,20 +1,17 @@
-<p id="notice"><%= notice %></p>
+<% content_for :topbar do %>
+	<%= render :partial => 'topbar' %>
+<% end %>
 
-<p>
-  <b>Po number:</b>
-  <%= @purchase.po_number %>
-</p>
+<% content_for :sidebar do %>
+	<%= render :partial => 'sidebar' %>
+<% end %>
 
-<p>
-  <b>Date ordered:</b>
-  <%= @purchase.date_ordered %>
-</p>
-
-<p>
-  <b>Complete:</b>
-  <%= @purchase.complete %>
-</p>
+<% content_for :content do %>
+<div class="content">
+	<%= render :partial => 'show-header' %>
+	<%= render :partial => 'show-content' %>
+</div>
+<% end %>
 
 
-<%= link_to 'Edit', edit_purchase_path(@purchase) %> |
-<%= link_to 'Back', purchases_path %>
+
