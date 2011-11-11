@@ -11,27 +11,39 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :prod_number %><br />
-    <%= f.text_field :prod_number %>
+  <fieldset>
+  <div class="clearfix">
+    <%= f.label "Product #:" %>
+	<div class="input">
+    	<%= f.text_field :prod_number, :class => "xlarg" %>
+	</div>
   </div>
-  <div class="field">
-    <%= f.label :prod_desc %><br />
-    <%= f.text_area :prod_desc %>
+  <div class="clearfix">
+    <%= f.label "Description:" %>
+	<div class="input">
+    	<%= f.text_area :prod_desc, :class => "xxlarge", :rows => 3 %>
+	</div>
   </div>
-  <div class="field">
-    <%= f.label :brand %><br />
-    <%= f.text_field :brand %>
+  <div class="clearfix">
+    <%= f.label "Brand:" %>
+	<div class="input">
+    	<%= f.text_field :brand, :class => "xlarg" %>
+	</div>
   </div>
-  <div class="field">
-    <%= f.label :total_quantity %><br />
-    <%= f.number_field :total_quantity %>
+  <div class="clearfix">
+    <%= f.label "Total Quantity:" %>
+	<div class="input">
+    	<%= f.number_field :total_quantity %>
+	</div>
   </div>
-  <div class="field">
-    <%= f.label :needed_quantity %><br />
-    <%= f.number_field :needed_quantity %>
+  <div class="clearfix">
+    <%= f.label "Quantity Needed:" %>
+	<div class="input">
+    	<%= f.number_field :needed_quantity %>
+	</div>
   </div>
-  <div class="actions">
-    <%= f.submit %>
+  <div class="well">
+    <%= f.submit :class => "btn primary" %>
   </div>
+  </fieldset>
 <% end %>

@@ -1,31 +1,45 @@
-<h1>Listing product_types</h1>
-
-<table>
-  <tr>
-    <th>Prod number</th>
-    <th>Prod desc</th>
-    <th>Brand</th>
-    <th>Total quantity</th>
-    <th>Needed quantity</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
-
-<% @product_types.each do |product_type| %>
-  <tr>
-    <td><%= product_type.prod_number %></td>
-    <td><%= product_type.prod_desc %></td>
-    <td><%= product_type.brand %></td>
-    <td><%= product_type.total_quantity %></td>
-    <td><%= product_type.needed_quantity %></td>
-    <td><%= link_to 'Show', product_type %></td>
-    <td><%= link_to 'Edit', edit_product_type_path(product_type) %></td>
-    <td><%= link_to 'Destroy', product_type, confirm: 'Are you sure?', method: :delete %></td>
-  </tr>
+<% content_for :topbar do %>
+	<%= render :partial => 'topbar' %>
 <% end %>
-</table>
 
-<br />
+<% content_for :sidebar do %>
+	<%= render :partial => 'sidebar' %>
+<% end %>
 
-<%= link_to 'New Product type', new_product_type_path %>
+<% content_for :content do %>
+<div class="content">
+	<h1>Inventory</h1>
+
+	<table class="zebra-striped bordered-table">
+		<thead>
+			<tr>
+				<th>Prod number</th>
+				<th>Prod desc</th>
+				<th>Brand</th>
+				<th>Total quantity</th>
+				<th>Needed quantity</th>
+				<th></th>
+				<th></th>
+				<th></th>
+			</tr>
+		</thead>
+		<tbody>
+			<% @product_types.each do |product_type| %>
+			<tr>
+				<td><%= product_type.prod_number %></td>
+				<td><%= product_type.prod_desc %></td>
+				<td><%= product_type.brand %></td>
+				<td><%= product_type.total_quantity %></td>
+				<td><%= product_type.needed_quantity %></td>
+				<td><%= link_to 'Show', product_type %></td>
+				<td><%= link_to 'Edit', edit_product_type_path(product_type) %></td>
+				<td><%= link_to 'Destroy', product_type, confirm: 'Are you sure?', method: :delete %></td>
+			</tr>
+			<% end %>
+		</tbody>
+	</table>
+
+	<br />
+
+	<%= link_to 'New Item', new_product_type_path,:class => "btn primary"  %>
+<% end %>
