@@ -1,0 +1,38 @@
+<div class="clearfix">
+	<h1>Product Details</h1>
+	<div class="panel">
+	  <h3>Purchase Order Details</h3>
+	  <div>
+	    <div>
+	      <table class="zebra-striped">
+	        <tbody>
+		        <tr>
+		          <th>Purchase Order:</th>
+		          <td><%= @product.purchase_id %></td>
+		        </tr>
+		        <tr>
+		          <th>Product Type:</th>
+		          <td><%= @product.product_type_id %></td>
+		        </tr>
+		        <tr>
+		          <th>Quantity Ordered:</th>
+		          <td><%= @product.quantity %></td>
+		        </tr>
+		        <tr>
+		          <th>Location Stored:</th>
+		          <td><%= @product.location_id %></td>
+		        </tr>
+		        <tr>
+		          <th>Received:</th>
+		          <td><%= @product.received %></td>
+		        </tr>
+		        <tr>
+		          <th>Date Received:</th>
+		          <td><%= @product.date_received %></td>
+		        </tr>
+	      	</tbody>
+	      </table>
+	    </div>
+	  </div>
+	</div>
+</div>

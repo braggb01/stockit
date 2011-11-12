@@ -3,7 +3,7 @@
 <% end %>
 
 <% content_for :sidebar do %>
-	<%= render :partial => 'sidebar' %>
+	<%= render :partial => 'sidebar-new' %>
 <% end %>
 
 <% content_for :content do %>
@@ -12,10 +12,10 @@
 		<%= link_to 'Back', purchases_path, :class => "btn primary" %>
 	</div>
 	<div class="row">
-		<div class="span20">
+		<div class="span12">
 			<h1>New Purchase Order</h1>
 			<div class="row">
-				<div class="span20">
+				<div class="span12">
 					<%= render 'form' %>
 				</div>
 			</div>

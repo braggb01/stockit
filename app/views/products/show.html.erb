@@ -1,40 +1,14 @@
-<p id="notice"><%= notice %></p>
+<% content_for :topbar do %>
+	<%= render :partial => 'topbar' %>
+<% end %>
 
-<p>
-  <b>Purchase:</b>
-  <%= @product.purchase_id %>
-</p>
+<% content_for :sidebar do %>
+	<%= render :partial => 'sidebar-new' %>
+<% end %>
 
-<p>
-  <b>Product type:</b>
-  <%= @product.product_type_id %>
-</p>
-
-<p>
-  <b>Vendor:</b>
-  <%= @product.vendor_id %>
-</p>
-
-<p>
-  <b>Quantity:</b>
-  <%= @product.quantity %>
-</p>
-
-<p>
-  <b>Location:</b>
-  <%= @product.location_id %>
-</p>
-
-<p>
-  <b>Received:</b>
-  <%= @product.received %>
-</p>
-
-<p>
-  <b>Date received:</b>
-  <%= @product.date_received %>
-</p>
-
-
-<%= link_to 'Edit', edit_product_path(@product) %> |
-<%= link_to 'Back', products_path %>
+<% content_for :content do %>
+<div class="content">
+	<%= render :partial => 'show-header' %>
+	<%= render :partial => 'show-content' %>
+</div>
+<% end %>
