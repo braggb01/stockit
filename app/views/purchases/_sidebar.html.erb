@@ -1,6 +1,6 @@
 <div class="sidebar">
   <div class="well-sidebar">
-    <h5 class="light">Search</h5>
+    <h5 class="light">Filters</h5><hr>
     <%= search_form_for @q, :html => { :class => "form-stacked" } do |f| %>
       <fieldset>
         <div class="clearfix">
@@ -10,7 +10,7 @@
           </div>
         </div>
         <div class="clearfix">
-          <%= f.submit :class => "btn primary" %>
+          <%= f.submit :class => "btn success" %>
         </div>
       </fieldset>
     <% end %>

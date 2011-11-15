@@ -13,27 +13,23 @@
 			<tr>
     		<th>Purchase Order</th>
     		<th>Product Type</th>
-    		<th>Quantity</th>
+    		<th>Quantity Ordered</th>
     		<th>Location</th>
     		<th>Received</th>
     		<th>Date received</th>
-    		<th></th>
-    		<th></th>
-    		<th></th>
+    		<th class="action-buttons">Actions</th>
   		</tr>
 		</thead>
 		<tbody>
 			<% @products.each do |product| %>
   		<tr>
-    		<td><%= product.purchase_id %></td>
-    		<td><%= product.product_type_id %></td>
+    		<td><%= product.purchase.po_number %></td>
+    		<td><%= product.product_type.prod_number %></td>
     		<td><%= product.quantity %></td>
-    		<td><%= product.location_id %></td>
+    		<td><%= product.location.room unless product.location.blank? %></td>
     		<td><%= product.received %></td>
     		<td><%= product.date_received %></td>
-    		<td><%= link_to 'Show', product %></td>
-    		<td><%= link_to 'Edit', edit_product_path(product) %></td>
-    		<td><%= link_to 'Destroy', product, confirm: 'Are you sure?', method: :delete %></td>
+    		<td><%= link_to 'Show', product,:class => "btn success" %>&nbsp;<%= link_to 'Edit', edit_product_path(product),:class => "btn primary" %>&nbsp;<%= link_to 'Destroy', product,:class => "btn danger", confirm: 'Are you sure?', method: :delete %></td>
   		</tr>
 		</tbody>
 <% end %>

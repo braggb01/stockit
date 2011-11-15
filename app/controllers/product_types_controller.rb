@@ -4,6 +4,8 @@ class ProductTypesController < ApplicationController
   def index
     @title = "Inventory"
     @product_types = ProductType.all
+    @q = ProductType.search(params[:q])
+    @product_types = @q.result(:distinct => true)
 
     respond_to do |format|
       format.html # index.html.erb

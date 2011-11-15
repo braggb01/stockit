@@ -12,14 +12,12 @@
 	<table class="zebra-striped bordered-table">
 		<thead>
 			<tr>
-				<th>Prod number</th>
-				<th>Prod desc</th>
-				<th>Brand</th>
-				<th>Total quantity</th>
-				<th>Needed quantity</th>
-				<th></th>
-				<th></th>
-				<th></th>
+				<th><%= sort_link @q, :prod_number, "Product Type" %></th>
+				<th>Product Description</th>
+				<th><%= sort_link @q, :brand, "Brand" %></th>
+				<th>Current Stock Count</th>
+				<th>Stock Desired</th>
+				<th class="action-buttons">Actions</th>
 			</tr>
 		</thead>
 		<tbody>
@@ -30,9 +28,7 @@
 				<td><%= product_type.brand %></td>
 				<td><%= product_type.total_quantity %></td>
 				<td><%= product_type.needed_quantity %></td>
-				<td><%= link_to 'Show', product_type %></td>
-				<td><%= link_to 'Edit', edit_product_type_path(product_type) %></td>
-				<td><%= link_to 'Destroy', product_type, confirm: 'Are you sure?', method: :delete %></td>
+				<td><%= link_to 'Show', product_type,:class => "btn success" %>&nbsp;<%= link_to 'Edit', edit_product_type_path(product_type),:class => "btn primary" %>&nbsp;<%= link_to 'Destroy', product_type,:class => "btn danger", confirm: 'Are you sure?', method: :delete %></td>
 			</tr>
 			<% end %>
 		</tbody>

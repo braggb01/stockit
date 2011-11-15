@@ -830,13 +830,14 @@ input[type=submit].btn {
   background: -ms-linear-gradient(-45deg,  #3b679e 0%,#2b88d9 50%,#207cca 51%,#7db9e8 100%); /* IE10+ */
   background: linear-gradient(-45deg,  #3b679e 0%,#2b88d9 50%,#207cca 51%,#7db9e8 100%); /* W3C */
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3b679e', endColorstr='#7db9e8',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
-  -webkit-box-shadow: 2px 2px 2px 2px rgba(3, 3, 3, .5);
-  -moz-box-shadow: 2px 2px 2px 2px rgba(3, 3, 3, .5);
-  box-shadow: 2px 2px 2px 2px rgba(3, 3, 3, .5); 
+  -webkit-box-shadow: 2px 2px 1px 1px rgba(3, 3, 3, .5);
+  -moz-box-shadow: 2px 2px 1px 1px rgba(3, 3, 3, .5);
+  box-shadow: 2px 2px 1px 1px rgba(3, 3, 3, .5); 
 }
 
 .well-sidebar h5.light {
   color:white;
+  line-height: 1%;
 }
 
 .well-sidebar label {

@@ -6,6 +6,11 @@
  *= require bootstrap
  *= require jquery-ui
 */
+
+th.action-buttons {
+    width:200px;
+}
+
 #title_bar {
     background: -moz-linear-gradient(-90deg, #EFEFEF, #DFE1E2) repeat scroll 0 0 transparent;
     border-bottom: 1px solid #EDEDED;
