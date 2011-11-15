@@ -24,9 +24,12 @@
 			<% end %>
 		</tbody>
 	</table>
-
+	<div class="pull-right">
+		<%= paginate @locations%>
+	</div>
 	<br />
+		<%= link_to 'New Location', new_location_path,:class => "btn primary" %>
 
-	<%= link_to 'New Location', new_location_path,:class => "btn primary" %>
 </div>
+
 <% end %>

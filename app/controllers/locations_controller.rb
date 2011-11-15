@@ -4,6 +4,7 @@ class LocationsController < ApplicationController
   def index
 		@title = "Storage Locations"
     @locations = Location.all
+    @locations = Location.order(:room).page params[:page]
 
     respond_to do |format|
       format.html # index.html.erb
