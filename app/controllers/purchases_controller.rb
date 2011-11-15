@@ -2,6 +2,7 @@ class PurchasesController < ApplicationController
   # GET /purchases
   # GET /purchases.json
   def index
+    @title = "Purchase Orders"
     @purchases = Purchase.all
     @q = Purchase.search(params[:q])
     @purchases = @q.result(:distinct => true)
@@ -15,6 +16,7 @@ class PurchasesController < ApplicationController
   # GET /purchases/1
   # GET /purchases/1.json
   def show
+    @title = "Purchase Order"
     @purchase = Purchase.find(params[:id])
 
     respond_to do |format|
@@ -26,6 +28,7 @@ class PurchasesController < ApplicationController
   # GET /purchases/new
   # GET /purchases/new.json
   def new
+    @title = "New Purchase Order"
     @purchase = Purchase.new
 
     respond_to do |format|
@@ -36,6 +39,7 @@ class PurchasesController < ApplicationController
 
   # GET /purchases/1/edit
   def edit
+    @title = "Purchase Orders"
     @purchase = Purchase.find(params[:id])
   end
 

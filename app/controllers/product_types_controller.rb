@@ -2,6 +2,7 @@ class ProductTypesController < ApplicationController
   # GET /product_types
   # GET /product_types.json
   def index
+    @title = "Inventory"
     @product_types = ProductType.all
 
     respond_to do |format|
@@ -13,6 +14,7 @@ class ProductTypesController < ApplicationController
   # GET /product_types/1
   # GET /product_types/1.json
   def show
+    @title = "Product Type"
     @product_type = ProductType.find(params[:id])
 
     respond_to do |format|
@@ -24,6 +26,7 @@ class ProductTypesController < ApplicationController
   # GET /product_types/new
   # GET /product_types/new.json
   def new
+    @title = "New Product Type"
     @product_type = ProductType.new
 
     respond_to do |format|
@@ -34,6 +37,7 @@ class ProductTypesController < ApplicationController
 
   # GET /product_types/1/edit
   def edit
+    @title = "Edit Product Type"
     @product_type = ProductType.find(params[:id])
   end
 

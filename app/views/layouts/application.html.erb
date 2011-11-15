@@ -8,7 +8,9 @@
 </head>
 <body>
 	<%= yield :topbar %>
-
+	<div id="title_bar">
+		<h2 id="page_title"><%= @title %></h2>
+	</div>
     <div class="container-fluid">
 	  <%= yield :sidebar %>
       <%= yield :content %>
