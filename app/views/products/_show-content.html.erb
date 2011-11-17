@@ -8,11 +8,11 @@
 	        <tbody>
 		        <tr>
 		          <th>Purchase Order:</th>
-		          <td><%= @product.purchase_id %></td>
+		          <td><%= @product.purchase.po_number %></td>
 		        </tr>
 		        <tr>
 		          <th>Product Type:</th>
-		          <td><%= @product.product_type_id %></td>
+		          <td><%= @product.product_type.prod_number %></td>
 		        </tr>
 		        <tr>
 		          <th>Quantity Ordered:</th>
@@ -20,7 +20,7 @@
 		        </tr>
 		        <tr>
 		          <th>Location Stored:</th>
-		          <td><%= @product.location_id %></td>
+		          <td><%= @product.location.room unless @product.location.blank? %></td>
 		        </tr>
 		        <tr>
 		          <th>Received:</th>

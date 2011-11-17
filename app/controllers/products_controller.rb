@@ -7,8 +7,10 @@ class ProductsController < ApplicationController
   
   def index
     @title = "Products"
-    @products = Product.all
-
+    #@products = Product.all
+    @products = Product.order(:po_number).page params[:page]
+    @q = Product.search(params[:q])
+    @products = @q.result(:distinct => true).page params[:page]
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @products }

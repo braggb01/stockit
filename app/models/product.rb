@@ -9,6 +9,8 @@ class Product < ActiveRecord::Base
 	validates :received, :inclusion => { :in => [true, false] }
 	after_save :add_products_to_inventory
 
+
+	
 	def add_products_to_inventory
 		i = ProductType.find_by_id(product_type_id)
 		if received?

@@ -11,12 +11,12 @@
 	<table class="zebra-striped bordered-table">
 		<thead>
 			<tr>
-    		<th>Purchase Order</th>
+    		<th><%= sort_link @q, :po_number, "Purchase Order" %></th>
     		<th>Product Type</th>
-    		<th>Quantity Ordered</th>
-    		<th>Location</th>
-    		<th>Received</th>
-    		<th>Date received</th>
+    		<th><%= sort_link @q, :quantity, "Quantity Ordered" %></th>
+    		<th><%= sort_link @q, :location, "Location" %></th>
+    		<th><%= sort_link @q, :received, "Received" %></th>
+    		<th><%= sort_link @q, :date_received, "Date Received" %></th>
     		<th class="action-buttons">Actions</th>
   		</tr>
 		</thead>

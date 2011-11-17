@@ -3,7 +3,7 @@ class LocationsController < ApplicationController
   # GET /locations.json
   def index
 		@title = "Storage Locations"
-    @locations = Location.all
+    #@locations = Location.all.page params[:page]
     @locations = Location.order(:room).page params[:page]
 
     respond_to do |format|

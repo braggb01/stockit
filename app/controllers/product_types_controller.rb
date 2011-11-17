@@ -3,9 +3,10 @@ class ProductTypesController < ApplicationController
   # GET /product_types.json
   def index
     @title = "Inventory"
-    @product_types = ProductType.all
+    #@product_types = ProductType.all
+    @product_types = ProductType.order(:prod_number).page params[:page]
     @q = ProductType.search(params[:q])
-    @product_types = @q.result(:distinct => true)
+    @product_types = @q.result(:distinct => true).page params[:page]
 
     respond_to do |format|
       format.html # index.html.erb
