@@ -1,0 +1,24 @@
+	<table class="zebra-striped bordered-table">
+		<thead>
+			<tr>
+    		<th>Product Type</th>
+    		<th>Quantity Ordered</th>
+    		<th>Location</th>
+    		<th>Received</th>
+    		<th>Date Received</th>
+    		<th class="action-buttons">Actions</th>
+  		</tr>
+		</thead>
+		<tbody>
+			<% @purchase.products.each do |product| %>
+  		<tr>
+    		<td><%= product.product_type.prod_number %></td>
+    		<td><%= product.quantity %></td>
+    		<td><%= product.location.room unless product.location.blank? %></td>
+    		<td><%= product.received %></td>
+    		<td><%= product.date_received %></td>
+    		<td><%= link_to 'Show', purchase_product_path(@purchase, product),:class => "btn success" %>&nbsp;<%= link_to 'Edit', edit_purchase_product_path(@purchase, product),:class => "btn primary" %>&nbsp;<%= link_to 'Destroy', purchase_product_path(@purchase, product),:class => "btn danger", confirm: 'Are you sure?', method: :delete %></td>
+  		</tr>
+		</tbody>
+<% end %>
+	</table>

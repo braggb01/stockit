@@ -8,7 +8,8 @@ class ProductsController < ApplicationController
   def index
     @title = "Products"
     #@products = Product.all
-    @products = Product.order(:po_number).page params[:page]
+    @purchase = Purchase.find(params[:purchase_id])
+    @products = @purchase.products.all
     @q = Product.search(params[:q])
     @products = @q.result(:distinct => true).page params[:page]
     respond_to do |format|
@@ -21,6 +22,7 @@ class ProductsController < ApplicationController
   # GET /products/1.json
   def show
     @title = "Product"
+    @purchase = Purchase.find(params[:purchase_id])
     @product = Product.find(params[:id])
 
     respond_to do |format|
@@ -33,6 +35,7 @@ class ProductsController < ApplicationController
   # GET /products/new.json
   def new
     @title = "New Product"
+    @purchase = Purchase.find(params[:purchase_id])
     @product = Product.new
 
     respond_to do |format|
@@ -44,17 +47,19 @@ class ProductsController < ApplicationController
   # GET /products/1/edit
   def edit
     @title = "Edit Product"
+    @purchase = Purchase.find(params[:purchase_id])
     @product = Product.find(params[:id])
   end
 
   # POST /products
   # POST /products.json
   def create
-    @product = Product.new(params[:product])
+    @purchase = Purchase.find(params[:purchase_id])
+    @product = @purchase.products.create(params[:product])
 
     respond_to do |format|
       if @product.save
-        format.html { redirect_to @product, notice: 'Product was successfully created.' }
+        format.html { redirect_to purchase_path(@purchase), notice: 'Product was successfully created.' }
         format.json { render json: @product, status: :created, location: @product }
       else
         format.html { render action: "new" }
@@ -66,11 +71,12 @@ class ProductsController < ApplicationController
   # PUT /products/1
   # PUT /products/1.json
   def update
+    @purchase = Purchase.find(params[:purchase_id])
     @product = Product.find(params[:id])
 
     respond_to do |format|
       if @product.update_attributes(params[:product])
-        format.html { redirect_to @product, notice: 'Product was successfully updated.' }
+        format.html { redirect_to purchase_path(@purchase), notice: 'Product was successfully updated.' }
         format.json { head :ok }
       else
         format.html { render action: "edit" }
@@ -82,11 +88,12 @@ class ProductsController < ApplicationController
   # DELETE /products/1
   # DELETE /products/1.json
   def destroy
+    @purchase = Purchase.find(params[:purchase_id])
     @product = Product.find(params[:id])
     @product.destroy
 
     respond_to do |format|
-      format.html { redirect_to products_url }
+      format.html { redirect_to purchase_path(@purchase) }
       format.json { head :ok }
     end
   end

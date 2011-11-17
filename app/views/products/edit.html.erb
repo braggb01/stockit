@@ -9,8 +9,8 @@
 <% content_for :content do %>
 <div class="content">
 			<div class="pull-right">
-				<%= link_to 'Show', @product, :class => "btn primary"  %>
-				<%= link_to 'Back', products_path, :class => "btn primary"  %>
+				<%= link_to 'Show', purchase_product_path(@product), :class => "btn primary"  %>
+				<%= link_to 'Back', purchase_path(@purchase), :class => "btn primary"  %>
 			</div>
 	<div class="row">
 		<div class="span12">

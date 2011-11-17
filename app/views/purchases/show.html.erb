@@ -3,13 +3,14 @@
 <% end %>
 
 <% content_for :sidebar do %>
-	<%= render :partial => 'sidebar-new' %>
+	<%= render :partial => 'sidebar-products' %>
 <% end %>
 
 <% content_for :content do %>
 <div class="content">
 	<%= render :partial => 'show-header' %>
 	<%= render :partial => 'show-content' %>
+	<%= render :partial => 'show-products' %>
 </div>
 <% end %>
 
