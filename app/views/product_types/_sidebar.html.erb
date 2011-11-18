@@ -1,6 +1,6 @@
 <div class="sidebar">
   <div class="well-sidebar">
-    <h5 class="light">Filters</h5><hr>
+    <h5 class="light">Filters</h5>
     <%= search_form_for @q, :html => { :class => "form-stacked" } do |f| %>
       <fieldset>
         <div class="clearfix">
@@ -20,5 +20,12 @@
         </div>
       </fieldset>
     <% end %>
+  </div>
+  <br/>
+  <div class="well-sidebar">
+    <h5 class="light">Create a Product</h5>
+    <fieldset>
+      <span style="padding-left: 20px;"><%= link_to 'New Item', new_product_type_path,:class => "btn primary"  %></span>
+    </fieldset>
   </div>
 </div>

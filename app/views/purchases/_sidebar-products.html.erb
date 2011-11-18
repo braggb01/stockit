@@ -1,6 +1,9 @@
 <div class="sidebar">
   <div class="well-sidebar">
-    <h5 class="light">Create A Product</h5><hr>
-    <%= link_to "Add a Part", new_purchase_product_path(@purchase) %>
+    <h5 class="light">Add a Product</h5>
+    <fieldset>
+      <span style="padding-left: 20px;"><%= link_to "New Product", new_purchase_product_path(@purchase),:class => "btn primary" %></span>
+    </fieldset>
   </div>
+
 </div>

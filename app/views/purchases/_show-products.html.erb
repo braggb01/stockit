@@ -2,6 +2,7 @@
 		<thead>
 			<tr>
     		<th>Product Type</th>
+            <th>Description</th>
     		<th>Quantity Ordered</th>
     		<th>Location</th>
     		<th>Received</th>
@@ -13,9 +14,10 @@
 			<% @purchase.products.each do |product| %>
   		<tr>
     		<td><%= product.product_type.prod_number %></td>
+            <td><%= product.product_type.prod_desc %></td>
     		<td><%= product.quantity %></td>
     		<td><%= product.location.room unless product.location.blank? %></td>
-    		<td><%= product.received %></td>
+    		<td><% if !product.received?  %><span class="alert-message error">Pending</span><% else %><span class="alert-message success">In Stock</span><% end %> </td>
     		<td><%= product.date_received %></td>
     		<td><%= link_to 'Show', purchase_product_path(@purchase, product),:class => "btn success" %>&nbsp;<%= link_to 'Edit', edit_purchase_product_path(@purchase, product),:class => "btn primary" %>&nbsp;<%= link_to 'Destroy', purchase_product_path(@purchase, product),:class => "btn danger", confirm: 'Are you sure?', method: :delete %></td>
   		</tr>

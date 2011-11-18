@@ -7,6 +7,7 @@
 <% end %>
 
 <% content_for :content do %>
+
 <div class="content">
 	<table class="zebra-striped bordered-table">
 		<thead>
@@ -27,9 +28,6 @@
 	<div class="pull-right">
 		<%= paginate @locations%>
 	</div>
-	<br />
-		<%= link_to 'New Location', new_location_path,:class => "btn primary" %>
-
 </div>
 
 <% end %>

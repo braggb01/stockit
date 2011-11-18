@@ -10,6 +10,7 @@
 <div class="content">
 	<%= render :partial => 'show-header' %>
 	<%= render :partial => 'show-content' %>
+	<h1>Line Items (<%= @purchase.products.count %>)</h1>
 	<%= render :partial => 'show-products' %>
 </div>
 <% end %>

@@ -33,8 +33,8 @@
 			<% end %>
 		</tbody>
 	</table>
-
-	<br />
-
-	<%= link_to 'New Item', new_product_type_path,:class => "btn primary"  %>
+        <div class="pull-right">
+                <%= paginate @product_types%>
+        </div>
+        <div class="clearfix"></div>
 <% end %>
