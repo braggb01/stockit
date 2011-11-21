@@ -539,6 +539,9 @@ footer {
   &.info {
     @include gradientBar(#5bc0de, #339bb9);
   }
+  &.pending {
+    @include gradientBar(#ffa84c, #ff7b0d);
+  }
 }
 
 // Base .btn styles
@@ -678,7 +681,8 @@ input[type=submit].btn {
   &.danger p a,
   &.error p a,
   &.success p a,
-  &.info p a {
+  &.info p a, 
+  &.pending {
     color: $white;
   }
  
