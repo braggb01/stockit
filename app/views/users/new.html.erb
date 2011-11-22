@@ -1,19 +1,23 @@
-<% content_for :sidebar do %>
-
-<% end %>
-
 <% content_for :content do %>
-<div class="content">
-	<div class="pull-right">
-		<%= link_to 'Back', users_path, :class => "btn primary" %>
+      <% if @user.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
+
+          <ul>
+          <% @user.errors.full_messages.each do |msg| %>
+            <li><%= msg %></li>
+          <% end %>
+          </ul>
+        </div>
+      <% end %>
+<div class="modal" style="position: relative; top: auto; left: auto; margin: 0 auto; z-index: 1">
+	<div class="modal-header">
+		<%= link_to 'x', users_path, :class => 'close' %>
+	    <h3><%= action_name.capitalize %> User</h3>
 	</div>
-	<div class="row">
-		<div class="span12">
-			<div class="row">
-				<div class="span12">
-					<%= render 'form' %>
-				</div>
-			</div>
-		</div>
+	<div class="modal-body">
+	    <%= render 'form' %>
 	</div>
+
+</div>
 <% end %>
