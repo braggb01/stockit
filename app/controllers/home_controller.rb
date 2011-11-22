@@ -1,6 +1,6 @@
 class HomeController < ApplicationController
   def index
-		@title = "Home"
+		@title = "Dashboard"
   end
 
 end

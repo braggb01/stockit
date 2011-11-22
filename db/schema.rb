@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111110131223) do
+ActiveRecord::Schema.define(:version => 20111122160336) do
 
   create_table "locations", :force => true do |t|
     t.string   "room"
@@ -44,6 +44,15 @@ ActiveRecord::Schema.define(:version => 20111110131223) do
     t.string   "po_number"
     t.date     "date_ordered"
     t.boolean  "complete"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "users", :force => true do |t|
+    t.string   "email"
+    t.string   "password_digest"
+    t.boolean  "admin"
+    t.string   "username"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

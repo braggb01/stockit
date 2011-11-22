@@ -14,9 +14,9 @@
         <%= link_to "stockify", root_path, :class => "brand" %>
         <ul class="nav">
           <% if controller_name == 'home' %>
-            <li class="active"><%= link_to "Home", root_path %></li> 
+            <li class="active"><%= link_to "Dashboard", root_path %></li> 
           <% else %>
-            <li><%= link_to "Home", root_path %></li> 
+            <li><%= link_to "Dashboard", root_path %></li> 
           <% end %>
           <% if controller_name == 'purchases' %>
             <li class="active"><%= link_to "Purchase Orders", purchases_path %></li> 
@@ -33,6 +33,15 @@
               <a href="#" class="dropdown-toggle">Administration</a>
               <ul class="dropdown-menu">        
                 <li class="active"><%= link_to "Storage Locations", locations_path %></li>
+                <li><%= link_to "Users", users_path %></li>
+              </ul>
+            </li>
+          <% elsif controller_name == 'users' %>
+            <li class="dropdown active" data-dropdown="dropdown" >
+              <a href="#" class="dropdown-toggle">Administration</a>
+              <ul class="dropdown-menu">        
+                <li><%= link_to "Storage Locations", locations_path %></li>
+                <li class="active"><%= link_to "Users", users_path %></li>
               </ul>
             </li>
           <% else %>
@@ -40,11 +49,12 @@
             <a href="#" class="dropdown-toggle">Administration</a>
             <ul class="dropdown-menu">        
               <li><%= link_to "Storage Locations", locations_path %></li>
+              <li><%= link_to "Users", users_path %></li>
             </ul>
           </li>
           <% end %> 
         </ul>
-        <p class="pull-right">Logged in as <a href="#">username</a></p>
+        <p class="pull-right"><% if current_user %>Logged in as <%= link_to current_user.username, user_path(current_user.id) %>&nbsp;&nbsp;<%= link_to "Logout", log_out_path, :class => "btn primary" %><% else %><%= link_to "Login", log_in_path, :class => "btn primary" %><% end %></p>
       </div>
     </div>
   </div>
@@ -55,7 +65,22 @@
     <h2 id="page_title"><%= @title %></h2>
   </div>
 <!-- END TITLE BAR -->
-
+  <div class="container-fluid">
+    <div class="content">
+      <% if flash[:notice] %>
+      <div class="alert-message success">
+        <%= link_to "x", root_url, :class => "close" %>
+        <p id="notice"><%= notice %></p>
+      </div>
+      <% end %>
+      <% if flash[:error] %>
+      <div class="alert-message error">
+        <%= link_to "x", root_url, :class => "close" %>
+        <p id="error"><%= error %></p>
+      </div>
+      <% end %>
+    </div>
+  </div>
 <!-- MAIN CONTENT -->  
   <div class="container-fluid">
     <%= yield :sidebar %>

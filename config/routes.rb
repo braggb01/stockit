@@ -12,6 +12,13 @@ Stockit::Application.routes.draw do
 
   resources :locations
 
+  resources :users
+
+  resources :sessions
+
+  get "log_in" => "sessions#new", :as => "log_in"  
+  get "log_out" => "sessions#destroy", :as => "log_out"
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

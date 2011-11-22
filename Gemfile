@@ -11,6 +11,7 @@ gem 'therubyracer'
 gem 'rails3-jquery-autocomplete'
 gem "ransack"
 gem 'kaminari'
+gem 'bcrypt-ruby'
 
 
 # Gems used only for assets and not required
