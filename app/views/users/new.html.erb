@@ -10,7 +10,17 @@
           </ul>
         </div>
       <% end %>
-<div class="modal" style="position: relative; top: auto; left: auto; margin: 0 auto; z-index: 1">
+<a class="btn" data-controls-modal="my-modal" data-backdrop="static" >Launch Modal</a>
+<script type="text/javascript" id="js">
+  $(document).ready(function() {
+    $('#my-modal').modal({
+   show : true,
+   keyboard : true,
+   backdrop : true
+});
+</script>
+
+<div class="modal hide fade" id="my-modal" >
 	<div class="modal-header">
 		<%= link_to 'x', users_path, :class => 'close' %>
 	    <h3><%= action_name.capitalize %> User</h3>

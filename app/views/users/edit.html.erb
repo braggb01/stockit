@@ -3,18 +3,18 @@
 <% end %>
 
 <% content_for :content do %>
-<div class="content">
-			<div class="pull-right">
-				<%= link_to 'Show', @user, :class => "btn primary"  %>
-				<%= link_to 'Back', users_path, :class => "btn primary"  %>
-			</div>
-	<div class="row">
-		<div class="span12">
-			<div class="row">
-				<div class="span12">
-					<%= render 'form' %>
-				</div>
-			</div>
-		</div>
+<div class="modal" id="my-modal" style="position: relative; top: auto; left: auto; margin: 0 auto;" >
+	<div class="modal-header">
+		<%= link_to 'x', users_path, :class => 'close' %>
+	    <h3><%= action_name.capitalize %> User</h3>
 	</div>
+	<div class="modal-body">
+	    <%= render 'form' %>
+	</div>
+	<div class="modal-footer">
+	    <%= link_to 'Show', @user, :class => "btn primary"  %>
+	    <%= link_to 'Back', users_path, :class => "btn primary"  %>
+	</div>
+
+</div>
 <% end %>

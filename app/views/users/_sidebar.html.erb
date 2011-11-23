@@ -2,7 +2,7 @@
   <div class="well-sidebar">
     <h5 class="light">Add a User</h5>
     <fieldset>
-      <span style="padding-left: 20px;"><%= link_to "New User", new_user_path(@user),:class => "btn primary" %></span>
+      <span style="padding-left: 20px;"><%= link_to "New User", new_user_path(@user),:class => "btn primary", "data-controls-modal" => "my-modal", "data-backdrop" => "static" %></span>
     </fieldset>
   </div>
 

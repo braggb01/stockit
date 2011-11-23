@@ -3,32 +3,26 @@
 <% end %>
 
 <% content_for :content do %>
-<div class="content">
-	<% if flash[:notice] %>
-	<div class="alert-message success">
-		<%= link_to "x", user_path(@user), :class => "close" %>
-		<p id="notice"><%= notice %></p>
+<div class="modal" id="my-modal" style="position: relative; top: auto; left: auto; margin: 0 auto;" >
+	<div class="modal-header">
+		<%= link_to 'x', users_path, :class => 'close' %>
+	    <h3><%= @user.username %></h3>
 	</div>
-	<% end %>
-	<div class="pull-right">
-		<%= link_to 'Edit', edit_user_path(@user), :class => "btn primary"  %> 
-		<%= link_to 'Back', users_path, :class => "btn primary"  %>
-	</div>
-	<div class="row">
-		<div class="span12">
-			<h1><%= @user.username %></h1>
-			<div class="row">
-				<div class="span12">
-					<p>
-  					<b>Email:</b>
-  					<%= @user.email %>
-					</p>
-					<p>
-  					<b>Admin?:</b>
-  					<%= @user.admin %>
-					</p>
-				</div>
+	<div class="modal-body">
+			<% if flash[:notice] %>
+			<div class="alert-message success">
+				<%= link_to "x", user_path(@user), :class => "close" %>
+				<p id="notice"><%= notice %></p>
 			</div>
-		</div>
+			<% end %>
+	    <fieldset>
+	    	<p><b>Email Address:  </b><%= @user.email %></p>
+	    	<p><b>Admin Privileges:  </b><%= @user.admin %></p>
 	</div>
+	<div class="modal-footer">
+	    <%= link_to 'Edit', edit_user_path(@user), :class => "btn primary"  %> 
+	    <%= link_to 'Back', users_path, :class => "btn primary"  %>
+	</div>
+
+</div>
 <% end %>

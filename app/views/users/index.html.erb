@@ -26,4 +26,25 @@
     </tbody>
   </table>
 
+
+<script type="text/javascript" id="js">
+  $(document).ready(function() {
+    $('#my-modal').modal({
+   show : true,
+   keyboard : true,
+   backdrop : true
+});
+</script>
+
+<div class="modal hide fade" id="my-modal" >
+  <div class="modal-header">
+    <%= link_to 'x', users_path, :class => 'close' %>
+      <h3><%= action_name.capitalize %> User</h3>
+  </div>
+  <div class="modal-body">
+      <%= render 'form' %>
+  </div>
+
+</div>
+
 <% end %>

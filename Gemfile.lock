@@ -58,7 +58,6 @@ GEM
       treetop (~> 1.4.8)
     mime-types (1.17.2)
     multi_json (1.0.3)
-    mysql2 (0.3.7)
     polyamorous (0.5.0)
       activerecord (~> 3.0)
     polyglot (0.3.3)
@@ -129,7 +128,6 @@ DEPENDENCIES
   coffee-rails (~> 3.1.1)
   jquery-rails
   kaminari
-  mysql2
   rails (= 3.1.1)
   rails3-jquery-autocomplete
   ransack
