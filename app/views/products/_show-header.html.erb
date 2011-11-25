@@ -1,9 +1,3 @@
-<% if flash[:notice] %>
-<div class="alert-message success">
-	<%= link_to "x", purchase_product_path(@product), :class => "close" %>
-	<p id="notice"><%= notice %></p>
-</div>
-<% end %>
 <div class="pull-right">
 	<%= link_to 'Edit', edit_purchase_product_path(@product), :class => "btn primary"  %> 
 	<%= link_to 'Back', purchase_path(@purchase), :class => "btn primary"  %>

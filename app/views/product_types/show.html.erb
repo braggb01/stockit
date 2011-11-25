@@ -4,12 +4,6 @@
 
 <% content_for :content do %>
 <div class="content">
-  <% if flash[:notice] %>
-  <div class="alert-message success">
-    <%= link_to "x", product_type_path(@product_type), :class => "close" %>
-    <p id="notice"><%= notice %></p>
-  </div>
-  <% end %>
   <div class="pull-right">
     <%= link_to 'Edit', edit_product_type_path(@product_type), :class => "btn primary"  %> 
     <%= link_to 'Back', product_types_path, :class => "btn primary"  %>

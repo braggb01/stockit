@@ -54,7 +54,7 @@
           </li>
           <% end %> 
         </ul>
-        <p class="pull-right"><% if current_user %>Logged in as <%= link_to current_user.username, user_path(current_user.id) %>&nbsp;&nbsp;<%= link_to "Logout", log_out_path, :class => "btn primary" %><% else %><%= link_to "Login", log_in_path, :class => "btn primary", "data-controls-modal" => "logitin", "data-backdrop" => "static" %><% end %></p>
+        <p class="pull-right"><% if current_user %><span style="color:#BFBFBF;">Logged in as </span><%= link_to current_user.username, user_path(current_user.id) %>&nbsp;&nbsp;<%= link_to "Logout", log_out_path, :class => "btn primary" %><% else %><%= link_to "Login", log_in_path, :class => "btn primary", "data-controls-modal" => "logitin", "data-backdrop" => "static" %><% end %></p>
       </div>
     </div>
   </div>
@@ -69,13 +69,13 @@
     <div class="content">
       <% if flash[:notice] %>
       <div class="alert-message success">
-        <%= link_to "x", root_url, :class => "close" %>
+        <%= link_to "x", '', :class => "close" %>
         <p id="notice"><%= notice %></p>
       </div>
       <% end %>
       <% if flash[:error] %>
       <div class="alert-message error">
-        <%= link_to "x", root_url, :class => "close" %>
+        <%= link_to "x", '', :class => "close" %>
         <p id="error"><%= error %></p>
       </div>
       <% end %>

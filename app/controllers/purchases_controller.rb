@@ -6,6 +6,7 @@ class PurchasesController < ApplicationController
     @purchases = Purchase.all
     @q = Purchase.search(params[:q])
     @purchases = @q.result(:distinct => true)
+    @purchase = Purchase.new
 
     respond_to do |format|
       format.html # index.html.erb

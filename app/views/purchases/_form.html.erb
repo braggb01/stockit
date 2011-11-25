@@ -13,25 +13,27 @@
 
   <fieldset>
   <div class="clearfix">
-    <%= f.label :po_number %>
+    <%= f.label "Purchase Order #:" %>
     <div class="input">
       <%= f.text_field :po_number %>
     </div>
   </div>
   <div class="clearfix">
-    <%= f.label :date_ordered %>
+    <%= f.label "Date Ordered:" %>
     <div class="input">
       <%= f.text_field :date_ordered, :id => "datepicker" %>
     </div>
   </div>
   <div class="clearfix">
-    <%= f.label :complete %>
+    <%= f.label "Completed:" %>
     <div class="input">
       <%= f.check_box :complete %>
     </div>
   </div>
-  <div class="well">
-    <%= f.submit :class => "btn primary" %>
+  <div class="clearfix">
+    <div class="input">
+      <%= f.submit :class => "btn primary" %>
+    </div>
   </div>
   </fieldset>
 <% end %>

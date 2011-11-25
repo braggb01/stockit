@@ -9,12 +9,6 @@
 	    <h3><%= @user.username %></h3>
 	</div>
 	<div class="modal-body">
-			<% if flash[:notice] %>
-			<div class="alert-message success">
-				<%= link_to "x", user_path(@user), :class => "close" %>
-				<p id="notice"><%= notice %></p>
-			</div>
-			<% end %>
 	    <fieldset>
 	    	<p><b>Email Address:  </b><%= @user.email %></p>
 	    	<p><b>Admin Privileges:  </b><%= @user.admin %></p>
