@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111122160336) do
+ActiveRecord::Schema.define(:version => 20111125170105) do
 
   create_table "locations", :force => true do |t|
     t.string   "room"
@@ -38,6 +38,7 @@ ActiveRecord::Schema.define(:version => 20111122160336) do
     t.date     "date_received"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "user_id"
   end
 
   create_table "purchases", :force => true do |t|
@@ -46,6 +47,7 @@ ActiveRecord::Schema.define(:version => 20111122160336) do
     t.boolean  "complete"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "user_id"
   end
 
   create_table "users", :force => true do |t|

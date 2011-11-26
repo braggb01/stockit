@@ -19,6 +19,12 @@
     </div>
   </div>
   <div class="clearfix">
+    <%= f.label "Ordered By:" %>
+    <div class="input">
+      <%= f.collection_select(:user_id, User.all, :id, :username, :include_blank => 'Select a User') %>
+    </div>
+  </div>
+  <div class="clearfix">
     <%= f.label "Date Ordered:" %>
     <div class="input">
       <%= f.text_field :date_ordered, :id => "datepicker" %>

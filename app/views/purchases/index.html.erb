@@ -9,6 +9,7 @@
     <thead>
       <tr>
         <th><%= sort_link @q, :prod_number, "Purchase Order" %></th>
+        <th>Ordered By</th>
         <th>Date Ordered</th>
         <th>Complete</th>
         <th class="action-buttons">Actions</th>
@@ -18,6 +19,7 @@
     <% @purchases.each do |purchase| %>
       <tr>
         <td><%= purchase.po_number %></td>
+        <td><%= purchase.user.username %></td>
         <td><%= purchase.date_ordered %></td>
         <td><%= purchase.complete %></td>
         <td><%= link_to 'Show', purchase,:class => "btn success" %>&nbsp;<%= link_to 'Edit', edit_purchase_path(purchase),:class => "btn primary" %>&nbsp;<%= link_to 'Destroy', purchase,:class => "btn danger", confirm: 'Are you sure?', method: :delete %></td>

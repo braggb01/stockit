@@ -32,6 +32,12 @@
 		</div>
 	</div>
   <div class="clearfix">
+    <%= f.label "Received By:" %>
+    <div class="input">
+      <%= f.collection_select(:user_id, User.all, :id, :username, :include_blank => 'Select a User') %>
+    </div>
+  </div>
+  <div class="clearfix">
 		<%= f.label "Location Stored:" %>
 		<div class="input">
     	<%= f.collection_select(:location_id, Location.all, :id, :room, :include_blank => 'Select Location') %>

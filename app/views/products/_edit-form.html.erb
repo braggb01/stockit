@@ -12,13 +12,14 @@
   <% end %>
 
   <fieldset>
-  <div class="clearfix">
+<!--   <div class="clearfix">
     <%= f.label "Purchase Order:" %>
 		<div class="input">
     	<%= text_field_tag 'purchase_product_purchase_id', @purchase.id, {:class => "uneditable-input", :disabled => true, :placeholder => @purchase.po_number} %>
 		
 		</div>
-	</div>
+	</div> -->
+  <%= f.hidden_field :purchase_id %>
   <div class="clearfix">
     <%= f.label "Product #:" %>
     <div class="input">
@@ -31,6 +32,12 @@
     	<%= f.number_field :quantity %>
 		</div>
 	</div>
+  <div class="clearfix">
+    <%= f.label "Received By:" %>
+    <div class="input">
+      <%= f.collection_select(:user_id, User.all, :id, :username, :include_blank => 'Select a User') %>
+    </div>
+  </div>
   <div class="clearfix">
 		<%= f.label "Location Stored:" %>
 		<div class="input">

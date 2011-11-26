@@ -11,6 +11,10 @@
 			          <td><%= @purchase.po_number %></td>
 			        </tr>
 			        <tr>
+			          <th>Ordered By:</th>
+			          <td><%= @purchase.user.username %></td>
+			        </tr>
+			        <tr>
 			          <th>Date ordered:</th>
 			          <td><%= @purchase.date_ordered %></td>
 			        </tr>

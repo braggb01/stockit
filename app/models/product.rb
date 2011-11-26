@@ -2,6 +2,7 @@ class Product < ActiveRecord::Base
 	belongs_to :purchase
 	belongs_to :location
 	belongs_to :product_type
+	belongs_to :user
 	attr_accessor :product_type_prod_number
 	attr_accessor :purchase_po_number
 
