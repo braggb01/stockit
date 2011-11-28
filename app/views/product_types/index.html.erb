@@ -33,4 +33,23 @@
                 <%= paginate @product_types%>
         </div>
         <div class="clearfix"></div>
+<script type="text/javascript" id="js">
+  $(document).ready(function() {
+    $('#new_product_type').modal({
+   show : true,
+   keyboard : true,
+   backdrop : true
+});
+</script>
+
+<div class="modal hide fade" id="new_product_type" >
+  <div class="modal-header">
+    <%= link_to 'x', product_types_path, :class => 'close' %>
+      <h3>New Item</h3>
+  </div>
+  <div class="modal-body">
+      <%= render 'form' %>
+  </div>
+
+</div>
 <% end %>

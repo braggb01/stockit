@@ -6,7 +6,7 @@
 <div class="modal" id="my-modal" style="position: relative; top: auto; left: auto; margin: 0 auto;" >
 	<div class="modal-header">
 		<%= link_to 'x', users_path, :class => 'close' %>
-	    <h3><%= action_name.capitalize %> User</h3>
+	    <h3><%= action_name.capitalize %> <%= @user.username %></h3>
 	</div>
 	<div class="modal-body">
 	    <%= render 'form' %>

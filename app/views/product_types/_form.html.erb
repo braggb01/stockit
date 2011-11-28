@@ -21,7 +21,7 @@
   <div class="clearfix">
     <%= f.label "Description:" %>
 	<div class="input">
-    	<%= f.text_area :prod_desc, :class => "xxlarge", :rows => 3 %>
+    	<%= f.text_area :prod_desc, :class => "xlarge", :rows => 3 %>
 	</div>
   </div>
   <div class="clearfix">
@@ -42,8 +42,10 @@
     	<%= f.number_field :needed_quantity %>
 	</div>
   </div>
-  <div class="well">
-    <%= f.submit :class => "btn primary" %>
+  <div class="clearfix">
+    <div class="input">
+      <%= f.submit :class => "btn primary" %>
+    </div>
   </div>
   </fieldset>
 <% end %>

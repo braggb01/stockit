@@ -1,18 +1,15 @@
 <% content_for :sidebar do %>
-  <%= render :partial => 'sidebar-new' %>
+
 <% end %>
 
 <% content_for :content do %>
-<div class="content">
-  <div class="pull-right">
-    <%= link_to 'Edit', edit_product_type_path(@product_type), :class => "btn primary"  %> 
-    <%= link_to 'Back', product_types_path, :class => "btn primary"  %>
+<div class="modal" id="my-modal" style="position: relative; top: auto; left: auto; margin: 0 auto;" >
+  <div class="modal-header">
+    <%= link_to 'x', product_types_path, :class => 'close' %>
+      <h3><%= @product_type.prod_number %></h3>
   </div>
-  <div class="row">
-    <div class="span12">
-      <h1><%= @product_type.prod_number %></h1>
-      <div class="row">
-        <div class="span12">
+  <div class="modal-body">
+      <fieldset>
           <p>
             <b>Product #:</b>
             <%= @product_type.prod_number %>
@@ -35,8 +32,13 @@
             <b>Needed quantity:</b>
             <%= @product_type.needed_quantity %>
           </p>
-        </div>
-      </div>
-    </div>
+        </fieldset>
   </div>
+  <div class="modal-footer">
+    <%= link_to 'Edit', edit_product_type_path(@product_type), :class => "btn primary"  %> 
+    <%= link_to 'Back', product_types_path, :class => "btn primary"  %>
+  </div>
+</div>
 <% end %>
+
+

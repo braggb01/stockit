@@ -12,7 +12,7 @@
 			        </tr>
 			        <tr>
 			          <th>Ordered By:</th>
-			          <td><%= @purchase.user.username %></td>
+			          <td><%= @purchase.user.username unless @purchase.user.blank? %></td>
 			        </tr>
 			        <tr>
 			          <th>Date ordered:</th>

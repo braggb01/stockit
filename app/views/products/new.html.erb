@@ -1,20 +1,18 @@
 <% content_for :sidebar do %>
-	<%= render :partial => 'sidebar-new' %>
+
 <% end %>
 
 <% content_for :content do %>
-<div class="content">
-	<div class="pull-right">
-		<%= link_to 'Back', purchase_path(@purchase), :class => "btn primary" %>
+<div class="modal" id="my-modal" style="position: relative; top: auto; left: auto; margin: 0 auto;" >
+	<div class="modal-header">
+		<%= link_to 'x', purchase_path(@purchase), :class => 'close' %>
+	    <h3>New Product</h3>
 	</div>
-	<div class="row">
-		<div class="span20">
-			<h1>New product</h1>
-			<div class="row">
-				<div class="span20">
-					<%= render 'edit-form' %>
-				</div>
-			</div>
-		</div>
+	<div class="modal-body">
+	    <%= render 'edit-form' %>
 	</div>
+	<div class="modal-footer">
+	    <%= link_to 'Cancel', purchase_path(@purchase), :class => "btn danger"  %>
+	</div>
+</div>
 <% end %>

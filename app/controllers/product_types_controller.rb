@@ -3,8 +3,7 @@ class ProductTypesController < ApplicationController
   # GET /product_types.json
   def index
     @title = "Inventory"
-    #@product_types = ProductType.all
-    #@product_types = ProductType.order(:needed_quantity).page params[:page]
+    @product_type = ProductType.new
     @q = ProductType.search(params[:q])
     @product_types = @q.result(:distinct => true).order('needed_quantity DESC').page params[:page]
 
