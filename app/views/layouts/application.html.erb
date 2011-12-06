@@ -54,7 +54,7 @@
           </li>
           <% end %> 
         </ul>
-        <p class="pull-right"><% if current_user %><span style="color:#BFBFBF;">Logged in as </span><%= link_to current_user.username, user_path(current_user.id) %>&nbsp;&nbsp;<%= link_to "Logout", log_out_path, :class => "btn primary" %><% else %><%= link_to "Login", log_in_path, :class => "btn primary", "data-controls-modal" => "logitin", "data-backdrop" => "static" %><% end %></p>
+        <p class="pull-right"><% if current_user %><span style="color:#BFBFBF;">Logged in as </span><%= link_to current_user.username, user_path(current_user.id) %>&nbsp;&nbsp;<%= link_to "Logout", log_out_path, :class => "sprite-header logoutbutton" %><% else %><%= link_to "Login", log_in_path, :class => "btn primary", "data-controls-modal" => "logitin", "data-backdrop" => "static" %><% end %></p>
       </div>
     </div>
   </div>

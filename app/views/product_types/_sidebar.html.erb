@@ -15,8 +15,8 @@
             <%= f.text_field :prod_desc_cont, :class => "span3" %>
           </div>
         </div>
-        <div class="clearfix">
-          <%= f.submit :class => "btn success" %> &nbsp; <%= link_to "Reset", product_types_path, :class => "btn danger" %>
+        <div class="pull-right">
+          <%= f.submit :class => "sprite-new searchbutton", "data-placement" => "below", "rel" => "twipsy", :title => "Search" %> &nbsp; <%= link_to "Reset", product_types_path, :class => "sprite-new resetbutton", "data-placement" => "below", "rel" => "twipsy", "title" => "Clear Form" %>
         </div>
       </fieldset>
     <% end %>

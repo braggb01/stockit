@@ -13,6 +13,7 @@ table {
   padding: 0;
   font-size: $basefont;
   border-collapse: collapse;
+  box-shadow: 1px 1px 1px 1px rgba(3, 3, 3, 0.5);
   th,
   td {
     padding: 10px 10px 9px;
@@ -53,7 +54,7 @@ table {
   border: 1px solid #ddd;
   border-collapse: separate; // Done so we can round those corners!
   *border-collapse: collapse; /* IE7, collapse table to remove spacing */
-  @include border-radius(4px);
+  border-radius: 4px 4px 0 0;
   th + th,
   td + td,
   th + td {

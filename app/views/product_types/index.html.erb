@@ -24,7 +24,7 @@
 				<td><%= product_type.brand %></td>
 				<td><% if product_type.total_quantity < product_type.needed_quantity %><span class="alert-message warning"><%= product_type.total_quantity %></span><% else %><%= product_type.total_quantity %><% end %></td>
 				<td><%= product_type.needed_quantity %></td>
-				<td><%= link_to 'Show', product_type,:class => "btn success" %>&nbsp;<%= link_to 'Edit', edit_product_type_path(product_type),:class => "btn primary" %>&nbsp;<%= link_to 'Destroy', product_type,:class => "btn danger", confirm: 'Are you sure?', method: :delete %></td>
+				<td><%= link_to 'Show', product_type,:class => "sprite-new showbutton", "data-placement" => "below", "rel" => "twipsy", "title" => "Show Details" %>&nbsp;<%= link_to 'Edit', edit_product_type_path(product_type),:class => "sprite-new editbutton", "data-placement" => "below", "rel" => "twipsy", "title" => "Edit Product" %>&nbsp;<%= link_to 'Destroy', product_type,:class => "sprite-new deletebutton", confirm: 'Are you sure?', method: :delete, "data-placement" => "below", "title" => "Delete Product" %></td>
 			</tr>
 			<% end %>
 		</tbody>
@@ -40,6 +40,27 @@
    keyboard : true,
    backdrop : true
 });
+</script>
+<script>
+  $(function () {
+    $("a[rel=twipsy]").twipsy({
+      live: true
+    })
+  })
+</script>
+<script>
+  $(function () {
+    $("a[rel=nofollow]").twipsy({
+      live: true
+    })
+  })
+</script>
+<script>
+  $(function () {
+    $("input[rel=twipsy]").twipsy({
+      live: true
+    })
+  })
 </script>
 
 <div class="modal hide fade" id="new_product_type" >

@@ -7,6 +7,93 @@
  *= require jquery-ui
 */
 
+/* ACTION ITEM BUTTONS */
+.sprite-new {
+    background: url(sprite_new.png) no-repeat scroll 0 0 transparent;
+    display: block;
+    float: left;
+    height: 40px;
+    text-indent: -9999px;
+    width: 40px;
+}
+.showbutton {
+    background-position: -124px -401px;
+    height: 25px;
+    width: 25px;
+}
+.showbutton:hover {
+    background-position: -124px -441px;
+    height: 25px;
+    width: 25px;
+}
+.editbutton {
+    background-position: -85px -401px;
+    height: 25px;
+    width: 25px;
+}
+.editbutton:hover {
+    background-position: -85px -441px;
+    height: 25px;
+    width: 25px;
+}
+.deletebutton {
+    background-position: -205px -401px;
+    height: 25px;
+    width: 25px;
+}
+.deletebutton:hover {
+    background-position: -205px -441px;
+    height: 25px;
+    width: 25px;
+}
+
+/* FORM ITEM BUTTONS */
+input[type="submit"].searchbutton {
+    background-position: -372px -52px;
+    height: 25px;
+    width: 25px;
+    border: none;
+    box-shadow: none;
+}
+input[type="submit"].searchbutton:hover {
+    background-position: -372px -12px;
+    height: 25px;
+    width: 25px;
+}
+.resetbutton {
+    background-position: -205px -401px;
+    height: 25px;
+    width: 25px;
+}
+.resetbutton:hover {
+    background-position: -205px -441px;
+    height: 25px;
+    width: 25px;
+}
+
+
+/* Authentication */
+.sprite-header {
+    background: url(sprite_new.png) no-repeat scroll 0 0 transparent;
+    display: block;
+    float: right;
+    height: 40px;
+    text-indent: -9999px;
+    margin-top:5px;
+    width: 40px;
+}
+.logoutbutton {
+    background-position: -235px -516px;
+    height: 25px;
+    width: 25px;
+}
+.logoutbutton:hover {
+    background-position: -235px -476px;
+    height: 25px;
+    width: 25px;
+}
+
+/* PAGINATION */
 .pagination {
     display: inline;
     margin-left: 10px;
@@ -78,12 +165,12 @@
 }
 
 th.action-buttons {
-    width:200px;
+    width:95px;
 }
 thead {
     background: -moz-linear-gradient(-90deg, #EFEFEF, #DFE1E2) repeat scroll 0 0 transparent;
     border-bottom: 1px solid #EDEDED;
-    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.37);
+    box-shadow: 0 2px 0 rgba(0, 0, 0, 0.25);
     color: #5E6469;
     font-size: 1em;
     font-weight: bold;

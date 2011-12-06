@@ -20,7 +20,7 @@
         <td><%= user.username %></td>
         <td><%= user.email %></td>
         <td><%= user.admin %></td>
-        <td><%= link_to 'Show', user,:class => "btn success" %>&nbsp;<%= link_to 'Edit', edit_user_path(user),:class => "btn primary" %>&nbsp;<%= link_to 'Destroy', user,:class => "btn danger", confirm: 'Are you sure?', method: :delete %></td>
+        <td><%= link_to 'Show', user,:class => "sprite-new showbutton", "data-placement" => "below", "rel" => "twipsy", "title" => "Show Details" %>&nbsp;<%= link_to 'Edit', edit_user_path(user),:class => "sprite-new editbutton", "data-placement" => "below", "rel" => "twipsy", "title" => "Edit User" %>&nbsp;<%= link_to 'Destroy', user,:class => "sprite-new deletebutton", confirm: 'Are you sure?', method: :delete, "data-placement" => "below", "title" => "Delete User" %></td>
       </tr>
     <% end %>
     </tbody>
@@ -34,6 +34,27 @@
    keyboard : true,
    backdrop : true
 });
+</script>
+<script>
+  $(function () {
+    $("a[rel=twipsy]").twipsy({
+      live: true
+    })
+  })
+</script>
+<script>
+  $(function () {
+    $("a[rel=nofollow]").twipsy({
+      live: true
+    })
+  })
+</script>
+<script>
+  $(function () {
+    $("input[rel=twipsy]").twipsy({
+      live: true
+    })
+  })
 </script>
 
 <div class="modal hide fade" id="my-modal" >
