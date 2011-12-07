@@ -7,13 +7,16 @@
 // -----------
 
 form {
-  margin-bottom: $baseline;
+  //margin-bottom: $baseline;
+  margin-bottom: 0px;
 }
 
 // Groups of fields with labels on top (legends)
 fieldset {
-  margin-bottom: $baseline;
-  padding-top: $baseline;
+  //margin-bottom: $baseline;
+  margin-bottom: 0px;
+  //padding-top: $baseline;
+  padding-top: 12px;
   legend {
     display: block;
     padding-left: 150px;

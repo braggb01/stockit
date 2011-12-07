@@ -93,6 +93,23 @@ input[type="submit"].searchbutton:hover {
     width: 25px;
 }
 
+/* Purchase Order Filled */
+.completebutton {
+    background-position: -277px -836px;
+    height: 25px;
+    width: 25px;
+}
+.notcompletebutton {
+    background-position: -205px -401px;
+    height: 25px;
+    width: 25px;
+}
+
+/* LevelLow */
+.levellow {
+    color:red;
+}
+
 /* PAGINATION */
 .pagination {
     display: inline;

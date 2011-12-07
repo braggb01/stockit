@@ -19,31 +19,10 @@
     		<td><%= product.quantity %></td>
             <td><%= product.user.username unless product.user.blank? %></td>
     		<td><%= product.location.room unless product.location.blank? %></td>
-    		<td><% if !product.received?  %><span class="alert-message pending">Pending</span><% else %><span class="alert-message success">In Stock</span><% end %> </td>
+    		<td><% if !product.received?  %><span class="sprite-new notcompletebutton">Pending</span><% else %><span class="sprite-new completebutton">In Stock</span><% end %> </td>
     		<td><%= product.date_received %></td>
     		<td><%= link_to 'Show', purchase_product_path(@purchase, product),:class => "sprite-new showbutton", "data-placement" => "below", "rel" => "twipsy", "title" => "Show Details" %>&nbsp;<%= link_to 'Edit', edit_purchase_product_path(@purchase, product),:class => "sprite-new editbutton", "data-placement" => "below", "rel" => "twipsy", "title" => "Edit Line Item" %>&nbsp;<%= link_to 'Destroy', purchase_product_path(@purchase, product),:class => "sprite-new deletebutton", confirm: 'Are you sure?', method: :delete, "data-placement" => "below", "title" => "Delete Line Item" %></td>
   		</tr>
 		</tbody>
 <% end %>
 	</table>
-<script>
-  $(function () {
-    $("a[rel=twipsy]").twipsy({
-      live: true
-    })
-  })
-</script>
-<script>
-  $(function () {
-    $("a[rel=nofollow]").twipsy({
-      live: true
-    })
-  })
-</script>
-<script>
-  $(function () {
-    $("input[rel=twipsy]").twipsy({
-      live: true
-    })
-  })
-</script>
