@@ -13,7 +13,7 @@
 
   <fieldset>
   <div class="clearfix">
-    <%= f.label "Product #:" %>
+    <%= f.label "Product ID:" %>
 	<div class="input">
     	<%= f.text_field :prod_number, :class => "xlarg" %>
 	</div>
@@ -25,19 +25,19 @@
 	</div>
   </div>
   <div class="clearfix">
-    <%= f.label "Brand:" %>
+    <%= f.label "Manufacturer:" %>
 	<div class="input">
     	<%= f.text_field :brand, :class => "xlarg" %>
 	</div>
   </div>
   <div class="clearfix">
-    <%= f.label "Total Quantity:" %>
+    <%= f.label "Stock Available:" %>
 	<div class="input">
     	<%= f.number_field :total_quantity %>
 	</div>
   </div>
   <div class="clearfix">
-    <%= f.label "Quantity Needed:" %>
+    <%= f.label "Stock Desired:" %>
 	<div class="input">
     	<%= f.number_field :needed_quantity %>
 	</div>

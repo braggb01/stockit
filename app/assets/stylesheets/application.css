@@ -105,6 +105,56 @@ input[type="submit"].searchbutton:hover {
     width: 25px;
 }
 
+/* Sidebar New Icons */
+.sprite-sidebarnew {
+    background: url(sprite_new.png) no-repeat scroll 0 0 transparent;
+    display: block;
+
+    height: 40px;
+    text-indent: -9999px;
+    width: 40px;
+}
+.newuserbutton {
+    background-position: -476px -793px;
+    height: 35px;
+    width: 35px;
+}
+.newuserbutton:hover {
+    background-position: -476px -753px;
+    height: 35px;
+    width: 35px;
+}
+.newlocationbutton {
+    background-position: -202px -283px;
+    height: 35px;
+    width: 35px;
+}
+.newlocationbutton:hover {
+    background-position: -202px -243px;
+    height: 35px;
+    width: 35px;
+}
+.newproducttypebutton {
+    background-position: -163px -204px;
+    height: 35px;
+    width: 35px;
+}
+.newproducttypebutton:hover {
+    background-position: -163px -164px;
+    height: 35px;
+    width: 35px;
+}
+.newpurchasebutton {
+    background-position: -163px -204px;
+    height: 35px;
+    width: 35px;
+}
+.newpurchasebutton:hover {
+    background-position: -163px -164px;
+    height: 35px;
+    width: 35px;
+}
+
 /* LevelLow */
 .levellow {
     color:red;

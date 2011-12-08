@@ -41,7 +41,7 @@ h2 {
     font-size: 14px;
   }
 }
-h3, h4, h5, h6 {
+h3, h4, h5, h6, h7 {
   line-height: $baseline * 2;
 }
 h3 {
@@ -63,6 +63,17 @@ h6 {
   font-size: 13px;
   color: $grayLight;
   text-transform: uppercase;
+}
+h7 {
+    display: block;
+    float: none;
+    width: auto;
+    font-weight: bold;
+    text-align: left;
+    line-height: 20px;
+    padding-top: 5px;
+    color: #5E6469;
+    text-transform: uppercase;
 }
 
 

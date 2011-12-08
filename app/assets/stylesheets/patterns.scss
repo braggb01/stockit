@@ -826,7 +826,7 @@ input[type=submit].btn {
   box-shadow: 1px 1px 1px 1px rgba(3, 3, 3, .5); 
 }
 
-.well-sidebar h5.light {
+/*.well-sidebar h5.light {
     background: -moz-linear-gradient(-90deg, #EFEFEF, #DFE1E2) repeat scroll 0 0 transparent;
     border-bottom: 1px solid #EDEDED;
     box-shadow: 0 2px 0 rgba(0, 0, 0, 0.25);
@@ -838,6 +838,20 @@ input[type=submit].btn {
     padding: 9px;
     position: relative;
     text-shadow: 0 1px 0 white;
+} */
+
+.well-sidebar h5.light {
+    background: -moz-linear-gradient(-90deg, #049CDB, #0064CD) repeat scroll 0 0 transparent;
+    border-bottom: 1px solid #0064CD;
+    box-shadow: 0 2px 0 rgba(0, 0, 0, 0.25);
+    color: #FEFEFE;
+    font-size: 1em;
+    font-weight: bold;
+    line-height: 18px;
+    margin-top: -20px;
+    padding: 9px;
+    position: relative;
+    text-shadow: 0 1px 0 #333333;
 }
 
 .well-sidebar label {

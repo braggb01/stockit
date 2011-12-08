@@ -149,6 +149,18 @@
     })
   })
 </script>
+<script>
+  $(function () {
+    $("a[rel=popover]")
+      .popover({
+        offset: 10,
+        html: true
+      })
+    .hover(function(e) {
+      e.preventDefault()
+    })
+  }) 
+</script>
 <!-- END HIDDEN CONTENT -->
 </body>
 </html>

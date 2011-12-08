@@ -4,15 +4,21 @@
     <%= search_form_for @q, :html => { :class => "form-stacked" } do |f| %>
       <fieldset>
         <div class="clearfix">
-          <%= f.label "Product Type:" %>
+          <%= f.label "Product ID:" %>
           <div class="input">
             <%= f.text_field :prod_number_cont, :class => "span3" %>
           </div>
         </div>
         <div class="clearfix">
-          <%= f.label "Product Description:" %>
+          <%= f.label "Description:" %>
           <div class="input">
             <%= f.text_field :prod_desc_cont, :class => "span3" %>
+          </div>
+        </div>
+        <div class="clearfix">
+          <%= f.label "Manufacturer:" %>
+          <div class="input">
+            <%= f.text_field :brand_cont, :class => "span3" %>
           </div>
         </div>
         <hr style="margin-top:5px;margin-bottom:5px;"/>
@@ -24,9 +30,16 @@
   </div>
   <br/>
   <div class="well-sidebar">
-    <h5 class="light">Create a Product</h5>
+    <h5 class="light">Control Bar</h5>
     <fieldset>
-      <span style="padding-left: 20px;"><%= link_to 'New Item', new_product_type_path,:class => "btn primary", "data-controls-modal" => "new_product_type", "data-backdrop" => "static"  %></span>
+      <div class="clearfix">
+        <div style="margin-left:20px;float:left;">
+            <%= link_to 'New Item', new_product_type_path,:class => "sprite-sidebarnew newproducttypebutton", "data-controls-modal" => "new_product_type", "data-backdrop" => "static", "rel" => "popover", "data-content" => "<p>Creating a <b>Product ID</b> will allow users to add this product as a Line Item in a Purchase Order.</p><ol><li>Enter a Unique <b>Product ID</b> exactly as given by the vendor.</li><li>Enter the <b>Description</b> of the product.</li><li>Enter the <b>Manufacturer</b> of the product</li><li>If this product is currently in stock please enter this value in the <b>Stock Available</b> area, otherwise leave at 0.</li><li>If you would like to set a recommended quantity to keep in stock at all times, enter it in the <b>Stock Desired</b> area.</li></ol>", :title => "Information", "data-placement" => "left"  %>
+          </div>
+          <div style="margin-left:10px;float:left;">
+            <h7>Add a Product ID</h7>
+          </div>
+        </div>
     </fieldset>
   </div>
 </div>

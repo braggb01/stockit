@@ -18,9 +18,17 @@
   </div>
   <br/>
   <div class="well-sidebar">
-    <h5 class="light">Create a Product</h5>
+    <h5 class="light">Control Bar</h5>
     <fieldset>
-      <span style="padding-left: 20px;"><%= link_to 'New Purchase', new_purchase_path,:class => "btn primary", "data-controls-modal" => "new_purchase", "data-backdrop" => "static"  %></span>
+      <div class="clearfix">
+        <div style="margin-left:20px;float:left;">
+            <%= link_to 'New Purchase', new_purchase_path,:class => "sprite-sidebarnew newpurchasebutton", "data-controls-modal" => "new_purchase", "data-backdrop" => "static", "rel" => "popover", "data-content" => "Create a Purchase Order to start tracking your orders.  You will need to enter a unique P.O. number and select the user who created the P.O.  Once the Purchase Order is created you can begin to enter the associated Line Items.  Remember to change the P.O. to complete after all Line Items have been received.", :title => "Information", "data-placement" => "left"  %>
+          </div>
+          <div style="margin-left:10px;float:left;">
+            <h7>Create a P.O.</h7>
+          </div>
+        </div>
     </fieldset>
   </div>
 </div>
+

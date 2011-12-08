@@ -8,10 +8,10 @@
 	<table class="zebra-striped bordered-table">
 		<thead>
 			<tr>
-				<th><%= sort_link @q, :prod_number, "Product Type" %></th>
-				<th>Product Description</th>
-				<th><%= sort_link @q, :brand, "Brand" %></th>
-				<th>Current Stock Count</th>
+				<th><%= sort_link @q, :prod_number, "Product ID" %></th>
+				<th>Description</th>
+				<th><%= sort_link @q, :brand, "Manufacturer" %></th>
+				<th>Stock Available</th>
 				<th><%= sort_link @q, :needed_quantity, "Stock Desired" %></th>
 				<th class="action-buttons">Actions</th>
 			</tr>

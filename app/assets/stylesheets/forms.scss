@@ -51,6 +51,7 @@ label {
   width: 130px;
   text-align: right;
   color: $grayDark;
+  text-transform: uppercase;
 }
 
 // Shift over the inside div to align all label's relevant content
@@ -450,7 +451,7 @@ textarea[readonly] {
     text-align: left;
     line-height: 20px;
     padding-top: 0;
-    text-transform: capitalize;
+    text-transform: uppercase;
   }
   .clearfix {
     margin-bottom: $baseline / 2;
