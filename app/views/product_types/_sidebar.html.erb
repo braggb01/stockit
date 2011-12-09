@@ -29,6 +29,7 @@
     <% end %>
   </div>
   <br/>
+  <% if can? :create, ProductType %>
   <div class="well-sidebar">
     <h5 class="light">Control Bar</h5>
     <fieldset>
@@ -42,4 +43,5 @@
         </div>
     </fieldset>
   </div>
+  <% end %>
 </div>

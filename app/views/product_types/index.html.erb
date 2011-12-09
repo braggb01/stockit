@@ -13,7 +13,7 @@
 				<th><%= sort_link @q, :brand, "Manufacturer" %></th>
 				<th>Stock Available</th>
 				<th><%= sort_link @q, :needed_quantity, "Stock Desired" %></th>
-				<th class="action-buttons">Actions</th>
+				<% if can? :update, ProductType %><th class="action-buttons">Actions</th><% end %>
 			</tr>
 		</thead>
 		<tbody>
@@ -24,7 +24,9 @@
 				<td><%= product_type.brand %></td>
 				<td><% if product_type.total_quantity < product_type.needed_quantity %><span class="levellow"><%= product_type.total_quantity %></span><% else %><%= product_type.total_quantity %><% end %></td>
 				<td><%= product_type.needed_quantity %></td>
+				<% if can? :update, ProductType %>
 				<td><%= link_to 'Show', product_type,:class => "sprite-new showbutton", "data-placement" => "below", "rel" => "twipsy", "title" => "Show Details" %>&nbsp;<%= link_to 'Edit', edit_product_type_path(product_type),:class => "sprite-new editbutton", "data-placement" => "below", "rel" => "twipsy", "title" => "Edit Product" %>&nbsp;<%= link_to 'Destroy', product_type,:class => "sprite-new deletebutton", confirm: 'Are you sure?', method: :delete, "data-placement" => "below", "title" => "Delete Product" %></td>
+				<% end %>
 			</tr>
 			<% end %>
 		</tbody>

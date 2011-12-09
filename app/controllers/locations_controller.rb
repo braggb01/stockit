@@ -1,6 +1,7 @@
 class LocationsController < ApplicationController
   # GET /locations
   # GET /locations.json
+  load_and_authorize_resource
   def index
 		@title = "Storage Locations"
     #@locations = Location.all.page params[:page]

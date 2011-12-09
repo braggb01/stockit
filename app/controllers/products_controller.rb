@@ -1,6 +1,8 @@
 class ProductsController < ApplicationController
   # GET /products
   # GET /products.json
+  load_and_authorize_resource :purchase
+  load_and_authorize_resource :product, :through => :purchase
   autocomplete :product_type, :prod_number, :full => true
   autocomplete :purchase, :po_number, :full => true
 

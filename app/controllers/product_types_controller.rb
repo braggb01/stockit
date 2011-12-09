@@ -1,6 +1,7 @@
 class ProductTypesController < ApplicationController
   # GET /product_types
   # GET /product_types.json
+  load_and_authorize_resource
   def index
     @title = "Inventory"
     @product_type = ProductType.new

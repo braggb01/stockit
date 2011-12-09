@@ -1,6 +1,7 @@
 class PurchasesController < ApplicationController
   # GET /purchases
   # GET /purchases.json
+  load_and_authorize_resource
   def index
     @title = "Purchase Orders"
     @purchases = Purchase.all

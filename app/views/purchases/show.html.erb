@@ -1,5 +1,5 @@
 <% content_for :sidebar do %>
-	<%= render :partial => 'sidebar-products' %>
+	<% if can? :create, Product %><%= render :partial => 'sidebar-products' %> <%end%>
 <% end %>
 
 <% content_for :content do %>

@@ -12,6 +12,7 @@ gem 'rails3-jquery-autocomplete'
 gem "ransack"
 gem 'kaminari'
 gem 'bcrypt-ruby'
+gem 'cancan'
 
 
 # Gems used only for assets and not required

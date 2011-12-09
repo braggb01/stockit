@@ -18,41 +18,49 @@
           <% else %>
             <li><%= link_to "Dashboard", root_path %></li> 
           <% end %>
-          <% if controller_name == 'purchases' %>
-            <li class="active"><%= link_to "Purchase Orders", purchases_path %></li> 
-          <% else %>
-            <li><%= link_to "Purchase Orders", purchases_path %></li> 
+          <% if can? :update, (Purchase || ProductType) %>
+            <% if controller_name == 'purchases' %>
+              <li class="active"><%= link_to "Purchase Orders", purchases_path %></li> 
+            <% else %>
+              <li><%= link_to "Purchase Orders", purchases_path %></li> 
+            <% end %>
+            <% if controller_name == 'product_types' %>
+              <li class="active"><%= link_to "Inventory", product_types_path %></li> 
+            <% else %>
+              <li><%= link_to "Inventory", product_types_path %></li> 
+            <% end %>
           <% end %>
-          <% if controller_name == 'product_types' %>
-            <li class="active"><%= link_to "Inventory", product_types_path %></li> 
-          <% else %>
-            <li><%= link_to "Inventory", product_types_path %></li> 
-          <% end %>
-          <% if controller_name == 'locations' %>
-            <li class="dropdown active" data-dropdown="dropdown" >
-              <a href="#" class="dropdown-toggle">Administration</a>
-              <ul class="dropdown-menu">        
-                <li class="active"><%= link_to "Storage Locations", locations_path %></li>
-                <li><%= link_to "Users", users_path %></li>
-              </ul>
-            </li>
-          <% elsif controller_name == 'users' %>
-            <li class="dropdown active" data-dropdown="dropdown" >
-              <a href="#" class="dropdown-toggle">Administration</a>
-              <ul class="dropdown-menu">        
-                <li><%= link_to "Storage Locations", locations_path %></li>
-                <li class="active"><%= link_to "Users", users_path %></li>
-              </ul>
-            </li>
-          <% else %>
-          <li class="dropdown" data-dropdown="dropdown" >
-            <a href="#" class="dropdown-toggle">Administration</a>
-            <ul class="dropdown-menu">        
-              <li><%= link_to "Storage Locations", locations_path %></li>
-              <li><%= link_to "Users", users_path %></li>
-            </ul>
-          </li>
-          <% end %> 
+            <% if controller_name == 'locations' %>
+              <% if can? :update, (Location || User) %>
+                <li class="dropdown active" data-dropdown="dropdown" >
+                  <a href="#" class="dropdown-toggle">Administration</a>
+                  <ul class="dropdown-menu">        
+                    <% if can? :update, Location %><li class="active"><%= link_to "Storage Locations", locations_path %></li><% end %>
+                    <% if can? :update, User %><li><%= link_to "Users", users_path %></li><% end %>
+                  </ul>
+                </li>
+              <% end %>
+            <% elsif controller_name == 'users' %>
+              <% if can? :update, (Location || User) %>
+                <li class="dropdown active" data-dropdown="dropdown" >
+                  <a href="#" class="dropdown-toggle">Administration</a>
+                  <ul class="dropdown-menu">        
+                    <% if can? :update, Location %><li><%= link_to "Storage Locations", locations_path %></li><% end %>
+                    <% if can? :update, User %><li class="active"><%= link_to "Users", users_path %></li><% end %>
+                  </ul>
+                </li>
+              <% end %>
+            <% else %>
+              <% if can? :update, (Location || User) %>
+              <li class="dropdown" data-dropdown="dropdown" >
+                <a href="#" class="dropdown-toggle">Administration</a>
+                <ul class="dropdown-menu">        
+                  <% if can? :update, Location %><li><%= link_to "Storage Locations", locations_path %></li><% end %>
+                  <% if can? :update, User %><li><%= link_to "Users", users_path %></li><% end %>
+                </ul>
+              </li>
+              <% end %>
+            <% end %>
         </ul>
         <p class="pull-right"><% if current_user %><span style="color:#BFBFBF;">Logged in as </span><%= link_to current_user.username, user_path(current_user.id) %>&nbsp;&nbsp;<%= link_to "Logout", log_out_path, :class => "sprite-header logoutbutton" %><% else %><%= link_to "Login", log_in_path, :class => "btn primary", "data-controls-modal" => "logitin", "data-backdrop" => "static" %><% end %></p>
       </div>
@@ -86,6 +94,12 @@
     <%= yield :sidebar %>
     <%= yield :content %>
   </div>
+  <footer>
+    <div class="container-fluid">
+      <p>&copy; STOCKIFY 2011</p>
+    </div>
+
+  </footer>
 
 <!-- END MAIN CONTENT -->
 

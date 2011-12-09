@@ -12,6 +12,7 @@
 	    <fieldset>
 	    	<p><b>Email Address:  </b><%= @user.email %></p>
 	    	<p><b>Admin Privileges:  </b><%= @user.admin %></p>
+	    	<p><b>Engineer Privileges:  </b><%= @user.engineer %></p>
 	</div>
 	<div class="modal-footer">
 	    <%= link_to 'Edit', edit_user_path(@user), :class => "btn primary"  %> 
