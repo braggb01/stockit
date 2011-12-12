@@ -6,7 +6,9 @@ Stockit::Application.routes.draw do
     end
   end
 
-  resources :product_types
+  resources :product_types do
+    get 'page/:page', :action => :index, :on => :collection
+  end
 
   get "home/index"
 

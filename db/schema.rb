@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111209203245) do
+ActiveRecord::Schema.define(:version => 20111209222207) do
 
   create_table "locations", :force => true do |t|
     t.string   "room"
@@ -28,6 +28,11 @@ ActiveRecord::Schema.define(:version => 20111209203245) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  add_index "product_types", ["brand"], :name => "index_product_types_on_brand"
+  add_index "product_types", ["needed_quantity"], :name => "index_product_types_on_needed_quantity"
+  add_index "product_types", ["prod_number"], :name => "index_product_types_on_prod_number", :unique => true
+  add_index "product_types", ["total_quantity"], :name => "index_product_types_on_total_quantity"
 
   create_table "products", :force => true do |t|
     t.integer  "purchase_id"

@@ -90,19 +90,21 @@
     </div>
   </div>
 <!-- MAIN CONTENT -->  
-  <div class="container-fluid">
+  <div class="container-fluid" style="margin-bottom:0px;">
     <%= yield :sidebar %>
     <%= yield :content %>
   </div>
-  <footer>
-    <div class="container-fluid">
-      <p>&copy; STOCKIFY 2011</p>
-    </div>
+</div>
 
-  </footer>
 
 <!-- END MAIN CONTENT -->
-
+  <div class="container-fluid">
+    <div class="clearfix">
+      <footer>
+          <p>&copy; STOCKIFY 2011</p>
+      </footer>
+    </div>
+  </div>
 <!-- HIDDEN CONTENT -->
 <script type="text/javascript" id="js">
   $(document).ready(function() {
@@ -176,5 +178,6 @@
   }) 
 </script>
 <!-- END HIDDEN CONTENT -->
+
 </body>
 </html>
