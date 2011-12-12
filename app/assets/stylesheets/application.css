@@ -7,6 +7,11 @@
  *= require jquery-ui
 */
 
+/* DASHBOARD */
+.pull-left-dash {
+  float: left;
+  padding-left:20px;
+}
 /* ACTION ITEM BUTTONS */
 .sprite-new {
     background: url(sprite_new.png) no-repeat scroll 0 0 transparent;

@@ -1,0 +1,29 @@
+	<div class="span6 pull-left-dash">
+  <table class="zebra-striped bordered-table">
+    <thead>
+      <tr>
+        <th colspan="4">Others Unfilled Purchases</th>
+      </tr>
+    </thead>
+    <tbody>
+    <% @purchases.each do |purchase| %>
+    	<% if purchase.user != current_user %>
+      	<% if purchase.complete == false %>
+        <tr>
+          <td><%= purchase.po_number %></td>
+          <td><%= purchase.user.username unless purchase.user.blank? %></td>
+          <td><%= purchase.date_ordered %></td>
+          <% if can? :update, Purchase %>
+          <td><%= link_to 'Show', purchase,:class => "sprite-new showbutton", "data-placement" => "below", "rel" => "twipsy", "title" => "Show Details" %><%= link_to 'Edit', edit_purchase_path(purchase),:class => "sprite-new editbutton", "data-placement" => "below", "rel" => "twipsy", "title" => "Edit P.O." %><%= link_to 'Destroy', purchase,:class => "sprite-new deletebutton", confirm: 'Are you sure?', method: :delete, "data-placement" => "below", "title" => "Delete P.O." %></td>
+          <% end %>
+        </tr>
+        <% else %>
+        <tr>
+          <td>No Unfilled Purchases</td>
+        </tr>
+        <% end %>
+      <% end %>
+    <% end %>
+    </tbody>
+  </table>
+  </div>
