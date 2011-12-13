@@ -6,7 +6,7 @@ class ProductTypesController < ApplicationController
     @title = "Inventory"
     @product_type = ProductType.new
     @q = ProductType.search(params[:q])
-    @product_types = @q.result(:distinct => true).order('needed_quantity DESC').page params[:page]
+    @product_types = @q.result.order('needed_quantity DESC').page params[:page]
 
     respond_to do |format|
       format.html # index.html.erb
