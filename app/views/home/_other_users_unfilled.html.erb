@@ -1,0 +1,26 @@
+<div class="span6 pull-left-dash">
+	<div class="block-border">
+		<div class="block-content">
+			<h1>Low Inventory</h1>
+			  <table>
+			    <tbody>
+			    <% @product_types.each do |product_type| %>
+			    	<% if product_type.needed_quantity > 0 %>
+			      	<% if product_type.total_quantity < product_type.needed_quantity %>
+			        <tr>
+								<td><%= product_type.prod_number %></td>
+								<td><% if product_type.total_quantity < product_type.needed_quantity %><span class="levellow"><%= product_type.total_quantity %></span><% else %><%= product_type.total_quantity %><% end %></td>
+								<td><%= product_type.needed_quantity %></td>
+			        </tr>
+			        <% else %>
+			        <tr>
+			          <td>No Unfilled Purchases</td>
+			        </tr>
+			        <% end %>
+			      <% end %>
+			    <% end %>
+			    </tbody>
+			  </table>
+		</div>
+	</div>
+</div>

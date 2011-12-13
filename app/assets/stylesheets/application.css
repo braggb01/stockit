@@ -12,6 +12,65 @@
   float: left;
   padding-left:20px;
 }
+.block-border {
+    background: none repeat scroll 0 0 rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.75);
+    border-radius: 0.8em 0.8em 0.8em 0.8em;
+    box-shadow: 0 0 4px rgba(50, 50, 50, 0.5);
+    padding: 0.833em;
+}
+.block-border .block-content {
+    box-shadow: 0 0 0.8em rgba(255, 255, 255, 0.5);
+    min-height: 47px;
+}
+.block-content {
+    padding-top: 2.833em;
+}
+.block-content {
+    background: none repeat scroll 0 0 white;
+    border: 1px solid #999999;
+    border-radius: 0.25em 0.25em 0.25em 0.25em;
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.5);
+    padding: 1.667em;
+    position: relative;
+}
+.block-content h1, .block-content .h1 {
+    border-radius: 0.278em 0.278em 0.278em 0.278em;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+    left: 0.5em;
+    margin: 0;
+    position: absolute;
+    top: -1.8em;
+    z-index: 100;
+}
+.block-content h1, .block-content .h1 {
+    -moz-border-bottom-colors: none;
+    -moz-border-image: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    background: -moz-linear-gradient(-90deg, #049CDB, #0064CD) repeat scroll 0 0 transparent;
+    border-color: #50A3C8 #297CB4 #083F6F;
+    border-style: solid;
+    border-width: 1px;
+    color: white;
+    /*font-family: "Trebuchet MS","Lucida Sans Unicode","Lucida Sans",Arial,Helvetica,sans-serif;*/
+    font-size: 1em;
+    line-height: 20px;
+    padding: 0.278em 0.444em 0.389em;
+    /*text-shadow: -1px -1px 0 rgba(0, 0, 0, 0.2);*/
+}
+.block-content table {
+    box-shadow: none;
+    margin-bottom: 0;
+    padding: 0;
+    width: 100%;
+}
+
+.block-content table td {
+    border-bottom: 1px solid #DDDDDD;
+    vertical-align: middle;
+}
 /* ACTION ITEM BUTTONS */
 .sprite-new {
     background: url(sprite_new.png) no-repeat scroll 0 0 transparent;
