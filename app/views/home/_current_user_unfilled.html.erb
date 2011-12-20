@@ -4,22 +4,20 @@
       <h1>Your Unfilled Purchases</h1>
         <table>
           <tbody>
-            <% @purchases.each do |purchase| %>
-            	<% if purchase.user == current_user %>
-              	<% if purchase.complete == false %>
+            <% if @myunfilled.count >= 1 %>
+              <% @myunfilled.each do |myunfilled| %>
                 <tr>
-                  <td><%= purchase.po_number %></td>
-                  <td><%= purchase.date_ordered %></td>
+                  <td><%= myunfilled.po_number %></td>
+                  <td><%= myunfilled.date_ordered %></td>
                   <% if can? :update, Purchase %>
-                  <td><%= link_to 'Show', purchase,:class => "sprite-new showbutton", "data-placement" => "below", "rel" => "twipsy", "title" => "Show Details" %><%= link_to 'Edit', edit_purchase_path(purchase),:class => "sprite-new editbutton", "data-placement" => "below", "rel" => "twipsy", "title" => "Edit P.O." %><%= link_to 'Destroy', purchase,:class => "sprite-new deletebutton", confirm: 'Are you sure?', method: :delete, "data-placement" => "below", "title" => "Delete P.O." %></td>
+                    <td><%= link_to 'Show', myunfilled,:class => "sprite-new showbutton", "data-placement" => "below", "rel" => "twipsy", "title" => "Show Details" %><%= link_to 'Edit', edit_purchase_path(myunfilled),:class => "sprite-new editbutton", "data-placement" => "below", "rel" => "twipsy", "title" => "Edit P.O." %><%= link_to 'Destroy', myunfilled,:class => "sprite-new deletebutton", confirm: 'Are you sure?', method: :delete, "data-placement" => "below", "title" => "Delete P.O." %></td>
                   <% end %>
                 </tr>
-                <% else %>
-                <tr>
-                  <td>No Unfilled Purchases</td>
-                </tr>
-                <% end %>
               <% end %>
+            <% else %>
+              <tr>
+                <td>No Unfilled Purchases</td>
+              </tr>
             <% end %>
           </tbody>
         </table>

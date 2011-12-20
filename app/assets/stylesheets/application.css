@@ -7,8 +7,26 @@
  *= require jquery-ui
 */
 
-/* DASHBOARD */
+/* BLANK SLATE */
+.blank_slate_container {
+    clear: both;
+    text-align: center;
+}
+.with_sidebar .blank_slate_container .blank_slate {
+    margin-top: 80px;
+}
+.blank_slate_container .blank_slate {
+    border: 1px dashed #DADADA;
+    border-radius: 3px 3px 3px 3px;
+    color: #AAAAAA;
+    display: inline-block;
+    font-size: 1.2em;
+    font-weight: bold;
+    padding: 14px 25px;
+    text-align: center;
+}
 
+/* DASHBOARD */
 .pull-left-dash {
   float: left;
   padding-left:20px;

@@ -1,0 +1,18 @@
+<div class="pull-left-dash">
+	<div class="block-border">
+		<div class="block-content">
+			<h1>Low Inventory</h1>
+			  <table>
+			    <tbody>
+			    <% @lowinventory.each do |lowinventory| %>
+			        <tr>
+								<td><%= lowinventory.prod_number %></td>
+								<td><% if lowinventory.total_quantity < lowinventory.needed_quantity %><span class="levellow"><%= lowinventory.total_quantity %></span><% else %><%= lowinventory.total_quantity %><% end %></td>
+								<td><%= lowinventory.needed_quantity %></td>
+			        </tr>
+			    <% end %>
+			    </tbody>
+			  </table>
+		</div>
+	</div>
+</div>
