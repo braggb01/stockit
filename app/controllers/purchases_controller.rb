@@ -4,6 +4,7 @@ class PurchasesController < ApplicationController
   load_and_authorize_resource
   def index
     @title = "Purchase Orders"
+    @lowinventory = ProductType.where("needed_quantity > 0 AND total_quantity < needed_quantity").order('needed_quantity asc')
     @purchases = Purchase.all
     @q = Purchase.search(params[:q])
     @purchases = @q.result(:distinct => true)
