@@ -43,15 +43,15 @@
     box-shadow: 0 0 0.8em rgba(255, 255, 255, 0.5);
     min-height: 47px;
 }
-.block-content {
+/*.block-content {
     padding-top: 2.833em;
-}
+}*/
 .block-content {
     background: none repeat scroll 0 0 white;
     border: 1px solid #999999;
     border-radius: 0.25em 0.25em 0.25em 0.25em;
     box-shadow: 0 0 4px rgba(0, 0, 0, 0.5);
-    padding: 1.667em;
+    padding: 1.6em 2px 1.6em 0;
     position: relative;
 }
 .block-content h1, .block-content .h1 {

@@ -5,7 +5,7 @@ class Purchase < ActiveRecord::Base
 	validates :po_number, :presence => true
 	validates :complete, :inclusion => { :in => [true, false] }
 
-
+	scope :pending, where("complete = false")
 
 
 
