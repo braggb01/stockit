@@ -5,7 +5,8 @@ class ProductTypesController < ApplicationController
   def index
     @title = "Inventory"
     @product_type = ProductType.new
-    @q = ProductType.search(params[:q])
+    @interested = ProductType.where("needed_quantity > 0 OR total_quantity > 0")
+    @q = @interested.search(params[:q])
     @product_types = @q.result.order('needed_quantity DESC').page params[:page]
 
     respond_to do |format|

@@ -13,7 +13,7 @@
 		</thead>
 		<tbody>
 			<% @purchase.products.each do |product| %>
-  		<tr>
+  		<tr <% unless !product.received? %>style="color:green;"<% end %>>
     		<td><%= product.product_type.prod_number %></td>
             <td><%= product.product_type.prod_desc %></td>
     		<td><%= product.quantity %></td>
