@@ -1,0 +1,95 @@
+/* _________________________________________________
+
+320 and Up boilerplate extension
+Andy Clarke http://about.me/malarkey
+Version: 2
+URL: http://stuffandnonsense.co.uk/projects/320andup/
+License: http://creativecommons.org/licenses/MIT/
+_____________________________________________________
+
+*/
+
+/* Remove this styles if you don't need it */
+.box code.hint, .colorswitcher {display: none!important;}
+body #main .breadCrumb {margin: auto 1%;}
+body #main .mobile_none, .tcontrols, .tview, .tedit, .tdelete, .el-finder-nav, .check {display: none;}
+.el-finder-cwd div {width: 75px;}
+
+/* Header changes */
+header { background-image: none!important; height: auto;}
+header .mainnav {height: auto;}
+header .mainnav ul li {float: none; position: relative;}
+table {font-size: 0.6em;}
+
+/* Logo - please change max-width value if you change the image dimensions*/
+header a.logo {width: 48%; max-width: 210px; margin: 0;}
+header a.logo img {width: 100%; height: auto;}
+
+/* Search input */
+header .r, body #main .box .row.line label, body #main .box .row.line .r {width: 100%;}
+header ul.lang {position: absolute; top: 27px; right: 10px;}
+header .search {width: 60%; float: left;}
+header .search input {width: 65%;}
+
+/* Usermenu */
+header .usermenu {width: 140px; position: absolute; top: 55px; right: 0;}
+
+/* Hiding text from the nav items */
+header ul li a span {display: none;}
+header ul li ul li a span {display: block;}
+header .mainnav {width: 100%;}
+header .mainnav ul li {border-top: 1px solid rgba(0,0,0,0.2);}
+header .mainnav ul li ul li, header .mainnav ul li ul li ul li {border: none;}
+header .mainnav ul li a span {display: inline;}
+header .mainnag ul li ul li .sf-sub-indicator {left: 400px;}
+
+/* Usermenu */
+header .usermenu {display: block;}
+header .usermenu ul li {padding: 0 5% 0 1%;}
+ul.sf_menu ul {left: -20px;}
+
+/* Form settings */
+.ui-multiselect .add-all, .ui-multiselect .remove-all, .ui-multiselect .search, .ui-multiselect .count, .ui-multiselect li span.ui-icon-arrowthick-2-n-s  {display:none;}
+body #main .ui-multiselect ul.selected li {padding-left: 10px;}
+body #main div.uploader span.action  {font-size: 14px; font-size: 1.4rem; padding: 10px 0 9px 0!important;line-height: normal;}
+.box .ui-tabs-nav li,.ui-tabs .ui-tabs-nav li.ui-tabs-selected {float: none; display: block; border: 0; border-radius: 4px; margin: 0.2em; padding: 0;}
+
+.ui-tabs .ui-tabs-nav {background: #ccc; padding: 0.2em;}
+.tabs ul li {border-bottom: 1px solid #ddd;}
+.ui-tabs .ui-tabs-nav li a, .tabs ul li {float: none; display: block;}
+.ui-tabs .ui-tabs-nav li.ui-tabs-selected {margin: 0.2em;}
+.tabs ul li.active {border-bottom: 0;}
+.tabs.upper {margin-top: 0;} .tabs.upper ul li a {border-radius: 4px;}
+
+.ui-multiselect div.selected {width: 49.7%;}
+.fileupload-progressbar {display: none;}
+.fileupload-buttonbar .btn {margin-bottom: 10px;}
+.template-download td.size, .template-upload td.size, .template-download td.preview, .template-upload td.preview {display: none;}
+.template-download td.name, .template-upload td.name {width: 50%;}
+.template-download, .template-upload {width: 105px;}
+
+.box .row.line label, .box .row.line .r {float: none;}
+
+/* Content area */
+#main .box {width: 98%;}
+#external-events {display: none;}
+#calendar {width: 100%;}
+body #main #calendar .fc-header .fc-header-left {display: none;}
+body #main #calendar .fc-header .fc-header-right {left: 10px;}
+
+body #main div.wysiwyg iframe {background: none;}
+
+.contactdetails {display: none;}
+.slider {width: 100%;}
+.box .boxheading a.move, .box.onethird .boxheading a.move, .box.twothirds .boxheading a.move {right: 5%;}
+
+/* Gallery */
+.gallery .controls span {display: none;}
+.gallery .thumb.large {width: 37%;padding: 0.7%;margin: 0 5.4% 15px 5.4%;}
+.gallery .thumb.medium {width: 21%;padding: 0.5%;margin: 0 0.7% 15px 0.7%;}
+.gallery .thumb.small { width: 14%;padding: 0.3%;margin: 0 0.5% 15px 0.5%;}
+
+
+.mainnav ul.sf_menu li ul, .mainnav ul.sf_menu li ul li ul {position: static; background: none; box-shadow: none;margin: 0;padding: 0;width: 107%;}
+.mainnav ul.sf_menu li ul li a{color: #ddd; border-bottom: 1px solid rgba(0,0,0,0.4); padding-left: 43px;}
+.mainnav ul.sf_menu ul li .sf-sub-indicator {background-image: url(../img/hdr_dropdown.png); height: 12px; top: 10px;}

@@ -1,0 +1,16 @@
+<section class="container_12"><!-- / Using 960's grid container_12 to standartize paddings/margins -->
+  <div class="upper clearfix">
+    <% if flash[:notice] %>
+      <div class="notification green">
+        <p><%= image_tag ("icons/success.png") %><%= notice %></p>
+        <%= link_to :class => "close hider" %>
+      </div>
+    <% end %>
+    <% if flash[:error] %>
+      <div class="notification red mt15">
+        <p><%= image_tag ("icons/error.png") %><%= error %></p>
+        <%= link_to :class => "close hider" %>
+      </div>
+    <% end %>
+  </div>
+</section>

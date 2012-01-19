@@ -1,0 +1,32 @@
+/* _________________________________________________
+
+320 and Up boilerplate extension
+Andy Clarke http://about.me/malarkey
+Version: 2
+URL: http://stuffandnonsense.co.uk/projects/320andup/
+License: http://creativecommons.org/licenses/MIT/
+_____________________________________________________
+
+*/
+
+/* Header */
+#main {width: 85%; max-width: 1700px;} section.container_12 {width: 83%; max-width: 1650px;}
+body #main .breadCrumb {margin: auto 1%;}
+
+
+header a.logo {max-width: 600px;float: left;}
+
+/* Search input */
+header .search { max-width: 300px; min-width: 220px;}
+header .r {max-width: 350px;}
+
+/* Content area */
+#main .onethird {width: 23%;}
+#main .twothirds {width: 73%;}
+#main .threethirds {width: 98%;}
+#main .midthirds {width:50%;}
+
+/* Gallery */
+.gallery .thumb.large { width: 13.2%;padding: 0.7%;margin: 0 0.9% 15px 0.9%;}
+.gallery .thumb.medium { width: 9.9%;padding: 0.5%;margin: 0 0.7% 15px 0.7%;}
+.gallery .thumb.small { width: 4.8%;padding: 0.3%;margin: 0 0.5% 15px 0.5%;}

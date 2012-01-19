@@ -1,0 +1,24 @@
+/*
+ *  SliderNav - A Simple Content Slider with a Navigation Bar
+ *  Copyright 2010 Monjurul Dolon, http://mdolon.com/
+ *  Released under the MIT, BSD, and GPL Licenses.
+ *  More information: http://devgrow.com/slidernav
+ */
+.slidernav { width: 48%; min-height: 250px; max-height: 800px; display: block; position: relative; background: #fff; overflow: hidden; }
+.slidernav ul { list-style: none; }
+body #main .slidernav ul li {background: none; padding-left: 0;}
+.slider-content { float: left; width: 100%; display: block; overflow: auto; min-height: 270px; padding-bottom: 15px;}
+.slider-content ul { float: left; width: 100%; display: block; position: relative; font-size: 12px;padding: 0;}
+.slider-content ul li { float: left; width: 100%;}
+.slider-content ul ul li a { padding: 10px 10px; display: block; border-bottom: 1px solid #f3f3f3; text-transform: capitalize; background: #f6f6f6; } .slider-content ul ul li.odd a {background: #ececec;}
+.slider-content ul ul li a:hover { background: #fff; border-color: #ddd; text-decoration: underline;}
+.slider-content a.title { padding: 9px 5px; height: 15px; text-indent: 10px; width: 100%; float: left; font-weight: bold; text-transform: uppercase;background: #a5a5a5; color: white;}
+body #main .slider-content a.title {color: white; }
+.slidernav .slider-nav { position: absolute; right: 0; top: 0; background: #dadada; min-height: 250px; box-shadow: 0px 0px 15px #494949; border-left: 1px solid #e5e5e5;}
+.slidernav .slider-nav ul { padding: 0; }
+.slidernav .slider-nav ul li {margin-bottom: 0;}
+.slidernav .slider-nav li a { padding: 5px 8px; line-height: 17px; font-size: 16px;text-align: center; display: block; text-transform: uppercase; cursor: pointer; font-weight: bold; border-bottom: 1px solid #aaa;} .slidernav .slider-nav li a:hover {color: black; background: #fff;}
+.slidernav #debug { position: absolute; bottom: 0; left: 0; padding: 5px; background: #000; color: #fff; }
+.slidernav .slide-up, .slidernav .slide-down {display: none;} .slidernav .slide-down {height: 17px; background: white; display: block; position: absolute; bottom: 0; width: 100%;}
+
+.contactdetails {width: 48%;}

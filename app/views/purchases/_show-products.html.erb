@@ -1,30 +1,36 @@
-	<table class="zebra-striped bordered-table">
+<div class="boxheading clearfix">
+    <h3>Line Items (<%= @purchase.products.count %>)</h3>
+    <a class="move"></a>
+</div>
+<section>
+	<table class="bordered-table">
 		<thead>
 			<tr>
-    		<th>Product Type</th>
-            <th>Description</th>
-    		<th>Quantity Ordered</th>
-            <th>Received By</th>
-    		<th>Location</th>
-    		<th>Received</th>
-    		<th>Date Received</th>
-    		<% if can? :update, Product %><th class="action-buttons">Actions</th> <% end %>
-  		</tr>
+        		<th>Product Type</th>
+                <th>Description</th>
+        		<th>Quantity Ordered</th>
+                <th>Received By</th>
+        		<th>Location</th>
+        		<th>Received</th>
+        		<th>Date Received</th>
+        		<% if can? :update, Product %><th class="action-buttons">Actions</th> <% end %>
+  		    </tr>
 		</thead>
 		<tbody>
 			<% @purchase.products.each do |product| %>
-  		<tr <% unless !product.received? %>style="color:green;"<% end %>>
-    		<td><%= product.product_type.prod_number %></td>
-            <td><%= product.product_type.prod_desc %></td>
-    		<td><%= product.quantity %></td>
-            <td><%= product.user.username unless product.user.blank? %></td>
-    		<td><%= product.location.room unless product.location.blank? %></td>
-    		<td><% if !product.received?  %><span class="sprite-new notcompletebutton">Pending</span><% else %><span class="sprite-new completebutton">In Stock</span><% end %> </td>
-    		<td><%= product.date_received %></td>
-    		<% if can? :update, Product %>
-            <td><%= link_to 'Show', purchase_product_path(@purchase, product),:class => "sprite-new showbutton", "data-placement" => "below", "rel" => "twipsy", "title" => "Show Details" %>&nbsp;<%= link_to 'Edit', edit_purchase_product_path(@purchase, product),:class => "sprite-new editbutton", "data-placement" => "below", "rel" => "twipsy", "title" => "Edit Line Item" %>&nbsp;<%= link_to 'Destroy', purchase_product_path(@purchase, product),:class => "sprite-new deletebutton", confirm: 'Are you sure?', method: :delete, "data-placement" => "below", "title" => "Delete Line Item" %></td>
+  		    <tr <% unless !product.received? %>style="color:green;"<% end %>>
+        		<td><%= product.product_type.prod_number %></td>
+                <td><%= product.product_type.prod_desc %></td>
+        		<td><%= product.quantity %></td>
+                <td><%= product.user.username unless product.user.blank? %></td>
+        		<td><%= product.location.room unless product.location.blank? %></td>
+        		<td><% if !product.received?  %><span class="sprite-new notcompletebutton">Pending</span><% else %><span class="sprite-new completebutton">In Stock</span><% end %> </td>
+        		<td><%= product.date_received %></td>
+        		<% if can? :update, Product %>
+                <td><%= link_to 'Show', purchase_product_path(@purchase, product),:class => "sprite-new showbutton", "data-placement" => "below", "rel" => "twipsy", "title" => "Show Details" %>&nbsp;<%= link_to 'Edit', edit_purchase_product_path(@purchase, product),:class => "sprite-new editbutton", "data-placement" => "below", "rel" => "twipsy", "title" => "Edit Line Item" %>&nbsp;<%= link_to 'Destroy', purchase_product_path(@purchase, product),:class => "sprite-new deletebutton", confirm: 'Are you sure?', method: :delete, "data-placement" => "below", "title" => "Delete Line Item" %></td>
+                <% end %>
+  		    </tr>
             <% end %>
-  		</tr>
 		</tbody>
-<% end %>
 	</table>
+</section>

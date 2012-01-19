@@ -1,51 +1,48 @@
-<%= form_for(@product_type) do |f| %>
-  <% if @product_type.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@product_type.errors.count, "error") %> prohibited this product_type from being saved:</h2>
+  <%= form_for(@product_type, :remote => true) do |f| %>
+    <% if @product_type.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(@product_type.errors.count, "error") %> prohibited this product_type from being saved:</h2>
 
-      <ul>
-      <% @product_type.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
+        <ul>
+        <% @product_type.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+
+    <div class="row">
+      <%= f.label "Product ID:" %>
+
+      <%= f.text_field :prod_number %>
+
     </div>
+    <div class="row">
+      <%= f.label "Description:" %>
+
+      <%= f.text_area :prod_desc, :rows => 5 %>
+
+    </div>
+    <div class="row">
+      <%= f.label "Manufacturer:" %>
+
+      <%= f.text_field :brand %>
+
+    </div>
+    <div class="row">
+      <%= f.label "Stock Available:" %>
+
+      <%= f.number_field :total_quantity %>
+
+    </div>
+    <div class="row">
+      <%= f.label "Stock Desired:" %>
+
+      <%= f.number_field :needed_quantity %>
+
+    </div>
+
+      <%= f.submit "Update Product Type", :class => "btn blue submit mt15", :id => "formnoshow" %>
+
   <% end %>
-
-  <fieldset>
-  <div class="clearfix">
-    <%= f.label "Product ID:" %>
-	<div class="input">
-    	<%= f.text_field :prod_number, :class => "xlarg" %>
-	</div>
-  </div>
-  <div class="clearfix">
-    <%= f.label "Description:" %>
-	<div class="input">
-    	<%= f.text_area :prod_desc, :class => "xlarge", :rows => 3 %>
-	</div>
-  </div>
-  <div class="clearfix">
-    <%= f.label "Manufacturer:" %>
-	<div class="input">
-    	<%= f.text_field :brand, :class => "xlarg" %>
-	</div>
-  </div>
-  <div class="clearfix">
-    <%= f.label "Stock Available:" %>
-	<div class="input">
-    	<%= f.number_field :total_quantity %>
-	</div>
-  </div>
-  <div class="clearfix">
-    <%= f.label "Stock Desired:" %>
-	<div class="input">
-    	<%= f.number_field :needed_quantity %>
-	</div>
-  </div>
-  <div class="clearfix">
-    <div class="input">
-      <%= f.submit :class => "btn primary" %>
-    </div>
-  </div>
-  </fieldset>
-<% end %>

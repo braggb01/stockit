@@ -2,153 +2,174 @@
 <html>
 <head>
   <title>stockify | <%= @title %></title>
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, target-densitydpi=160dpi, initial-scale=1.0">
+  <link href='http://fonts.googleapis.com/css?family=Droid+Sans:400,700' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Droid+Serif:400,700' rel='stylesheet' type='text/css'>
+  <%= stylesheet_link_tag    "320", :media => "only screen and (max-width: 768px)" %>
+  <%= stylesheet_link_tag    "768", :media => "only screen and (min-width: 768px) and (max-width: 1024px)" %>
+  <%= stylesheet_link_tag    "1024", :media => "only screen and (min-width: 1024px)" %>
+  <%= stylesheet_link_tag    "1440", :media => "only screen and (min-width: 1440px)" %>
   <%= stylesheet_link_tag    "application" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
-</head>
-<body>
-<!--  NAVIGATION BAR -->
-  <div class="topbar">
-    <div class="topbar-inner">
-      <div class="container-fluid">
-        <%= link_to "stockify", root_path, :class => "brand" %>
-        <ul class="nav">
-          <% if controller_name == 'home' %>
-            <li class="active"><%= link_to "Dashboard", root_path %></li> 
-          <% else %>
-            <li><%= link_to "Dashboard", root_path %></li> 
-          <% end %>
-          <% if can? :update, (Purchase || ProductType) %>
-            <% if controller_name == 'purchases' %>
-              <li class="active"><%= link_to "Purchase Orders", purchases_path %></li> 
-            <% else %>
-              <li><%= link_to "Purchase Orders", purchases_path %></li> 
-            <% end %>
-            <% if controller_name == 'product_types' %>
-              <li class="active"><%= link_to "Inventory", product_types_path %></li> 
-            <% else %>
-              <li><%= link_to "Inventory", product_types_path %></li> 
-            <% end %>
-          <% end %>
-            <% if controller_name == 'locations' %>
-              <% if can? :update, (Location || User) %>
-                <li class="dropdown active" data-dropdown="dropdown" >
-                  <a href="#" class="dropdown-toggle">Administration</a>
-                  <ul class="dropdown-menu">        
-                    <% if can? :update, Location %><li class="active"><%= link_to "Storage Locations", locations_path %></li><% end %>
-                    <% if can? :update, User %><li><%= link_to "Users", users_path %></li><% end %>
-                  </ul>
-                </li>
-              <% end %>
-            <% elsif controller_name == 'users' %>
-              <% if can? :update, (Location || User) %>
-                <li class="dropdown active" data-dropdown="dropdown" >
-                  <a href="#" class="dropdown-toggle">Administration</a>
-                  <ul class="dropdown-menu">        
-                    <% if can? :update, Location %><li><%= link_to "Storage Locations", locations_path %></li><% end %>
-                    <% if can? :update, User %><li class="active"><%= link_to "Users", users_path %></li><% end %>
-                  </ul>
-                </li>
-              <% end %>
-            <% else %>
-              <% if can? :update, (Location || User) %>
-              <li class="dropdown" data-dropdown="dropdown" >
-                <a href="#" class="dropdown-toggle">Administration</a>
-                <ul class="dropdown-menu">        
-                  <% if can? :update, Location %><li><%= link_to "Storage Locations", locations_path %></li><% end %>
-                  <% if can? :update, User %><li><%= link_to "Users", users_path %></li><% end %>
-                </ul>
-              </li>
-              <% end %>
-            <% end %>
-        </ul>
-        <p class="pull-right"><% if current_user %><span style="color:#BFBFBF;">Logged in as </span><%= link_to current_user.username, user_path(current_user.id) %>&nbsp;&nbsp;<%= link_to "Logout", log_out_path, :class => "sprite-header logoutbutton" %><% else %><%= link_to "Login", log_in_path, :class => "btn primary", "data-controls-modal" => "logitin", "data-backdrop" => "static" %><% end %></p>
-      </div>
-    </div>
-  </div>
-<!-- END NAVIGATION BAR -->
 
-<!-- TITLE BAR  -->
-  <div id="title_bar">
-    <h2 id="page_title"><%= @title %></h2>
-  </div>
-<!-- END TITLE BAR -->
-  <div class="container-fluid">
-    <div class="content">
-      <% if flash[:notice] %>
-      <div class="alert-message success">
-        <%= link_to "x", '', :class => "close" %>
-        <p id="notice"><%= notice %></p>
+</head>
+<% if current_user %>
+<body class="clearfix">
+<div id="wrap">
+<header>
+  <section class="container_12"><!-- / Using 960's grid container_12 to standartize paddings/margins -->
+      <div class="upper clearfix">
+        <!-- / Logo -->
+        <%= link_to image_tag('hdr_logo.png'), root_path, :class => "logo mt20" %>
+        <!-- <a href="dashboard.html" class="logo mt20"><img src="assets/hdr_logo.png" alt="" /></a> -->
+        <!-- / End logo -->
+
+        <!-- / Language and search -->
+        <div class="r top">
+          <!-- / Language  -->
+          <ul class="lang sf_menu clearfix"><!-- / Please note that these LI elements are right floated to keep the fluid layout consistent  -->
+            <li class="last"><%= link_to image_tag('icons/question.png'),"" %></a></li>
+            <li><a href="#">English</a>
+              <ul>
+                <li><a href="#">German</a></li>
+                <li class="last"><a href="#">Bulgarian</a></li>
+              </ul>
+            </li>
+          </ul>
+          <!-- / End language  -->
+          <!-- / Search  -->
+          <div class="search">
+          <form action="search.php">
+            <input type="text" placeholder="Search database..." >
+            <button></button>
+          </form>
+          </div>
+          <!-- / End search input -->
+        </div>
+        <div class="clear">&nbsp;</div>
+        <!-- / End slanguage and search -->
+        
+        <!-- / Userbar - separated from the main nav to fall back in mobile design. -->
+        <div class="r usermenu">
+          <ul class="sf_menu clearfix">
+            <li class="last">
+              <%= link_to "", :class => "messages" do %>
+                <%= image_tag('icons/helloadmin/messages.png') %>
+                <sup>5</sup>
+              <% end %>
+            </li>
+            <li><%= link_to current_user do %>
+                  <%= image_tag('icons/helloadmin/user.png') %>
+                  <span><%= current_user.username %></span>
+                <% end %>
+              <ul>
+                <li class="last"><%= link_to "Your Account", current_user %></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+        <!-- / End userbar -->
+
+        <!-- / Main navigation-->
+        <nav class="mainnav l">
+          <ul id="mainnav" class="sf_menu clearfix">
+            <li>
+              <%= link_to root_path do %>
+                <%= image_tag('icons/helloadmin/dashboard.png') %>
+                <span>Dashboard</span>
+              <% end %>
+            </li>
+            <li>
+              <%= link_to purchases_path do %>
+                <%= image_tag('icons/helloadmin/layouts.png') %>
+                <span>Purchase Orders</span>
+              <% end %>
+            </li>
+            <li>
+              <%= link_to product_types_path do %>
+                <%= image_tag('icons/helloadmin/modules.png') %>
+                <span>Inventory</span>
+              <% end %>
+            </li>
+            <li>
+              <%= link_to "" do %>
+                <%= image_tag('icons/helloadmin/features.png') %>
+                <span>Administration</span>
+              <% end %>
+              <ul>
+                <li><%= link_to "Storage Locations", locations_path %></li>
+                <li class="last"><%= link_to "Users", users_path %></li>
+              </ul> 
+            </li>
+          </ul>
+        </nav>
+        <!-- / End main navigation-->
       </div>
+  </section>
+</header>
+
+<!-- / Start main -->
+
+<div id="main" class="container_12 clearfix" role="main">
+  <section class="container_12"><!-- / Using 960's grid container_12 to standartize paddings/margins -->
+    <div class="upper clearfix">
+      <% if flash[:notice] %>
+        <div class="notification green">
+          <p><%= image_tag ("icons/success.png") %><%= notice %></p>
+          <%= link_to "", "", :class => "close hider" %>
+        </div>
       <% end %>
       <% if flash[:error] %>
-      <div class="alert-message error">
-        <%= link_to "x", '', :class => "close" %>
-        <p id="error"><%= error %></p>
-      </div>
+        <div class="notification red mt15">
+          <p><%= image_tag ("icons/error.png") %><%= error %></p>
+          <%= link_to "", "", :class => "close hider" %>
+        </div>
       <% end %>
     </div>
-  </div>
-<!-- MAIN CONTENT -->  
-  <div class="container-fluid" style="margin-bottom:0px;">
-    <%= yield :nocontent %>
-    <%= yield :sidebar %>
-    <%= yield :content %>
-  </div>
-
-
-
-<!-- END MAIN CONTENT -->
-  <div style="position:absolute;width:100%;bottom:0;height:70px;">
-    <div class="container-fluid">
-      <footer class="clearfix">
-          <p>&copy; STOCKIFY 2011</p>
-      </footer>
-    </div>
-  </div>
-<!-- HIDDEN CONTENT -->
-<script type="text/javascript" id="js">
-  $(document).ready(function() {
-    $('#logitin').modal({
-   show : true,
-   keyboard : true,
-   backdrop : true
-});
-</script>
-
-<div class="modal hide fade" id="logitin" >
-  <div class="modal-header">
-    <%= link_to 'x', users_path, :class => 'close' %>
-      <h3>Please Login</h3>
-  </div>
-  <div class="modal-body">
-    <%= form_tag sessions_path do %>
-    <fieldset>
-      <div class="clearfix">
-        <%= label_tag :email %>
-        <div class="input">
-          <%= text_field_tag :email, params[:email] %>
-        </div>
-      </div>
-      <div class="clearfix">
-        <%= label_tag :password %>
-        <div class="input">
-          <%= password_field_tag :password %>
-        </div>
-      </div>
-      <div class="clearfix">
-        <div class="input">
-          <%= submit_tag "Log in", :class => "btn primary" %>
-        </div>
-      </div>
-    </fieldset>
-    <% end %>
-  </div>
+  </section>
+  <%= yield :empty %>
+  <%= yield :content %>
+  <%= yield :sidebar %>
 </div>
+</div>
+<!-- / End main -->
+
+<!-- / Footer -->
+<footer role="contentinfo">
+  <section class="container_12"><!-- / Using 960's grid container_12 to standartize paddings/margins -->
+    <div class="lower clearfix">
+      <nav class="mainnav l">
+        <ul id="mainnav2" class="clearfix">
+          <li><%= link_to image_tag('icons/helloadmin/dashboard.png'), root_path %></li>
+          <li><%= link_to image_tag('icons/helloadmin/layouts.png'), purchases_path %></li>
+          <li><%= link_to image_tag('icons/helloadmin/modules.png'), product_types_path %></li>
+          <li><%= link_to image_tag('icons/helloadmin/features.png'), users_path %></li>
+        </ul>
+      </nav>
+      <a href="#" id="top" class="top">top</a>
+    </div>
+    <div class="smallest">
+      <div class="l">
+        © Copyright 2010 Stockify
+      </div>
+      <div class="r">
+        © Copyright 2010 Stockify
+      </div>
+    </div>
+  </section>
+</footer>
+<!-- / End footer -->
+
+<!-- START SCRIPTING -->
 <script>
   $(function () {
     $("a[rel=twipsy]").twipsy({
-      live: true
+      // live: true
+      animate: false
     })
   })
 </script>
@@ -162,7 +183,8 @@
 <script>
   $(function () {
     $("input[rel=twipsy]").twipsy({
-      live: true
+      // live: true
+      animate: false
     })
   })
 </script>
@@ -178,7 +200,21 @@
     })
   }) 
 </script>
-<!-- END HIDDEN CONTENT -->
+
+<script>
+// iOS scale bug fix
+MBP.scaleFix();
+
+// Respond.js
+yepnope({
+  test : Modernizr.mq('(only all)'),
+  nope : ['<%= asset_path 'respond.min.js' %>']
+});
+</script>
+<!-- END SCRIPTION -->
 
 </body>
+<% else %>
+  <%= yield :nocontent %>
+<% end %>
 </html>

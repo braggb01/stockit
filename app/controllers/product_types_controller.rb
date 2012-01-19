@@ -52,10 +52,14 @@ class ProductTypesController < ApplicationController
 
     respond_to do |format|
       if @product_type.save
+        @product_type_before = 'tablehead'
+        
         format.html { redirect_to @product_type, notice: 'Product type was successfully created.' }
+        format.js
         format.json { render json: @product_type, status: :created, location: @product_type }
       else
         format.html { render action: "new" }
+        format.js
         format.json { render json: @product_type.errors, status: :unprocessable_entity }
       end
     end

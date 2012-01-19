@@ -1,18 +1,15 @@
-<% content_for :sidebar do %>
-
-<% end %>
-
 <% content_for :content do %>
-<div class="modal" id="my-modal" style="position: relative; top: auto; left: auto; margin: 0 auto;" >
-	<div class="modal-header">
-		<%= link_to 'x', purchase_path(@purchase), :class => 'close' %>
-	    <h3>New Product</h3>
-	</div>
-	<div class="modal-body">
+<div class="box onethird"> &nbsp;</div>
+<div class="box midthirds">
+  <% if can? :create, Product %>
+  <div class="boxheading clearfix">
+    <h3>New Product</h3>
+    <a class="move"></a>
+  </div>
+  <section>
 	    <%= render 'edit-form' %>
-	</div>
-	<div class="modal-footer">
-	    <%= link_to 'Cancel', purchase_path(@purchase), :class => "btn danger"  %>
-	</div>
+  </section>
+  <% end %>
 </div>
+<div class="box onethird"> &nbsp;</div>
 <% end %>

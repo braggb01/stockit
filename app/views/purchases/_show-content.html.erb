@@ -1,45 +1,14 @@
-<!-- 	<div class="clearfix">
-		<h1><%= @purchase.po_number %></h1>
-		<div class="panel">
-		  <h3>Purchase Order Details</h3>
-		  <div>
-		    <div>
-		      <table class="zebra-striped">
-		        <tbody>
-			        <tr>
-			          <th>Purchase Order:</th>
-			          <td><%= @purchase.po_number %></td>
-			        </tr>
-			        <tr>
-			          <th>Ordered By:</th>
-			          <td><%= @purchase.user.username unless @purchase.user.blank? %></td>
-			        </tr>
-			        <tr>
-			          <th>Date ordered:</th>
-			          <td><%= @purchase.date_ordered %></td>
-			        </tr>
-			        <tr>
-			          <th>Complete:</th>
-			          <td><%= @purchase.complete %></td>
-			        </tr>
-		      	</tbody>
-		      </table>
-		    </div>
-		  </div>
-		</div>
-	</div> -->
-
-	<div class="clearfix">
-		<h1>Purchase Order Details</h1>
-		<div style="margin:20px 0 40px;background: none repeat scroll 0 0 #F4F4F4;border-radius: 4px 4px 4px 4px;box-shadow: 1px 1px 1px 1px rgba(3, 3, 3, 0.5);padding:20px;">
-			<div>
-				<h5 style="display:inline;">Purchase Order:  </h4><span style="width:400px;text-align:right;"><%= @purchase.po_number %></span>
-			<hr style="margin: 5px 0 5px;"/>
-				<h5 style="display:inline;">Ordered By:  </h4><span style="width:400px;text-align:right;"><%= @purchase.user.username unless @purchase.user.blank? %></span>
-			<hr style="margin: 5px 0 5px;"/>
-				<h5 style="display:inline;">Date Ordered:  </h4><span style="width:400px;text-align:right;"><%= @purchase.date_ordered %></span>
-			<hr style="margin: 5px 0 5px;"/>
-				<h5 style="display:inline;">Complete:  </h4><span style="width:400px;text-align:right;"><%= @purchase.complete %></span>
-			</div>
-		</div>
-	</div>
+<div class="boxheading clearfix">
+	<h3>Purchase Order Details</h3>
+	<a class="move"></a>
+</div>
+<section>
+	<h5 style="display:inline;">Purchase Order:  </h5><span style="width:400px;text-align:right;"><%= @purchase.po_number %></span>
+	<hr style="margin: 5px 0 5px;"/>
+	<h5 style="display:inline;">Ordered By:  </h5><span style="width:400px;text-align:right;"><%= @purchase.user.username unless @purchase.user.blank? %></span>
+	<hr style="margin: 5px 0 5px;"/>
+	<h5 style="display:inline;">Date Ordered:  </h5><span style="width:400px;text-align:right;"><%= @purchase.date_ordered %></span>
+	<hr style="margin: 5px 0 5px;"/>
+	<h5 style="display:inline;">Complete:  </h5><span style="width:400px;text-align:right;"><%= @purchase.complete %></span>
+</section>
+<br/>

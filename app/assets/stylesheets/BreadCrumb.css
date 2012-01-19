@@ -1,0 +1,37 @@
+/* Float Clearing
+ ---------------------------------------------------------------------*/
+.module:after{clear:both; content:"."; display:block; height:0; visibility:hidden}
+
+/* float clearing for IE6 */
+* html .module{height:1%; overflow:visible}
+
+/* float clearing for IE7 */
+*+html .module{min-height:1%}
+
+/* Breadcrumb Styles
+ ---------------------------------------------------------------------*/
+body #main .breadCrumb{margin:0; padding:0; float:left; display:block; height:28px; width: auto; overflow:hidden; padding:0 10px 0 5px;}
+body #main .breadCrumb ul{margin:0; padding:0; height:28px; display:block}
+body #main .breadCrumb ul li{display:block; float:left; position:relative; height: 28px; line-height: 28px; overflow:hidden;margin:0px 6px 0px 0; padding:0px 10px 0px 0; font-size:1em; background:url(../../img/plugins/breadcrumbs/navsep1.png) no-repeat 100% 4px}
+body #main .breadCrumb ul li div.chevronOverlay{position:absolute; right:0; top:0; z-index:2}
+body #main .breadCrumb ul li span{display:block; overflow:hidden}
+body #main .breadCrumb ul li a{display:block; position:relative; height:20px; padding: 4px 0; line-height:21px; overflow:hidden; float:left}
+body #main .breadCrumb ul li.first a{height:16px !important; text-indent:-1000em; width:16px; padding:0; margin-top:7px; overflow:hidden; background:url(../../img/plugins/breadcrumbs/IconHome.gif) no-repeat 0 0}
+body #main .breadCrumb ul li.first a:hover{background-position:0 -16px}
+body #main .chevronOverlay{display:none; background:url(../../img/plugins/breadcrumbs/navsep1.png) no-repeat 100% 4px; width:13px; height:28px}
+
+body #main .breadCrumb.two {border: 1px solid #d5d5d5; border-radius: 4px;}
+body #main .breadCrumb.two ul li {background: url(../../img/plugins/breadcrumbs/navsep2.png) no-repeat 100% 0;}
+
+body #main .breadCrumb.three {border: 1px solid #d5d5d5;}
+body #main .breadCrumb.three ul li {background: url(../../img/plugins/breadcrumbs/navsep3.png) no-repeat 100% 0;}
+
+body #main .breadCrumb.four {border: 1px solid #d5d5d5;}
+body #main .breadCrumb.four ul li {background: url(../../img/plugins/breadcrumbs/navsep4.png) no-repeat 100% 0;}
+body #main .breadCrumb.four ul li a {padding-right: 5px;}
+
+body #main .breadCrumb.five ul li {background: url(../../img/plugins/breadcrumbs/navsep5.png) no-repeat 100% 0;}
+body #main .breadCrumb.five ul li a {padding-right: 5px;}
+
+body #main .breadCrumb ul li.last{background:none; margin-right:0; padding-right:0}
+

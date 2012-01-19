@@ -1,58 +1,54 @@
-<% content_for :sidebar do %>
-	<%= render :partial => 'sidebar' %>
+<% content_for :content do %>
+<div class="box twothirds">
+	<div class="boxheading clearfix">
+		<h3>Inventory</h3>
+		<a class="move"></a>
+	</div>
+	<section>
+		<div>
+			<table class="bordered-table">
+				<thead>
+					<tr>
+						<th><%= sort_link @q, :prod_number, "Product ID" %></th>
+						<th>Description</th>
+						<th><%= sort_link @q, :brand, "Manufacturer" %></th>
+						<th>Stock Available</th>
+						<th><%= sort_link @q, :needed_quantity, "Stock Desired" %></th>
+						<% if can? :update, ProductType %>
+						<th>Actions</th>
+						<% end %>
+					</tr>
+				</thead>
+				<tbody id="tablehead">
+					<%= render :partial => "product_type", :collection => @product_types %>
+				</tbody>
+			</table>
+		    
+		    <div class="pull-right">
+		            <%= paginate @product_types%>
+		    </div>
+		    
+		    <div class="clearfix"></div>
+
+		    <script type="text/javascript" id="js">
+		    	$(document).ready(function(){
+			    	$('#formshow').click(function() {
+			    		$('#form').toggle(function() {
+			    			
+			    		});
+			    	});
+			    	$('#formnoshow').click(function() {
+			    		$('#form').hide(function() {
+			    			
+			    		});
+			    	});
+			    });
+	    	</script>
+		</div>
+	</section>
+</div>
 <% end %>
 
-<% content_for :content do %>
-<div class="content">
-
-	<table class="zebra-striped bordered-table">
-		<thead>
-			<tr>
-				<th><%= sort_link @q, :prod_number, "Product ID" %></th>
-				<th>Description</th>
-				<th><%= sort_link @q, :brand, "Manufacturer" %></th>
-				<th>Stock Available</th>
-				<th><%= sort_link @q, :needed_quantity, "Stock Desired" %></th>
-				<% if can? :update, ProductType %><th class="action-buttons">Actions</th><% end %>
-			</tr>
-		</thead>
-		<tbody>
-			<% @product_types.each do |product_type| %>
-			<tr>
-				<td><%= product_type.prod_number %></td>
-				<td><%= product_type.prod_desc %></td>
-				<td><%= product_type.brand %></td>
-				<td><% if product_type.total_quantity < product_type.needed_quantity %><span class="levellow"><%= product_type.total_quantity %></span><% else %><%= product_type.total_quantity %><% end %></td>
-				<td><%= product_type.needed_quantity %></td>
-				<% if can? :update, ProductType %>
-				<td><%= link_to 'Show', product_type,:class => "sprite-new showbutton", "data-placement" => "below", "rel" => "twipsy", "title" => "Show Details" %>&nbsp;<%= link_to 'Edit', edit_product_type_path(product_type),:class => "sprite-new editbutton", "data-placement" => "below", "rel" => "twipsy", "title" => "Edit Product" %>&nbsp;<%= link_to 'Destroy', product_type,:class => "sprite-new deletebutton", confirm: 'Are you sure?', method: :delete, "data-placement" => "below", "title" => "Delete Product" %></td>
-				<% end %>
-			</tr>
-			<% end %>
-		</tbody>
-	</table>
-    <div class="pull-right">
-            <%= paginate @product_types%>
-    </div>
-    <div class="clearfix"></div>
-<script type="text/javascript" id="js">
-  $(document).ready(function() {
-    $('#new_product_type').modal({
-   show : true,
-   keyboard : true,
-   backdrop : true
-});
-</script>
-
-
-	<div class="modal hide fade" id="new_product_type" >
-	  <div class="modal-header">
-	    <%= link_to 'x', product_types_path, :class => 'close' %>
-	      <h3>New Item</h3>
-	  </div>
-	  <div class="modal-body">
-	      <%= render 'form' %>
-	  </div>
-	</div>
-</div>
+<% content_for :sidebar do %>
+	<%= render :partial => 'sidebar' %>
 <% end %>

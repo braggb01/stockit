@@ -1,0 +1,2 @@
+$('#<%= @product_type_before %>').after('<%= escape_javascript(render(:partial => @product_type)) %>');
+$('#form').html('<%= escape_javascript(render(:partial => "form", :locals => { :@product_type => ProductType.new })) %>');

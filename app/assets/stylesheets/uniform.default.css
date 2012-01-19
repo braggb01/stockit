@@ -1,0 +1,47 @@
+div.checker span, div.radio span{ background-image:url(../../img/main_uniformsprite.png);  background-repeat:no-repeat;  -webkit-font-smoothing:antialiased}
+.selector, .radio, .checker, .uploader, .selector *, .radio *, .checker *, .uploader *{ margin:0;  padding:0}
+div.selector span{ background-image:url('../../img/main_dropdown.png'); background-repeat:no-repeat; background-position:96% 17px; line-height:normal; width:89%}
+div.selector select{top:0px; left:0px}
+div.checker{width:16px; height:16px}
+div.checker input{width:16px; height:16px}
+div.checker span{background-position:0px -32px; height:16px; width:16px}
+div.checker:active span, div.checker.active span{background-position:-16px -32px}
+div.checker span.checked{background-position:-32px -32px}
+div.checker.focus:active span.checked, div.checker:hover:active span.checked, div.checker.active:hover span.checked, div.checker.active.focus span.checked{background-position:-48px -32px}
+div.checker.disabled span, div.checker.disabled:active span, div.checker.disabled.active span{background-position:-64px -32px}
+div.checker.disabled span.checked, div.checker.disabled:active span.checked, div.checker.disabled.active span.checked{background-position:-80px -32px}
+div.radio{width:16px; height:16px}
+div.radio input{width:16px; height:16px}
+div.radio span{height:16px; width:16px; background-position:0px -16px}
+div.radio span.checked{background-position:-32px -16px}
+div.radio:active span.checked, div.radio.active span.checked{background-position:-32px -16px}
+div.radio.focus span.checked, div.radio:hover span.checked{background-position:-48px -16px}
+div.radio.disabled span, div.radio.disabled:active span, div.radio.disabled.active span{background-position:-64px -16px}
+div.radio.disabled span.checked, div.radio.disabled:active span.checked, div.radio.disabled.active span.checked{background-position:-80px -16px}
+div.uploader{background-position:0px -297px}
+div.uploader span.action{background-position:right -409px; line-height:normal}
+div.uploader span.filename{line-height:normal}
+div.checker{margin-right:5px}
+div.radio{margin-right:3px}
+div.uploader{width:100%; cursor:pointer}
+div.uploader span.action{width:36%; text-align:center; text-shadow:#fff 0px 1px 0px; background-color:#fff; font-size:14px; margin-left:-1px; font-size:1.4rem; font-weight:bold}
+div.uploader span.filename{color:#777; width:57%; border-right:solid 1px #bbb; font-size:14px; font-size:1.4rem}
+div.uploader input{width:100%}
+div.uploader.disabled span.action{color:#aaa}
+div.uploader.disabled span.filename{border-color:#ddd; color:#aaa}
+.selector, .checker, .button, .radio, .uploader{display:-moz-inline-box; display:inline-block; vertical-align:middle; zoom:1; *display:inline}
+.selector select:focus, .radio input:focus, .checker input:focus, .uploader input:focus{outline:0}
+div.selector{position:relative; overflow:hidden; max-width:270px}
+.selector.hover{cursor:pointer}
+div.selector span{display:block; overflow:hidden; text-overflow:ellipsis; white-space:nowrap}
+div.selector select{position:absolute; opacity:0; filter:alpha(opacity:0); height:38px; width:100%; border:none; background:none; cursor:pointer}
+div.checker{position:relative}
+div.checker span{display:-moz-inline-box; display:inline-block; text-align:center}
+div.checker input{opacity:0; filter:alpha(opacity:0); display:inline-block; background:none}
+div.radio{position:relative}
+div.radio span{display:-moz-inline-box; display:inline-block; text-align:center}
+div.radio input{opacity:0; filter:alpha(opacity:0); text-align:center; display:inline-block; background:none}
+div.uploader{position:relative; overflow:hidden; cursor:pointer; max-width:450px}
+div.uploader span.action{float:left; display:inline; padding:2px 0px; overflow:hidden}
+div.uploader span.filename{float:left; display:block; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; cursor:pointer}
+div.uploader input{opacity:0; filter:alpha(opacity:0); position:absolute; top:0; right:0; bottom:0; float:right; height:39px; border:none; cursor:pointer}

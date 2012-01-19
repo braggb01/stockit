@@ -8,4 +8,12 @@
 //= require jquery_ujs
 //= require jquery-ui
 //= require autocomplete-rails
+//= require hoverIntent
+//= require superfish
+//= require plugins
+//= require slidernav
+//= require script
+//= require bootstrap-twipsy
+//= require modernizr-2.0.6.min
+//= require respond.min
 //= require_tree .

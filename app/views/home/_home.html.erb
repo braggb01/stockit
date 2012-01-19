@@ -1,32 +1,37 @@
 <% content_for :nocontent do %>
-<div style="margin:auto;min-height:700px;width:980px;">
-  <div class="modal" id="logitin" >
-    <div class="modal-header">
-        <h3>Please Login</h3>
+<body class="login clearfix">
+  <!-- / Start main -->
+  <div id="login" class="inner clearfix">
+
+    <div class="header">
+      <a href="index.html" class="logo"><img src="assets/hdr_logo.png" alt=""></a>
     </div>
-    <div class="modal-body">
-      <%= form_tag sessions_path do %>
-      <fieldset>
-        <div class="clearfix">
-          <%= label_tag :email %>
-          <div class="input">
-            <%= text_field_tag :email, params[:email] %>
-          </div>
-        </div>
-        <div class="clearfix">
-          <%= label_tag :password %>
-          <div class="input">
-            <%= password_field_tag :password %>
-          </div>
-        </div>
-        <div class="clearfix">
-          <div class="input">
-            <%= submit_tag "Log in", :class => "btn primary" %>
-          </div>
-        </div>
-      </fieldset>
-      <% end %>
+    <div class="loginform">
+      <!-- / Language  -->
+      <ul class="lang sf_menu clearfix sf-js-enabled sf-shadow"><!-- / Please note that these LI elements are right floated to keep the fluid layout consistent  -->
+        <li class="last"><a href="#"><img src="assets/icons/question.png" alt=""></a></li>
+        <li><a class="sf-with-ul" href="#">English<span class="sf-sub-indicator"> »</span></a>
+          <ul style="display: none; visibility: hidden;">
+            <li><a href="#">German</a></li>
+            <li class="last"><a href="#">Bulgarian</a></li>
+          </ul>
+        </li>
+      </ul>
+      <!-- / End language  -->
+      <div class="form_container">
+        <%= form_tag sessions_path do %>
+
+              <%= text_field_tag :email, params[:email], :value => "email.example.com", :autofocus => "autofocus" %>
+
+              <%= password_field_tag :password, :value => "password" %>
+
+              <%= submit_tag "Log in", :class => "loginbtn" %>
+
+        <% end %>
+      </div>
     </div>
+    
   </div>
-</div>
+  <!-- / End main -->
+</body>
 <% end %>

@@ -1,47 +1,52 @@
-<div class="sidebar">
-  <div class="well-sidebar">
-    <h5 class="light">Filters</h5>
-    <%= search_form_for @q, :html => { :class => "form-stacked" } do |f| %>
-      <fieldset>
-        <div class="clearfix">
-          <%= f.label "Product ID:" %>
-          <div class="input">
-            <%= f.text_field :prod_number_cont, :class => "span3" %>
-          </div>
-        </div>
-        <div class="clearfix">
-          <%= f.label "Description:" %>
-          <div class="input">
-            <%= f.text_field :prod_desc_cont, :class => "span3" %>
-          </div>
-        </div>
-        <div class="clearfix">
-          <%= f.label "Manufacturer:" %>
-          <div class="input">
-            <%= f.text_field :brand_cont, :class => "span3" %>
-          </div>
-        </div>
-        <hr style="margin-top:5px;margin-bottom:5px;"/>
-        <div class="pull-right filteraction">
-          <%= f.submit :class => "sprite-new searchbutton", "data-placement" => "below", "rel" => "twipsy", :title => "Search" %> &nbsp; <%= link_to "Reset", product_types_path, :class => "sprite-new resetbutton", "data-placement" => "below", "rel" => "twipsy", "title" => "Clear Form" %>
-        </div>
-      </fieldset>
-    <% end %>
-  </div>
-  <br/>
+<div class="box onethird">
   <% if can? :create, ProductType %>
-  <div class="well-sidebar">
-    <h5 class="light">Control Bar</h5>
-    <fieldset>
-      <div class="clearfix">
-        <div style="margin-left:20px;float:left;">
-            <%= link_to 'New Item', new_product_type_path,:class => "sprite-sidebarnew newproducttypebutton", "data-controls-modal" => "new_product_type", "data-backdrop" => "static", "rel" => "popover", "data-content" => "<p>Creating a <b>Product ID</b> will allow users to add this product as a Line Item in a Purchase Order.</p><ol><li>Enter a Unique <b>Product ID</b> exactly as given by the vendor.</li><li>Enter the <b>Description</b> of the product.</li><li>Enter the <b>Manufacturer</b> of the product</li><li>If this product is currently in stock please enter this value in the <b>Stock Available</b> area, otherwise leave at 0.</li><li>If you would like to set a recommended quantity to keep in stock at all times, enter it in the <b>Stock Desired</b> area.</li></ol>", :title => "Information", "data-placement" => "left"  %>
-          </div>
-          <div style="margin-left:10px;float:left;">
-            <h7>Add a Product ID</h7>
-          </div>
-        </div>
-    </fieldset>
+  <div class="boxheading clearfix">
+    <h3>Control Bar</h3>
+    <a class="move"></a>
   </div>
+  <section>
+    <%= link_to(new_product_type_path, :class => "btn_icon textright mrb15", "rel" => "popover", "data-content" => "<p>Creating a <b>Product ID</b> will allow users to add this product as a Line Item in a Purchase Order.</p><ol><li>Enter a Unique <b>Product ID</b> exactly as given by the vendor.</li><li>Enter the <b>Description</b> of the product.</li><li>Enter the <b>Manufacturer</b> of the product</li><li>If this product is currently in stock please enter this value in the <b>Stock Available</b> area, otherwise leave at 0.</li><li>If you would like to set a recommended quantity to keep in stock at all times, enter it in the <b>Stock Desired</b> area.</li></ol>", :remote => true, :id => "formshow", :title => "Information", "data-placement" => "left")  do %>
+        <%= image_tag ("icons/fatcow-hosting-icons/32x32/add.png") %>
+        <span class="l">
+          <span class="title">Create!</span>
+          <span class="subtitle">New Product I.D.</span>
+        </span>
+    <% end %>
+  </section>
+  <section id="form" style="display:none;">
+    <%= render 'form' %>
+  </section>
   <% end %>
+  <br/>
+  <div class="boxheading clearfix">
+    <h3>Filters</h3>
+    <a class="move"></a>
+  </div>
+  <section>
+    <%= search_form_for @q do |f| %>
+
+        <div class="row">
+          <%= f.label "Product ID:" %>
+
+            <%= f.text_field :prod_number_cont, :class => "span3" %>
+
+        </div>
+        <div class="row">
+          <%= f.label "Description:" %>
+
+            <%= f.text_field :prod_desc_cont, :class => "span3" %>
+
+        </div>
+        <div class="row">
+          <%= f.label "Manufacturer:" %>
+
+            <%= f.text_field :brand_cont, :class => "span3" %>
+
+        </div>
+        <div class="pull-right filteraction">
+          <%= f.submit :class => "btn blue submit mt15", "data-placement" => "below", "rel" => "twipsy", :title => "Search" %> &nbsp; <%= link_to "Reset", product_types_path, :class => "btn blue submit mt15", "data-placement" => "below", "rel" => "twipsy", "title" => "Clear Form" %>
+        </div>
+
+    <% end %>
+  </section>
 </div>
