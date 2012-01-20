@@ -1,3 +1,10 @@
+<% if @purchase.products.all.count == 0 %>
+    <div class="blank_slate_container">
+      <span class="blank_slate">
+        There are no Products yet.  <%= link_to 'Create One', new_purchase_product_path(@purchase) %>
+      </span>
+    </div>
+<% else %>
 <div class="boxheading clearfix">
     <h3>Line Items (<%= @purchase.products.count %>)</h3>
     <a class="move"></a>
@@ -20,7 +27,7 @@
 			<% @purchase.products.each do |product| %>
   		    <tr <% unless !product.received? %>style="color:green;"<% end %>>
         		<td><%= product.product_type.prod_number %></td>
-                <td><%= product.product_type.prod_desc %></td>
+                <td><%= truncate(product.product_type.prod_desc) %></td>
         		<td><%= product.quantity %></td>
                 <td><%= product.user.username unless product.user.blank? %></td>
         		<td><%= product.location.room unless product.location.blank? %></td>
@@ -34,3 +41,4 @@
 		</tbody>
 	</table>
 </section>
+<% end %>

@@ -12,48 +12,51 @@
   <% end %>
 
 
-  <div class="row">
+  <div class="row line narrow clearfix">
     <%= f.label "Purchase Order:" %>
-
-    	<%= autocomplete_field_tag :product_purchase_po_number, @product.purchase.po_number, autocomplete_purchase_po_number_purchase_products_path, :size => 75, :id_element => "#product_purchase_id" %><%= f.hidden_field :purchase_id %>
-		
-
+    <div class="r">
+      <%= autocomplete_field_tag :product_purchase_po_number, @product.purchase.po_number, autocomplete_purchase_po_number_purchase_products_path, :size => 75, :id_element => "#product_purchase_id" %><%= f.hidden_field :purchase_id %>
+    </div>
 	</div>
-  <div class="row">
+  <div class="row line narrow clearfix">
     <%= f.label "Product #:" %>
-
-        <%= autocomplete_field_tag :product_type_prod_number, @product.product_type.prod_number, autocomplete_product_type_prod_number_purchase_products_path, :size => 75, :id_element => "#product_product_type_id"  %><%= f.hidden_field :product_type_id %>
-
+    <div class="r">
+      <%= autocomplete_field_tag :product_type_prod_number, @product.product_type.prod_number, autocomplete_product_type_prod_number_purchase_products_path, :size => 75, :id_element => "#product_product_type_id"  %><%= f.hidden_field :product_type_id %>
+    </div>
   </div>
-  <div class="row">
+  <div class="row line narrow clearfix">
     <%= f.label "Quantity Ordered:" %>
-
+    <div class="r">
     	<%= f.number_field :quantity %>
-
+    </div>
 	</div>
-  <div class="row">
+  <div class="row line narrow clearfix">
     <%= f.label "Received By:" %>
-
-      <%= f.collection_select(:user_id, User.all, :id, :username, :include_blank => 'Select a User') %>
-
+    <div class="r">
+      <div id="uniform-undefined" class="selector">
+        <%= f.collection_select(:user_id, User.all, :id, :username, {:include_blank => 'Select a User'}, {:class => "regular"}) %>
+      </div>
+    </div>
   </div>
-  <div class="row">
+  <div class="row line narrow clearfix">
 		<%= f.label "Location Stored:" %>
-
-    	<%= f.collection_select(:location_id, Location.all, :id, :room, :include_blank => 'Select Location') %>
-
+    <div class="r">
+      <div id="uniform-undefined" class="selector">
+    	 <%= f.collection_select(:location_id, Location.all, :id, :room, {:include_blank => 'Select Location'}, {:class => "regular"}) %>
+      </div>
+    </div>
 	</div>
-  <div class="row">
+  <div class="row line narrow clearfix">
 		<%= f.label "Received:" %>
 
     	<%= f.check_box :received %>
 
 	</div>
-  <div class="row">
+  <div class="row line narrow clearfix">
 		<%= f.label "Date Received:" %>
-
+    <div class="r">
     	<%= f.text_field :date_received, :id => "datepicker" %>
-
+    </div>
 	</div>
 
     	<%= f.submit :class => "btn blue submit mt15" %>

@@ -11,26 +11,27 @@
     </div>
   <% end %>
 
-
-  <div class="row">
+  <div class="row line narrow clearfix">
     <%= f.label "Purchase Order #:" %>
-
-    <%= f.text_field :po_number %>
-
+    <div class="r">
+      <%= f.text_field :po_number %>
+    </div>
   </div>
-  <div class="row">
+  <div class="row line narrow clearfix">
     <%= f.label "Ordered By:" %>
-
-    <%= f.collection_select(:user_id, User.all, :id, :username, :include_blank => 'Select a User') %>
-
+    <div class="r">
+      <div id="uniform-undefined" class="selector">
+       <%= f.collection_select(:user_id, User.all, :id, :username, {:include_blank => 'Select a User'}, {:class => "regular"}) %>
+      </div>
+    </div>
   </div>
-  <div class="row">
+  <div class="row line narrow clearfix">
     <%= f.label "Date Ordered:" %>
-
-    <%= f.text_field :date_ordered, :id => "datepicker" %>
-
+    <div class="r">
+      <%= f.text_field :date_ordered, :id => "datepicker" %>
+    </div>
   </div>
-  <div class="row">
+  <div class="row line narrow clearfix">
     <%= f.label "Completed:" %>
 
     <%= f.check_box :complete %>

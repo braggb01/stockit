@@ -1,7 +1,7 @@
 
 <tr id="<%= dom_id(product_type) %>">
 	<td><%= product_type.prod_number %></td>
-	<td><%= product_type.prod_desc %></td>
+	<td><%= truncate(product_type.prod_desc) %></td>
 	<td><%= product_type.brand %></td>
 	<td><% if product_type.total_quantity < product_type.needed_quantity %><span class="levellow"><%= product_type.total_quantity %></span><% else %><%= product_type.total_quantity %><% end %></td>
 	<td><%= product_type.needed_quantity %></td>

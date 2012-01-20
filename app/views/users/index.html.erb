@@ -1,54 +1,51 @@
-<% content_for :sidebar do %>
-<%= render :partial => 'sidebar' %>
-<% end %>
-
-<% content_for :content do %>
-<div class="content">
-
-  <table class="zebra-striped bordered-table">
-    <thead>
-      <tr>
-        <th>Username</th>
-        <th>Email</th>
-        <th>Admin Privileges</th>
-        <th>Engineer Privileges</th>
-        <th class="action-buttons">Actions</th>
-      </tr>
-    </thead>
-    <tbody>
-    <% @users.each do |user| %>
-      <tr>
-        <td><%= user.username %></td>
-        <td><%= user.email %></td>
-        <td><% if user.admin?  %><span class="sprite-new completebutton">Admin</span><% else %><span class="sprite-new notcompletebutton">NonAdmin</span><% end %></td>
-        <td><% if user.engineer?  %><span class="sprite-new completebutton">Engineer</span><% else %><span class="sprite-new notcompletebutton">NonEngineer</span><% end %></td>
-        <td><%= link_to 'Show', user,:class => "sprite-new showbutton", "data-placement" => "below", "rel" => "twipsy", "title" => "Show Details" %>&nbsp;<%= link_to 'Edit', edit_user_path(user),:class => "sprite-new editbutton", "data-placement" => "below", "rel" => "twipsy", "title" => "Edit User" %>&nbsp;<%= link_to 'Destroy', user,:class => "sprite-new deletebutton", confirm: 'Are you sure?', method: :delete, "data-placement" => "below", "title" => "Delete User" %></td>
-      </tr>
-    <% end %>
-    </tbody>
-  </table>
-
-
-<script type="text/javascript" id="js">
-  $(document).ready(function() {
-    $('#my-modal').modal({
-   show : true,
-   keyboard : true,
-   backdrop : true
-});
-</script>
-
-
-  <div class="modal hide fade" id="my-modal" >
-    <div class="modal-header">
-      <%= link_to 'x', users_path, :class => 'close' %>
-        <h3>New User</h3>
+<% if User.all.count == 0 %>
+  <% content_for :empty do %>
+    <div class="blank_slate_container">
+      <span class="blank_slate">
+        There are no Users yet.  <%= link_to 'Create One', new_user_path %>
+      </span>
     </div>
-    <div class="modal-body">
-        <%= render 'form' %>
+  <% end %>
+<% else %>
+  <% content_for :sidebar do %>
+    <%= render :partial => 'sidebar' %>
+  <% end %>
+
+  <% content_for :content do %>
+    <div class="box twothirds">
+      <div class="boxheading clearfix">
+        <h3>Users</h3>
+        <a class="move"></a>
+      </div>
+      <section>
+        <table class="bordered-table">
+          <thead>
+            <tr>
+              <th>Username</th>
+              <th>Email</th>
+              <th>Admin Privileges</th>
+              <th>Engineer Privileges</th>
+              <% if can? :update, User %>
+                <th class="action-buttons">Actions</th>
+              <% end %>
+            </tr>
+          </thead>
+          <tbody>
+            <% @users.each do |user| %>
+              <tr>
+                <td><%= user.username %></td>
+                <td><%= user.email %></td>
+                <td><% if user.admin?  %><span class="sprite-new completebutton">Admin</span><% else %><span class="sprite-new notcompletebutton">NonAdmin</span><% end %></td>
+                <td><% if user.engineer?  %><span class="sprite-new completebutton">Engineer</span><% else %><span class="sprite-new notcompletebutton">NonEngineer</span><% end %></td>
+                <td><%= link_to 'Show', user,:class => "sprite-new showbutton", "data-placement" => "below", "rel" => "twipsy", "title" => "Show Details" %>&nbsp;<%= link_to 'Edit', edit_user_path(user),:class => "sprite-new editbutton", "data-placement" => "below", "rel" => "twipsy", "title" => "Edit User" %>&nbsp;<%= link_to 'Destroy', user,:class => "sprite-new deletebutton", confirm: 'Are you sure?', method: :delete, "data-placement" => "below", "title" => "Delete User" %></td>
+              </tr>
+            <% end %>
+          </tbody>
+        </table>
+        <div>
+          <!-- RESERVED FOR PAGINATION -->
+        </div>
+      </section>
     </div>
-
-  </div>
-</div>
-
+  <% end %>
 <% end %>

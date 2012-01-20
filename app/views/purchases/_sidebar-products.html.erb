@@ -1,4 +1,29 @@
 <div class="box onethird">
+  <div class="boxheading clearfix">
+    <h3>P.O. Details</h3>
+    <a class="move"></a>
+  </div>
+  <section>
+    <p>
+    <h5 style="display:inline;">Purchase Order:  </h5><span style="width:400px;text-align:right;"><%= @purchase.po_number %></span>
+    </p>
+    <p>
+    <h5 style="display:inline;">Ordered By:  </h5><span style="width:400px;text-align:right;"><%= @purchase.user.username unless @purchase.user.blank? %></span>
+    </p>
+    <p>
+    <h5 style="display:inline;">Date Ordered:  </h5><span style="width:400px;text-align:right;"><%= @purchase.date_ordered %></span>
+    </p>
+    <p>
+    <h5 style="display:inline;">Complete:  </h5><span style="width:400px;text-align:right;"><%= @purchase.complete %></span>
+    </p>
+    <hr/>
+    <div class="clearfix">
+      <p class="r">
+        <%= link_to 'Edit', edit_purchase_path(@purchase),:class => "sprite-new editbutton", "data-placement" => "below", "rel" => "twipsy", "title" => "Edit P.O." %><%= link_to 'Destroy', @purchase,:class => "sprite-new deletebutton", confirm: 'Are you sure?', method: :delete, "data-placement" => "below", "title" => "Delete P.O." %>
+      </p>
+    </div>
+  </section>
+  <br/>
   <% if can? :create, Product %>
   <div class="boxheading clearfix">
     <h3>Control Bar</h3>

@@ -6,12 +6,20 @@
  *= require tables
  *= require style
  *= require color
-
+ *= require uniform.default
  *= require grid
  *= require variables
  *= require jquery-ui
  *= require_self
 */
+
+
+
+/* LevelLow */
+.levellow {
+    color:red;
+}
+
 
 /* ACTION ITEM BUTTONS */
 .sprite-new {

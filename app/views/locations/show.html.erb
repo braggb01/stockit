@@ -1,24 +1,27 @@
 <% content_for :sidebar do %>
-	<%= render :partial => 'sidebar' %>
+
 <% end %>
 
 <% content_for :content do %>
-<div class="content">
-	<div class="pull-right">
-		<%= link_to 'Edit', edit_location_path(@location), :class => "btn primary"  %> 
-		<%= link_to 'Back', locations_path, :class => "btn primary"  %>
-	</div>
-	<div class="row">
-		<div class="span12">
-			<h1><%= @location.room %></h1>
-			<div class="row">
-				<div class="span12">
-					<p>
-  					<b>Room:</b>
-  					<%= @location.room %>
-					</p>
-				</div>
-			</div>
-		</div>
-	</div>
+<div class="box onethird">&nbsp;</div>
+<div class="box midthirds">
+  <div class="boxheading clearfix">
+    <h3>Location Details</h3>
+    <%= link_to "", locations_path, :class => "prev" %>
+  </div>
+  <section>
+    <div class="row">
+      <p>
+        <b>Room:</b>
+        <%= @location.room %>
+      </p>
+    </div>
+    <div class="pt15">
+    <p>
+      <%= link_to 'Edit', edit_location_path(@location), :class => "btn blue pt20"  %>
+    </p>
+    </div>
+  </section>
+</div>
+<div class="box onethird">&nbsp;</div>
 <% end %>

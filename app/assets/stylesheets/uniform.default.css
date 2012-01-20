@@ -1,6 +1,6 @@
-div.checker span, div.radio span{ background-image:url(../../img/main_uniformsprite.png);  background-repeat:no-repeat;  -webkit-font-smoothing:antialiased}
+div.checker span, div.radio span{ background-image:url(main_uniformsprite.png);  background-repeat:no-repeat;  -webkit-font-smoothing:antialiased}
 .selector, .radio, .checker, .uploader, .selector *, .radio *, .checker *, .uploader *{ margin:0;  padding:0}
-div.selector span{ background-image:url('../../img/main_dropdown.png'); background-repeat:no-repeat; background-position:96% 17px; line-height:normal; width:89%}
+div.selector span{ background-image:url('main_dropdown.png'); background-repeat:no-repeat; background-position:96% 17px; line-height:normal; width:89%}
 div.selector select{top:0px; left:0px}
 div.checker{width:16px; height:16px}
 div.checker input{width:16px; height:16px}

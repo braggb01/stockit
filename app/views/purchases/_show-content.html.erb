@@ -1,14 +1,19 @@
 <div class="boxheading clearfix">
-	<h3>Purchase Order Details</h3>
+	<h3>P.O. Details</h3>
 	<a class="move"></a>
 </div>
 <section>
+	<p>
 	<h5 style="display:inline;">Purchase Order:  </h5><span style="width:400px;text-align:right;"><%= @purchase.po_number %></span>
-	<hr style="margin: 5px 0 5px;"/>
+	</p>
+	<p>
 	<h5 style="display:inline;">Ordered By:  </h5><span style="width:400px;text-align:right;"><%= @purchase.user.username unless @purchase.user.blank? %></span>
-	<hr style="margin: 5px 0 5px;"/>
+	</p>
+	<p>
 	<h5 style="display:inline;">Date Ordered:  </h5><span style="width:400px;text-align:right;"><%= @purchase.date_ordered %></span>
-	<hr style="margin: 5px 0 5px;"/>
+	</p>
+	<p>
 	<h5 style="display:inline;">Complete:  </h5><span style="width:400px;text-align:right;"><%= @purchase.complete %></span>
+	</p>
 </section>
 <br/>

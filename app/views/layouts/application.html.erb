@@ -24,7 +24,7 @@
   <section class="container_12"><!-- / Using 960's grid container_12 to standartize paddings/margins -->
       <div class="upper clearfix">
         <!-- / Logo -->
-        <%= link_to image_tag('hdr_logo.png'), root_path, :class => "logo mt20" %>
+        <%= link_to image_tag('stockify3_logo.png'), root_path, :class => "logo mt20" %>
         <!-- <a href="dashboard.html" class="logo mt20"><img src="assets/hdr_logo.png" alt="" /></a> -->
         <!-- / End logo -->
 
@@ -59,7 +59,7 @@
             <li class="last">
               <%= link_to "", :class => "messages" do %>
                 <%= image_tag('icons/helloadmin/messages.png') %>
-                <sup>5</sup>
+                <sup><%= my_unfilled_po.count %></sup>
               <% end %>
             </li>
             <li><%= link_to current_user do %>
@@ -67,7 +67,8 @@
                   <span><%= current_user.username %></span>
                 <% end %>
               <ul>
-                <li class="last"><%= link_to "Your Account", current_user %></li>
+                <li><%= link_to "Your Account", current_user %></li>
+                <li class="last"><%= link_to "Logout", log_out_path %></li>
               </ul>
             </li>
           </ul>

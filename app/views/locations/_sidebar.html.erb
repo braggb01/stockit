@@ -1,17 +1,17 @@
+<div class="box onethird">
 <% if can? :create, Location %>
-<div class="sidebar">
-  <div class="well-sidebar">
-    <h5 class="light">Control Bar</h5>
-    <fieldset>
-    	<div class="clearfix">
-    		<div style="margin-left:20px;float:left;">
-      			<%= link_to "New Location", new_location_path,:class => "sprite-sidebarnew newlocationbutton" %>
-      		</div>
-      		<div style="margin-left:10px;float:left;">
-      			<h7>Add a Location</h7>
-      		</div>
-      	</div>
-    </fieldset>
+  <div class="boxheading clearfix">
+    <h3>Control Bar</h3>
+    <a class="move"></a>
   </div>
-</div>
+  <section>
+    <%= link_to(new_location_path, :class => "btn_icon textright mrb15", "rel" => "popover", "data-content" => "Create a location so that you and other team memebers can specify it when new products arrive.", :title => "Information", "data-placement" => "left")  do %>
+        <%= image_tag ("icons/fatcow-hosting-icons/32x32/add.png") %>
+        <span class="l">
+          <span class="title">Create!</span>
+          <span class="subtitle">New Location</span>
+        </span>
+    <% end %>
+  </section>
 <% end %>
+</div>

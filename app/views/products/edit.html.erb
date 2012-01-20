@@ -1,20 +1,15 @@
-<% content_for :sidebar do %>
-	<%= render :partial => 'sidebar-new' %>
-<% end %>
-
 <% content_for :content do %>
-<div class="content">
-			<div class="pull-right">
-				<%= link_to 'Show', purchase_product_path(@product), :class => "btn primary"  %>
-				<%= link_to 'Back', purchase_path(@purchase), :class => "btn primary"  %>
-			</div>
-	<div class="row">
-		<div class="span12">
-			<div class="row">
-				<div class="span12">
-					<%= render 'form' %>
-				</div>
-			</div>
-		</div>
-	</div>
+<div class="box onethird"> &nbsp;</div>
+<div class="box midthirds">
+  <% if can? :create, Product %>
+  <div class="boxheading clearfix">
+    <h3>Edit Product</h3>
+    <a class="move"></a>
+  </div>
+  <section>
+	    <%= render 'form' %>
+  </section>
+  <% end %>
+</div>
+<div class="box onethird"> &nbsp;</div>
 <% end %>

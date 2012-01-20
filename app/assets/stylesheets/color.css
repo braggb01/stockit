@@ -9,7 +9,7 @@ header.mobile {background: #212121;}
 header .search {background: #212121; background: rgba(0,0,0, 0.2);}
 
 /* Content colors */
-.box .boxheading, .slider-content li.selected .title, .box.menu ul li.act a  {background: #212121; background-image: url(assets/gradient2.png); background-repeat: repeat-x; background-position: 50% 50%;border: 1px solid #212121;color: white;}
+.box .boxheading, .slider-content li.selected .title, .box.menu ul li.act a  {background: #212121; background-image: url(gradient2.png); background-repeat: repeat-x; background-position: 50% 50%;border: 1px solid #212121;color: white;}
 .box .boxheading a, body #main .slider-content li.selected a.title{color: white;}
 
 /* Footer */

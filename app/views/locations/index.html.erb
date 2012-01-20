@@ -1,18 +1,31 @@
-<% content_for :sidebar do %>
-	<%= render :partial => 'sidebar' %>
-<% end %>
+<% if Location.all.count == 0 %>
+  <% content_for :empty do %>
+    <div class="blank_slate_container">
+      <span class="blank_slate">
+        There are no Locations yet.  <%= link_to 'Create One', new_location_path %>
+      </span>
+    </div>
+  <% end %>
+<% else %>
+  <% content_for :sidebar do %>
+    <%= render :partial => 'sidebar' %>
+  <% end %>
 
-<% content_for :content do %>
-
-<div class="content">
-	<table class="zebra-striped bordered-table">
-		<thead>
-			<tr>
+  <% content_for :content do %>
+    <div class="box twothirds">
+      <div class="boxheading clearfix">
+        <h3>Locations</h3>
+        <a class="move"></a>
+      </div>
+      <section>
+        <table class="bordered-table">
+          <thead>
+            <tr>
 				<th>Room</th>
 				<% if can? :update, Location %><th class="action-buttons">Actions</th><% end %>
-			</tr>
-		</thead>
-		<tbody>
+            </tr>
+          </thead>
+          <tbody>
 			<% @locations.each do |location| %>
 			<tr>
 				<td><%= location.room %></td>
@@ -21,11 +34,12 @@
 				<% end %>	
 			</tr>
 			<% end %>
-		</tbody>
-	</table>
-	<div class="pull-right">
-		<%= paginate @locations%>
-	</div>
-</div>
-
+          </tbody>
+        </table>
+        <div>
+        	<%= paginate @locations%>
+        </div>
+      </section>
+    </div>
+  <% end %>
 <% end %>

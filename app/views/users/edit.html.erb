@@ -1,20 +1,13 @@
-<% content_for :sidebar do %>
-
-<% end %>
-
 <% content_for :content do %>
-<div class="modal" id="my-modal" style="position: relative; top: auto; left: auto; margin: 0 auto;" >
-	<div class="modal-header">
-		<%= link_to 'x', users_path, :class => 'close' %>
-	    <h3><%= action_name.capitalize %> <%= @user.username %></h3>
+<div class="box onethird"> &nbsp;</div>
+<div class="box midthirds">
+	<div class="boxheading clearfix">
+		<h3>Edit User</h3>
+		<a class="move"></a>
 	</div>
-	<div class="modal-body">
-	    <%= render 'form' %>
-	</div>
-	<div class="modal-footer">
-	    <%= link_to 'Show', @user, :class => "btn primary"  %>
-	    <%= link_to 'Back', users_path, :class => "btn primary"  %>
-	</div>
-
+	<section>
+		<%= render 'form' %>
+	</section>
 </div>
+<div class="box onethird"> &nbsp;</div>
 <% end %>

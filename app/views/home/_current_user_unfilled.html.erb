@@ -1,10 +1,17 @@
 <div class="box onethird">
   <div class="boxheading clearfix">
-    <h3>Your Unfilled Purchases</h3>
+    <h3>My Open PO's</h3>
     <a class="move"></a>
   </div>
   <section class="clearfix">
     <table>
+      <thead>
+        <tr>
+          <th>PO Number</th>
+          <th>Date Ordered</th>
+          <th></th>
+        </tr>
+      </thead>
       <tbody>
         <% if @myunfilled.count >= 1 %>
           <% @myunfilled.each do |myunfilled| %>

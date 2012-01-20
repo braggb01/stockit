@@ -1,54 +1,66 @@
-<% content_for :content do %>
-<div class="box twothirds">
-	<div class="boxheading clearfix">
-		<h3>Inventory</h3>
-		<a class="move"></a>
-	</div>
-	<section>
-		<div>
-			<table class="bordered-table">
-				<thead>
-					<tr>
-						<th><%= sort_link @q, :prod_number, "Product ID" %></th>
-						<th>Description</th>
-						<th><%= sort_link @q, :brand, "Manufacturer" %></th>
-						<th>Stock Available</th>
-						<th><%= sort_link @q, :needed_quantity, "Stock Desired" %></th>
-						<% if can? :update, ProductType %>
-						<th>Actions</th>
-						<% end %>
-					</tr>
-				</thead>
-				<tbody id="tablehead">
-					<%= render :partial => "product_type", :collection => @product_types %>
-				</tbody>
-			</table>
-		    
-		    <div class="pull-right">
-		            <%= paginate @product_types%>
-		    </div>
-		    
-		    <div class="clearfix"></div>
-
-		    <script type="text/javascript" id="js">
-		    	$(document).ready(function(){
-			    	$('#formshow').click(function() {
-			    		$('#form').toggle(function() {
-			    			
-			    		});
-			    	});
-			    	$('#formnoshow').click(function() {
-			    		$('#form').hide(function() {
-			    			
-			    		});
-			    	});
-			    });
-	    	</script>
+<% if ProductType.all.count == 0 %>
+  <% content_for :empty do %>
+    <div class="blank_slate_container">
+      <span class="blank_slate">
+        There are no Product Types yet.  <%= link_to 'Create One', new_product_type_path %>
+      </span>
+    </div>
+  <% end %>
+<% else %>
+	<% content_for :content do %>
+	<div class="box twothirds">
+		<div class="boxheading clearfix">
+			<h3>Inventory</h3>
+			<a class="move"></a>
 		</div>
-	</section>
-</div>
-<% end %>
+		<section>
+			<div>
+				<table class="bordered-table">
+					<thead>
+						<tr>
+							<th><%= sort_link @q, :prod_number, "Product ID" %></th>
+							<th>Description</th>
+							<th><%= sort_link @q, :brand, "Manufacturer" %></th>
+							<th>Stock Available</th>
+							<th><%= sort_link @q, :needed_quantity, "Stock Desired" %></th>
+							<% if can? :update, ProductType %>
+							<th>Actions</th>
+							<% end %>
+						</tr>
+					</thead>
+					<tbody id="tablehead">
+						<%= render :partial => "product_type", :collection => @product_types %>
+					</tbody>
+				</table>
+			    
+			    <div class="paging mt15 clearfix">
+			    	<div class="r">
+			            <%= paginate @product_types%>
+			        </div>
+			    </div>
+			    
+			    <div class="clearfix"></div>
 
-<% content_for :sidebar do %>
-	<%= render :partial => 'sidebar' %>
+			    <script type="text/javascript" id="js">
+			    	$(document).ready(function(){
+				    	$('#formshow').click(function() {
+				    		$('#form').toggle(function() {
+				    			
+				    		});
+				    	});
+				    	$('#formnoshow').click(function() {
+				    		$('#form').hide(function() {
+				    			
+				    		});
+				    	});
+				    });
+		    	</script>
+			</div>
+		</section>
+	</div>
+	<% end %>
+
+	<% content_for :sidebar do %>
+		<%= render :partial => 'sidebar' %>
+	<% end %>
 <% end %>
