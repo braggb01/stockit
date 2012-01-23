@@ -498,7 +498,11 @@ body .l {float: left!important;}
 header .search {margin-top: 10px;}
 
 /* Margin-top 15px */
-footer, nav.mainnav,header .usermenu {margin-top: 15px;}
+footer, nav.mainnav, header .usermenu {margin-top: 15px;}
+
+/* Margin-top 25px */
+nav.mainnavf {margin-top:25px;}
+nav.mainnavf ul, nav.mainnavf ol {padding:0 0 0 0;}
 
 /* Margin-bottom 15px */
 footer .lower {margin-bottom: 15px;}
@@ -561,6 +565,8 @@ body #main .ultralong {height: 250px;}
 .gallery .controls a {opacity: 0.6;}
 nav.mainnav ul li a img, ul.sf_menu li a img, a.prev, a.next, .btn, button, body input[type=submit], body input[type=reset], body input[type=button],.gallery .thumb {opacity: 0.9;}
 nav.mainnav ul li a:hover img, ul.sf_menu li a:hover img, .gallery .controls a:hover, a.prev:hover, a.next:hover, .btn:hover, button:hover, .gallery .thumb:hover, body input[type=submit]:hover, body input[type=reset]:hover, body input[type=button]:hover {opacity: 1;}
+nav.mainnavf ul li a img {opacity: 0.9;}
+nav.mainnavf ul li a:hover img {opacity: 1;}
 
 /* No border */
 ul.lang li.last, ul.lang ul li, header .usermenu ul li ul li {border: none;}
@@ -617,7 +623,7 @@ body #main .box input.clearest {background: none; border: none;width: auto;}
 body input[type=submit], body input[type=reset], body input[type=button] {width: auto;}
 
 /* Header */
-header {height: 179px;}
+/*header {height: 179px;}*/
 section.container_12 {margin: 0 auto;}
 
 header a.logo {display: block;}
@@ -629,6 +635,13 @@ nav.mainnav ul li {float: left;margin-right: 3%;}
 nav.mainnav ul li a {display: block;}
 nav.mainnav ul li ul li{margin-right:0px !important;}
 nav.mainnav ul li a img {vertical-align: middle; margin-right: 5px;}
+
+/* Footer main navigation */
+nav.mainnavf {float: left;width: 77%; height: 43px;}
+nav.mainnavf ul li {float: left;margin-right: 3%;}
+nav.mainnavf ul li a {display: block;}
+nav.mainnavf ul li ul li{margin-right:0px !important;}
+nav.mainnavf ul li a img {vertical-align: middle; margin-right: 5px;}
 
 /* Language dropdown */
 ul.lang {float: right;}

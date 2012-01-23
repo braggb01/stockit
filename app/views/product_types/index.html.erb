@@ -44,7 +44,24 @@
 			    <script type="text/javascript" id="js">
 			    	$(document).ready(function(){
 				    	$('#formshow').click(function() {
-				    		$('#form').toggle(function() {
+				    		$('#product_type_prod_desc').css('width', '94%');
+				    		$('#form').toggle('blind', 500,function() {
+				    			
+				    		});
+				    	});
+				    	$('#formnoshow').click(function() {
+				    		$('#form').hide(function() {
+				    			
+				    		});
+				    	});
+				    });
+		    	</script>
+
+			    <script type="text/javascript" id="js">
+			    	$(document).ready(function(){
+				    	$('#footerformshow').click(function() {
+				    		$('#product_type_prod_desc').css('width', '94%');
+				    		$('#form').toggle('blind', 500,function() {
 				    			
 				    		});
 				    	});
@@ -63,4 +80,13 @@
 	<% content_for :sidebar do %>
 		<%= render :partial => 'sidebar' %>
 	<% end %>
+<% end %>
+
+<% content_for :footer do %>
+  <li>
+    <%= link_to(new_product_type_path, :remote => true, :id => "footerformshow") do %>
+      <%= image_tag('addit.png') %>
+      <span><h4 style="display:inline;">Create Product</h4></span>
+    <% end %>
+  </li>
 <% end %>

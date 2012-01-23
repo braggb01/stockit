@@ -1,0 +1,6 @@
+<tr id="<%= dom_id(location) %>">
+	<td><%= location.room %></td>
+	<% if can? :update, Location %>
+		<td><%= link_to 'Show', location,:class => "sprite-new showbutton", "data-placement" => "below", "rel" => "twipsy", "title" => "Show Details" %>&nbsp;<%= link_to 'Edit', edit_location_path(location),:class => "sprite-new editbutton", "data-placement" => "below", "rel" => "twipsy", "title" => "Edit Location" %>&nbsp;<%= link_to 'Destroy', location,:class => "sprite-new deletebutton", confirm: 'Are you sure?', method: :delete, "data-placement" => "below", "title" => "Delete Location" %></td>
+	<% end %>	
+</tr>

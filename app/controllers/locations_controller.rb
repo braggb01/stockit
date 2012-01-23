@@ -5,6 +5,7 @@ class LocationsController < ApplicationController
   def index
 		@title = "Storage Locations"
     #@locations = Location.all.page params[:page]
+    @location = Location.new
     @locations = Location.order(:room).page params[:page]
 
     respond_to do |format|
@@ -50,10 +51,14 @@ class LocationsController < ApplicationController
 
     respond_to do |format|
       if @location.save
+        @location_before = 'tablehead'
+
         format.html { redirect_to @location, notice: 'Location was successfully created.' }
+        format.js
         format.json { render json: @location, status: :created, location: @location }
       else
         format.html { render action: "new" }
+        format.js
         format.json { render json: @location.errors, status: :unprocessable_entity }
       end
     end

@@ -1,0 +1,2 @@
+$('#<%= @location_before %>').after('<%= escape_javascript(render(:partial => @location)) %>');
+$('#form').html('<%= escape_javascript(render(:partial => "form", :locals => { :@location => Location.new })) %>');

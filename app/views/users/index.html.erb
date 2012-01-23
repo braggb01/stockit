@@ -30,22 +30,52 @@
               <% end %>
             </tr>
           </thead>
-          <tbody>
-            <% @users.each do |user| %>
-              <tr>
-                <td><%= user.username %></td>
-                <td><%= user.email %></td>
-                <td><% if user.admin?  %><span class="sprite-new completebutton">Admin</span><% else %><span class="sprite-new notcompletebutton">NonAdmin</span><% end %></td>
-                <td><% if user.engineer?  %><span class="sprite-new completebutton">Engineer</span><% else %><span class="sprite-new notcompletebutton">NonEngineer</span><% end %></td>
-                <td><%= link_to 'Show', user,:class => "sprite-new showbutton", "data-placement" => "below", "rel" => "twipsy", "title" => "Show Details" %>&nbsp;<%= link_to 'Edit', edit_user_path(user),:class => "sprite-new editbutton", "data-placement" => "below", "rel" => "twipsy", "title" => "Edit User" %>&nbsp;<%= link_to 'Destroy', user,:class => "sprite-new deletebutton", confirm: 'Are you sure?', method: :delete, "data-placement" => "below", "title" => "Delete User" %></td>
-              </tr>
-            <% end %>
+          <tbody id="tablehead">
+            <%= render :partial => "user", :collection => @users %>
           </tbody>
         </table>
         <div>
           <!-- RESERVED FOR PAGINATION -->
         </div>
+          <script type="text/javascript" id="js">
+            $(document).ready(function(){
+              $('#formshow').click(function() {
+                $('#form').toggle('blind', 500,function() {
+                  
+                });
+              });
+              $('#formnoshow').click(function() {
+                $('#form').hide(function() {
+                  
+                });
+              });
+            });
+          </script>
+
+          <script type="text/javascript" id="js">
+            $(document).ready(function(){
+              $('#footerformshow').click(function() {
+                $('#form').toggle('blind', 500,function() {
+                  
+                });
+              });
+              $('#formnoshow').click(function() {
+                $('#form').hide(function() {
+                  
+                });
+              });
+            });
+          </script>
       </section>
     </div>
   <% end %>
+<% end %>
+
+<% content_for :footer do %>
+  <li>
+    <%= link_to(new_user_path, :remote => true, :id => "footerformshow") do %>
+      <%= image_tag('addit.png') %>
+      <span><h4 style="display:inline;">Create User</h4></span>
+    <% end %>
+  </li>
 <% end %>

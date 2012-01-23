@@ -33,10 +33,14 @@ class UsersController < ApplicationController
     @user = User.new(params[:user])
     respond_to do |format|
       if @user.save
+        @user_before = 'tablehead'
+
         format.html { redirect_to @user, notice: 'Account Created!' }
+        format.js
         format.json { render json: @user, status: :created, location: @user }
       else
         format.html { render action: "new" }
+        format.js
         format.json { render json: @user.errors, status: :unprocessable_entity }
       end
     end

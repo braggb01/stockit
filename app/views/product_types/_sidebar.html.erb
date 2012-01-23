@@ -1,23 +1,20 @@
 <div class="box onethird">
   <% if can? :create, ProductType %>
-  <div class="boxheading clearfix">
-    <h3>Control Bar</h3>
-    <a class="move"></a>
-  </div>
-  <section>
-    <%= link_to(new_product_type_path, :class => "btn_icon textright mrb15", "rel" => "popover", "data-content" => "<p>Creating a <b>Product ID</b> will allow users to add this product as a Line Item in a Purchase Order.</p><ol><li>Enter a Unique <b>Product ID</b> exactly as given by the vendor.</li><li>Enter the <b>Description</b> of the product.</li><li>Enter the <b>Manufacturer</b> of the product</li><li>If this product is currently in stock please enter this value in the <b>Stock Available</b> area, otherwise leave at 0.</li><li>If you would like to set a recommended quantity to keep in stock at all times, enter it in the <b>Stock Desired</b> area.</li></ol>", :remote => true, :id => "formshow", :title => "Information", "data-placement" => "left")  do %>
-        <%= image_tag ("icons/fatcow-hosting-icons/32x32/add.png") %>
-        <span class="l">
-          <span class="title">Create!</span>
-          <span class="subtitle">New Product I.D.</span>
-        </span>
+  <div>
+    <div class="boxheading clearfix">
+      <h3>New Product Type</h3>
+      <!-- <a class="move"></a> -->
+        <%= link_to(new_product_type_path, :class => "r", :remote => true, :id => "formshow")  do %>
+            <%= image_tag ("hdr_dropdown.png") %>
+        <% end %>
+    </div>
+    <section id="form" style="display:none;">
+      <%= render 'form' %>
+    </section>
     <% end %>
-  </section>
-  <section id="form" style="display:none;">
-    <%= render 'form' %>
-  </section>
-  <% end %>
-  <br/>
+      <br/>
+  </div>
+
   <div class="boxheading clearfix">
     <h3>Filters</h3>
     <a class="move"></a>

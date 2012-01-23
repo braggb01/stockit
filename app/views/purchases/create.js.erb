@@ -1,0 +1,2 @@
+$('#<%= @purchase_before %>').after('<%= escape_javascript(render(:partial => @purchase)) %>');
+$('#form').html('<%= escape_javascript(render(:partial => "form", :locals => { :@purchase => Purchase.new })) %>');

@@ -1,0 +1,9 @@
+<tr id="<%= dom_id(purchase) %>">
+  <td><%= link_to purchase.po_number, purchase %></td>
+  <td><%= purchase.user.username unless purchase.user.blank? %></td>
+  <td><%= purchase.date_ordered %></td>
+  <td><% if !purchase.complete?  %><span class="sprite-new notcompletebutton">False</span><% else %><span class="sprite-new completebutton">True</span><% end %></td>
+  <% if can? :update, Purchase %>
+  <td><%= link_to 'Show', purchase,:class => "sprite-new showbutton", "data-placement" => "below", "rel" => "twipsy", "title" => "Show Details" %><%= link_to 'Edit', edit_purchase_path(purchase),:class => "sprite-new editbutton", "data-placement" => "below", "rel" => "twipsy", "title" => "Edit P.O." %><%= link_to 'Destroy', purchase,:class => "sprite-new deletebutton", confirm: 'Are you sure?', method: :delete, "data-placement" => "below", "title" => "Delete P.O." %></td>
+  <% end %>
+</tr>

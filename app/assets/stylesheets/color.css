@@ -2,7 +2,7 @@
 body {background: #FEFEFE;}
 
 /* Header backgrounds */
-header {background: url(headerbgr_U.png) no-repeat center 0;}
+header {background: url(headerbgr_S.png) no-repeat center 0 #323232;}
 header.mobile {background: #212121;}
 
 /* Search input */
@@ -13,4 +13,4 @@ header .search {background: #212121; background: rgba(0,0,0, 0.2);}
 .box .boxheading a, body #main .slider-content li.selected a.title{color: white;}
 
 /* Footer */
-footer {background: url(footerbgr.png) no-repeat center 0;}
+footer {background: url(footerbgr_S.png) no-repeat center 0 #323232;}

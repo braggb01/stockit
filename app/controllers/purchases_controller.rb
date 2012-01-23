@@ -5,9 +5,9 @@ class PurchasesController < ApplicationController
   def index
     @title = "Purchase Orders"
     @lowinventory = ProductType.where("needed_quantity > 0 AND total_quantity < needed_quantity").order('needed_quantity asc')
-    @purchases = Purchase.all
+    # @purchases = Purchase.all
     @q = Purchase.search(params[:q])
-    @purchases = @q.result(:distinct => true)
+    @purchases = @q.result.page params[:page]
     @purchase = Purchase.new
 
     respond_to do |format|
@@ -53,10 +53,14 @@ class PurchasesController < ApplicationController
 
     respond_to do |format|
       if @purchase.save
+        @purchase_before = 'tablehead'
+
         format.html { redirect_to @purchase, notice: 'Purchase was successfully created.' }
+        format.js
         format.json { render json: @purchase, status: :created, location: @purchase }
       else
         format.html { render action: "new" }
+        format.js
         format.json { render json: @purchase.errors, status: :unprocessable_entity }
       end
     end

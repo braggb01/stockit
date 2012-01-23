@@ -143,12 +143,13 @@
 <footer role="contentinfo">
   <section class="container_12"><!-- / Using 960's grid container_12 to standartize paddings/margins -->
     <div class="lower clearfix">
-      <nav class="mainnav l">
+      <nav class="mainnavf l">
         <ul id="mainnav2" class="clearfix">
-          <li><%= link_to image_tag('icons/helloadmin/dashboard.png'), root_path %></li>
+          <!-- <li><%= link_to image_tag('icons/helloadmin/dashboard.png'), root_path %></li>
           <li><%= link_to image_tag('icons/helloadmin/layouts.png'), purchases_path %></li>
           <li><%= link_to image_tag('icons/helloadmin/modules.png'), product_types_path %></li>
-          <li><%= link_to image_tag('icons/helloadmin/features.png'), users_path %></li>
+          <li><%= link_to image_tag('icons/helloadmin/features.png'), users_path %></li> -->
+          <%= yield :footer %>
         </ul>
       </nav>
       <a href="#" id="top" class="top">top</a>

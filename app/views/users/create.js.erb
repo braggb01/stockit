@@ -1,0 +1,2 @@
+$('#<%= @user_before %>').after('<%= escape_javascript(render(:partial => @user)) %>');
+$('#form').html('<%= escape_javascript(render(:partial => "form", :locals => { :@user => User.new })) %>');

@@ -1,17 +1,21 @@
 <div class="box onethird">
 <% if can? :create, Location %>
-  <div class="boxheading clearfix">
-    <h3>Control Bar</h3>
-    <a class="move"></a>
+  <div>
+    <div class="boxheading clearfix">
+      <h3>New Location</h3>
+      <!-- <a class="move"></a> -->
+        <%= link_to(new_location_path, :class => "r", :remote => true, :id => "formshow")  do %>
+            <%= image_tag ("hdr_dropdown.png") %>
+        <% end %>
+    </div>
+    <section id="form" style="display:none;">
+      <%= render 'form' %>
+    </section>
   </div>
-  <section>
-    <%= link_to(new_location_path, :class => "btn_icon textright mrb15", "rel" => "popover", "data-content" => "Create a location so that you and other team memebers can specify it when new products arrive.", :title => "Information", "data-placement" => "left")  do %>
-        <%= image_tag ("icons/fatcow-hosting-icons/32x32/add.png") %>
-        <span class="l">
-          <span class="title">Create!</span>
-          <span class="subtitle">New Location</span>
-        </span>
-    <% end %>
-  </section>
 <% end %>
 </div>
+
+
+
+
+

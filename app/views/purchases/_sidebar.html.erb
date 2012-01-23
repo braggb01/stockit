@@ -1,20 +1,21 @@
 <div class="box onethird">
 <% if can? :create, Purchase %>
-  <div class="boxheading clearfix">
-    <h3>Control Bar</h3>
-    <a class="move"></a>
-  </div>
-  <section>
-    <%= link_to(new_purchase_path, :class => "btn_icon textright mrb15", "rel" => "popover", "data-content" => "Create a Purchase Order to start tracking your orders.  You will need to enter a unique P.O. number and select the user who created the P.O.  Once the Purchase Order is created you can begin to enter the associated Line Items.  Remember to change the P.O. to complete after all Line Items have been received.", :title => "Information", "data-placement" => "left")  do %>
-        <%= image_tag ("icons/fatcow-hosting-icons/32x32/add.png") %>
-        <span class="l">
-          <span class="title">Create!</span>
-          <span class="subtitle">New P.O.</span>
-        </span>
+
+  <div>
+    <div class="boxheading clearfix">
+      <h3>New Purchase Order</h3>
+      <!-- <a class="move"></a> -->
+        <%= link_to(new_purchase_path, :class => "r", :remote => true, :id => "formshow")  do %>
+            <%= image_tag ("hdr_dropdown.png") %>
+        <% end %>
+    </div>
+    <section id="form" style="display:none;">
+      <%= render 'form' %>
+    </section>
     <% end %>
-  </section>
-<% end %>
-  <br/>
+      <br/>
+  </div>
+
   <div class="boxheading clearfix">
     <h3>Filters</h3>
     <a class="move"></a>
