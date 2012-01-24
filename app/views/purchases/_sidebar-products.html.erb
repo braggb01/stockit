@@ -23,20 +23,4 @@
       </p>
     </div>
   </section>
-  <br/>
-  <% if can? :create, Product %>
-  <div class="boxheading clearfix">
-    <h3>Control Bar</h3>
-    <a class="move"></a>
-  </div>
-  <section>
-    <%= link_to(new_purchase_product_path(@purchase), :class => "btn_icon textright mrb15", "rel" => "popover", "data-content" => "Line Items are the individual parts that make up the Purchase Order.  When creating a Line Item, you will be picking from Product IDs that have already been added to the system.  Until the Line Item has been received, the Location and Date Received should remain blank.", :title => "Information", "data-placement" => "left")  do %>
-        <%= image_tag ("icons/fatcow-hosting-icons/32x32/add.png") %>
-        <span class="l">
-          <span class="title">Create!</span>
-          <span class="subtitle">New Line Item</span>
-        </span>
-    <% end %>
-  </section>
-  <% end %>
 </div>

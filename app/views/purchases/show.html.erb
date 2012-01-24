@@ -8,3 +8,14 @@
 </div>
 
 <% end %>
+
+<% if can? :create, Product %>
+	<% content_for :footer do %>
+	  <li>
+	    <%= link_to new_purchase_product_path(@purchase) do %>
+	      <%= image_tag('addit.png') %>
+	      <span><h4 style="display:inline;">Create Line Item</h4></span>
+	    <% end %>
+	  </li>
+	<% end %>
+<% end %>

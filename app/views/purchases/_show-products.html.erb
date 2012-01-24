@@ -23,22 +23,10 @@
         		<% if can? :update, Product %><th class="action-buttons">Actions</th> <% end %>
   		    </tr>
 		</thead>
-		<tbody>
-			<% @purchase.products.each do |product| %>
-  		    <tr <% unless !product.received? %>style="color:green;"<% end %>>
-        		<td><%= product.product_type.prod_number %></td>
-                <td><%= truncate(product.product_type.prod_desc) %></td>
-        		<td><%= product.quantity %></td>
-                <td><%= product.user.username unless product.user.blank? %></td>
-        		<td><%= product.location.room unless product.location.blank? %></td>
-        		<td><% if !product.received?  %><span class="sprite-new notcompletebutton">Pending</span><% else %><span class="sprite-new completebutton">In Stock</span><% end %> </td>
-        		<td><%= product.date_received %></td>
-        		<% if can? :update, Product %>
-                <td><%= link_to 'Show', purchase_product_path(@purchase, product),:class => "sprite-new showbutton", "data-placement" => "below", "rel" => "twipsy", "title" => "Show Details" %>&nbsp;<%= link_to 'Edit', edit_purchase_product_path(@purchase, product),:class => "sprite-new editbutton", "data-placement" => "below", "rel" => "twipsy", "title" => "Edit Line Item" %>&nbsp;<%= link_to 'Destroy', purchase_product_path(@purchase, product),:class => "sprite-new deletebutton", confirm: 'Are you sure?', method: :delete, "data-placement" => "below", "title" => "Delete Line Item" %></td>
-                <% end %>
-  		    </tr>
-            <% end %>
+		<tbody id="tablehead">
+            <%= render :partial => "product"%>
 		</tbody>
 	</table>
+
 </section>
 <% end %>

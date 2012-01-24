@@ -23,6 +23,7 @@
       <%= f.text_field :email %>
     </div>
   </div>
+  <% unless :action => 'new' %>
   <div class="row line narrow clearfix">
     <%= f.label "Password:" %>
     <div class="r">
@@ -35,6 +36,7 @@
       <%= f.password_field :password_confirmation %>
     </div>
   </div>
+  <% end %>
   <div class="row line narrow clearfix">
     <%= f.label "Admin:" %>
     <%= f.check_box :admin %>

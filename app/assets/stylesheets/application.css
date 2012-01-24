@@ -20,6 +20,8 @@
     color:red;
 }
 
+/* FORM FONT */
+label {text-transform:uppercase;}
 
 /* ACTION ITEM BUTTONS */
 .sprite-new {
