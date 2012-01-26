@@ -4,7 +4,7 @@
     <a class="move"></a>
   </div>
   <section class="clearfix">
-    <table>
+    <table class="zebra-striped">
       <thead>
         <tr>
           <th>PO Number</th>
@@ -16,7 +16,7 @@
         <% if @myunfilled.count >= 1 %>
           <% @myunfilled.each do |myunfilled| %>
             <tr>
-              <td><%= myunfilled.po_number %></td>
+              <td><%= link_to myunfilled.po_number, purchase_path(myunfilled) %></td>
               <td><%= myunfilled.date_ordered %></td>
               <% if can? :update, Purchase %>
                 <td><%= link_to 'Show', myunfilled,:class => "sprite-new showbutton", "data-placement" => "below", "rel" => "twipsy", "title" => "Show Details" %><%= link_to 'Edit', edit_purchase_path(myunfilled),:class => "sprite-new editbutton", "data-placement" => "below", "rel" => "twipsy", "title" => "Edit P.O." %><%= link_to 'Destroy', myunfilled,:class => "sprite-new deletebutton", confirm: 'Are you sure?', method: :delete, "data-placement" => "below", "title" => "Delete P.O." %></td>
@@ -25,7 +25,7 @@
           <% end %>
         <% else %>
           <tr>
-            <td>No Unfilled Purchases</td>
+            <td colspan="3">No Unfilled Purchases</td>
           </tr>
         <% end %>
       </tbody>

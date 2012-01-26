@@ -1,4 +1,4 @@
-<% if ProductType.all.count == 0 %>
+<% if ProductType.count.zero? %>
   <% content_for :empty do %>
     <div class="blank_slate_container">
       <span class="blank_slate">
@@ -15,14 +15,14 @@
 		</div>
 		<section>
 			<div>
-				<table class="bordered-table">
+				<table class="zebra-striped bordered-table">
 					<thead>
 						<tr>
 							<th><%= sort_link @q, :prod_number, "Product ID" %></th>
 							<th>Description</th>
 							<th><%= sort_link @q, :brand, "Manufacturer" %></th>
 							<th>Stock Available</th>
-							<th><%= sort_link @q, :needed_quantity, "Stock Desired" %></th>
+							<th><%= sort_link @q, :needed_quantity, "ReOrder Point" %></th>
 							<% if can? :update, ProductType %>
 							<th>Actions</th>
 							<% end %>
@@ -35,7 +35,7 @@
 			    
 			    <div class="paging mt15 clearfix">
 			    	<div class="r">
-			            <%= paginate @product_types%>
+			            <%= paginate @product_types %>
 			        </div>
 			    </div>
 			    

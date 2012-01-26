@@ -4,7 +4,7 @@
     <a class="move"></a>
   </div>
   <section class="clearfix">
-    <table>
+    <table class="zebra-striped">
       <thead>
         <tr>
           <th>PO Number</th>
@@ -16,7 +16,7 @@
         <% if @otherunfilled.count >= 1 %>
           <% @otherunfilled.each do |otherunfilled| %>
             <tr>
-              <td><%= otherunfilled.po_number %></td>
+              <td><%= link_to otherunfilled.po_number, purchase_path(otherunfilled) %></td>
               <td><%= otherunfilled.user.username unless otherunfilled.user.blank? %></td>
 
               <% if can? :update, Purchase %>
@@ -26,7 +26,7 @@
           <% end %>
         <% else %>
           <tr>
-            <td>No Unfilled Purchases</td>
+            <td colspan="3">No Unfilled Purchases</td>
           </tr>
         <% end %>
       </tbody>

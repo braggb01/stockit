@@ -6,15 +6,19 @@
   <meta name="HandheldFriendly" content="True">
   <meta name="MobileOptimized" content="320">
   <meta name="viewport" content="width=device-width, target-densitydpi=160dpi, initial-scale=1.0">
-  <link href='http://fonts.googleapis.com/css?family=Droid+Sans:400,700' rel='stylesheet' type='text/css'>
-  <link href='http://fonts.googleapis.com/css?family=Droid+Serif:400,700' rel='stylesheet' type='text/css'>
-  <%= stylesheet_link_tag    "320", :media => "only screen and (max-width: 768px)" %>
-  <%= stylesheet_link_tag    "768", :media => "only screen and (min-width: 768px) and (max-width: 1024px)" %>
-  <%= stylesheet_link_tag    "1024", :media => "only screen and (min-width: 1024px)" %>
-  <%= stylesheet_link_tag    "1440", :media => "only screen and (min-width: 1440px)" %>
-  <%= stylesheet_link_tag    "application" %>
+  <%= stylesheet_link_tag "application" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
+  <link href='http://fonts.googleapis.com/css?family=Droid+Sans:400,700' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Droid+Serif:400,700' rel='stylesheet' type='text/css'>
+  <%= stylesheet_link_tag "1440", :media => "only screen and (min-width: 1440px)" %>
+  <%= stylesheet_link_tag "1024", :media => "only screen and (min-width: 1024px)" %>
+  <%= stylesheet_link_tag "768", :media => "only screen and (min-width: 768px) and (max-width: 1024px)" %>
+
+  
+  
+  
+
 
 </head>
 <% if current_user %>
@@ -24,7 +28,7 @@
   <section class="container_12"><!-- / Using 960's grid container_12 to standartize paddings/margins -->
       <div class="upper clearfix">
         <!-- / Logo -->
-        <%= link_to image_tag('stockify3_logo.png'), root_path, :class => "logo mt20" %>
+        <%= link_to image_tag('stockify_logo_alt.png'), root_path, :class => "logo mt20" %>
         <!-- <a href="dashboard.html" class="logo mt20"><img src="assets/hdr_logo.png" alt="" /></a> -->
         <!-- / End logo -->
 

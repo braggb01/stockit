@@ -2,16 +2,21 @@
  * This is a manifest file that'll automatically include all the stylesheets available in this directory
  * and any sub-directories. You're free to add application-wide styles to this file and they'll appear at
  * the top of the compiled file, but it's generally better to create a new file per style scope.
+ 
  *= require reset
- *= require tables
- *= require style
- *= require color
- *= require uniform.default
- *= require grid
+ *= require slidernav
+ *= require tipsy
  *= require variables
+ *= require mixins
  *= require jquery-ui
+ *= require tables
+ *= require uniform.default
+ *= require color
+ *= require grid
+ *= require style
  *= require_self
 */
+
 
 
 
@@ -33,12 +38,12 @@ label {text-transform:uppercase;}
     width: 40px;
 }
 .showbutton {
-    background-position: -124px -401px;
+    background-position: -477px -873px;
     height: 25px;
     width: 25px;
 }
 .showbutton:hover {
-    background-position: -124px -441px;
+    background-position: -516px -873px;
     height: 25px;
     width: 25px;
 }

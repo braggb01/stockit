@@ -1,4 +1,4 @@
-<% if Purchase.all.count == 0 %>
+<% if Purchase.count.zero? %>
   <% content_for :empty do %>
     <div class="blank_slate_container">
       <span class="blank_slate">
@@ -18,7 +18,7 @@
         <a class="move"></a>
       </div>
       <section>
-        <table class="bordered-table">
+        <table class="zebra-striped bordered-table">
           <thead>
             <tr>
               <th><%= sort_link @q, :prod_number, "Purchase Order" %></th>

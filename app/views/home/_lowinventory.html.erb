@@ -4,18 +4,18 @@
     <a class="move"></a>
   </div>
   <section class="clearfix">
-	  <table>
+	  <table class="zebra-striped">
 		<thead>
 			<tr>
 				<th>Device Type</th>
 				<th>Current</th>
-				<th>Needed</th>
+				<th>ReOrder Point</th>
 			</tr>
 		</thead>
 		<tbody>
 			<% @lowinventory.each do |lowinventory| %>
 		    <tr>
-				<td><%= lowinventory.prod_number %></td>
+				<td><%= link_to lowinventory.prod_number, product_type_path(lowinventory) %></td>
 				<td><% if lowinventory.total_quantity < lowinventory.needed_quantity %><span class="levellow"><%= lowinventory.total_quantity %></span><% else %><%= lowinventory.total_quantity %><% end %></td>
 				<td><%= lowinventory.needed_quantity %></td>
 		    </tr>

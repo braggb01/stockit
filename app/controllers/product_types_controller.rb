@@ -6,8 +6,11 @@ class ProductTypesController < ApplicationController
     @title = "Inventory"
     @product_type = ProductType.new
     @interested = ProductType.where("needed_quantity > 0 OR total_quantity > 0")
-    @q = @interested.search(params[:q])
-    @product_types = @q.result.order('needed_quantity DESC').page params[:page]
+
+    @q = ProductType.search(params[:q])
+    @product_types = @q.result.sorted.page params[:page]
+
+
 
     respond_to do |format|
       format.html # index.html.erb

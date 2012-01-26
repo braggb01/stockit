@@ -615,7 +615,7 @@ body #main .btn.blue, body .btn.blue {background-color: #0066cc;color: white;bor
 body #main .btn.yellow, body .btn.yellow{background-color: #ffcc00; border-color: #cc9900; color: #695106;text-shadow: 0 0 2px white;  }
 body #main .btn.orange, body .btn.orange{background-color: #ff9900; border-color: #cc6600;color: white;text-shadow: 0 0 2px black;}
 
-{background-image: url(gradient.png); background-repeat: repeat-x; background-position: 50% 50%;}
+/*{background-image: url(gradient.png); background-repeat: repeat-x; background-position: 50% 50%;}*/
 
 body #main .btn.clear, body .btn.clear {padding: 0; margin:0; background: none;border: 0; font-family: "Droid Sans", Helvetica, Arial;text-shadow: none; font-size: 14px; font-size: 1.4rem; color: #535353;}
 body #main .box input.clearest {background: none; border: none;width: auto;}
@@ -819,11 +819,15 @@ table tbody tr:hover td {background: #fff6c6;}*/
 
 /* Paging */
 .paging {margin: 10px 0;}
-.paging .l {width: 75%;} .paging .r {width: 24%;margin-right: 1%;}
+/*.paging .l {width: 75%;} .paging .r {width: 24%;margin-right: 1%;}
 .paging .l a {margin: 0 3px;}
-.paging .l a.active {background: #9d9d9d; padding: 3px; border-radius: 2px; color: white!important;}
+.paging .l a.active {background: #9d9d9d; padding: 3px; border-radius: 2px; color: white!important;}*/
 a.prev {display: block; float: right; width: 11px; height: 19px; background: url(icons/prev.png) no-repeat 0 0;}
 a.next {display: block; float: right; width: 11px; height: 19px; background: url(icons/next.png) no-repeat 0 0;}
+
+.paging .r {width: 100%;margin-right: 1%;text-align:right;}
+.paging .l .page {margin: 0 3px;}
+.paging .r .current {background: #9d9d9d; padding: 3px; border-radius: 2px; color: white!important;}
 
 
 /* User account and menu */

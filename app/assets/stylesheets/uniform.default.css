@@ -34,14 +34,14 @@ div.uploader.disabled span.filename{border-color:#ddd; color:#aaa}
 div.selector{position:relative; overflow:hidden; max-width:270px}
 .selector.hover{cursor:pointer}
 div.selector span{display:block; overflow:hidden; text-overflow:ellipsis; white-space:nowrap}
-div.selector select{position:absolute; opacity:0; filter:alpha(opacity:0); height:38px; width:100%; border:none; background:none; cursor:pointer}
+div.selector select{position:absolute; opacity:0; filter:alpha(opacity=0); height:38px; width:100%; border:none; background:none; cursor:pointer}
 div.checker{position:relative}
 div.checker span{display:-moz-inline-box; display:inline-block; text-align:center}
-div.checker input{opacity:0; filter:alpha(opacity:0); display:inline-block; background:none}
+div.checker input{opacity:0; filter:alpha(opacity=0); display:inline-block; background:none}
 div.radio{position:relative}
 div.radio span{display:-moz-inline-box; display:inline-block; text-align:center}
-div.radio input{opacity:0; filter:alpha(opacity:0); text-align:center; display:inline-block; background:none}
+div.radio input{opacity:0; filter:alpha(opacity=0); text-align:center; display:inline-block; background:none}
 div.uploader{position:relative; overflow:hidden; cursor:pointer; max-width:450px}
 div.uploader span.action{float:left; display:inline; padding:2px 0px; overflow:hidden}
 div.uploader span.filename{float:left; display:block; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; cursor:pointer}
-div.uploader input{opacity:0; filter:alpha(opacity:0); position:absolute; top:0; right:0; bottom:0; float:right; height:39px; border:none; cursor:pointer}
+div.uploader input{opacity:0; filter:alpha(opacity=0); position:absolute; top:0; right:0; bottom:0; float:right; height:39px; border:none; cursor:pointer}

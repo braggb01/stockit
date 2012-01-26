@@ -44,6 +44,7 @@ Stockit::Application.configure do
 
   # Precompile additional assets (application.js, application.css, and all non-JS/CSS are already added)
   # config.assets.precompile += %w( search.js )
+  config.assets.precompile +=  ['1440.css', '1024.css', '768.css', '320.css', 'respond.min.js', 'modernizr-2.0.6.min.js']
 
   # Disable delivery errors, bad email addresses will be ignored
   # config.action_mailer.raise_delivery_errors = false

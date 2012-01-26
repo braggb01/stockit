@@ -1,7 +1,7 @@
 /* Mixins.scss
  * Snippets of reusable CSS to develop faster and keep code readable
  * ----------------------------------------------------------------- */
-
+@import "variables.scss";
 // Clearfix for clearing floats like a boss h5bp.com/q
 @mixin clearfix {
   zoom: 1;

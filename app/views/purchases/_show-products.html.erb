@@ -1,4 +1,4 @@
-<% if @purchase.products.all.count == 0 %>
+<% if @purchase.products.count.zero? %>
     <div class="blank_slate_container">
       <span class="blank_slate">
         There are no Products yet.  <%= link_to 'Create One', new_purchase_product_path(@purchase) %>
@@ -10,16 +10,14 @@
     <a class="move"></a>
 </div>
 <section>
-	<table class="bordered-table">
+	<table class="zebra-striped bordered-table">
 		<thead>
 			<tr>
         		<th>Product Type</th>
-                <th>Description</th>
         		<th>Quantity Ordered</th>
                 <th>Received By</th>
         		<th>Location</th>
         		<th>Received</th>
-        		<th>Date Received</th>
         		<% if can? :update, Product %><th class="action-buttons">Actions</th> <% end %>
   		    </tr>
 		</thead>
